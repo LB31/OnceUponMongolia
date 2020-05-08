@@ -36,7 +36,7 @@ TagManager:
   - 
   - 
   - 
-  - EncyclopediaText
+  - EncyclopediaContent
   m_SortingLayers:
   - name: Default
     uniqueID: 0

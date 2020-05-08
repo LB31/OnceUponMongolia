@@ -1,18 +1,19 @@
 ﻿using System.Linq;
+using Layouter;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
 public  class Page : MonoBehaviour
 {
-    [SerializeField] private Renderer leftRenderer;
-    [SerializeField] private Renderer rightRenderer;
+    [SerializeField] private RectTransform leftTransformParent;
+    [SerializeField] private RectTransform rightTransformParent;
     
     private Animator _animator;
     
-    private static readonly int goRight = Animator.StringToHash("goRight");
-    private static readonly int goLeft = Animator.StringToHash("goLeft");
-    private static readonly int right = Animator.StringToHash("right");
-    private static readonly int left = Animator.StringToHash("left");
+    private static readonly int GoRight = Animator.StringToHash("goRight");
+    private static readonly int GoLeft = Animator.StringToHash("goLeft");
+    private static readonly int Right = Animator.StringToHash("right");
+    private static readonly int Left = Animator.StringToHash("left");
 
     private AnimationClip _goRightAnimation;
     private AnimationClip _goLeftAnimation;
@@ -30,32 +31,32 @@ public  class Page : MonoBehaviour
 
     public void GoFromRightToLeft()
     {
-        _animator.SetTrigger(right);
-        _animator.SetTrigger(goRight);
+        _animator.SetTrigger(Right);
+        _animator.SetTrigger(GoRight);
     }
 
     public void GoFromLeftToRight()
     {
-        _animator.SetTrigger(left);
-        _animator.SetTrigger(goLeft);
+        _animator.SetTrigger(Left);
+        _animator.SetTrigger(GoLeft);
     }
 
-    public void EnableLeft(Texture2D background1, Texture2D background2)
+    public void EnableLeft(PageLayout pageLayout1, PageLayout pageLayout2)
     {
         gameObject.SetActive(true);
-        _animator.SetTrigger(left);
+        _animator.SetTrigger(Left);
         
-        SetRightTexture(background1);
-        SetLeftTexture(background2);
+        SetRightPage(pageLayout1);
+        SetLeftPage(pageLayout2);
     }
     
-    public void EnableRight(Texture2D background1, Texture2D background2)
+    public void EnableRight(PageLayout pageLayout1, PageLayout pageLayout2)
     {
         gameObject.SetActive(true);
-        _animator.SetTrigger(right);
+        _animator.SetTrigger(Right);
         
-        SetRightTexture(background1);
-        SetLeftTexture(background2);
+        SetRightPage(pageLayout1);
+        SetLeftPage(pageLayout2);
     }
 
     public void Disable()
@@ -63,23 +64,25 @@ public  class Page : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    private void SetLeftTexture(Texture2D texture)
+    private void SetLeftPage(PageLayout page)
     {
-        if (texture == null)
+        if (page == null)
         {
             return;
         }
-        
-        leftRenderer.material.mainTexture = texture;
+
+        if(leftTransformParent.childCount > 0) Destroy(leftTransformParent.GetChild(0).gameObject);
+        Instantiate(page, leftTransformParent);
     }
 
-    private void SetRightTexture(Texture2D texture)
+    private void SetRightPage(PageLayout page)
     {
-        if (texture == null)
+        if (page == null)
         {
             return;
         }
-        
-        rightRenderer.material.mainTexture = texture;
+
+        if(rightTransformParent.childCount > 0) Destroy(rightTransformParent.GetChild(0).gameObject);
+        Instantiate(page, rightTransformParent);
     }
 }

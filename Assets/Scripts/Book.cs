@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections;
-using JetBrains.Annotations;
+﻿using System.Collections;
+using Layouter;
 using UnityEngine;
 
 public class Book : MonoBehaviour
@@ -11,7 +10,7 @@ public class Book : MonoBehaviour
     [SerializeField] private Page page3 = null;
 
     [Header("Page Content")]
-    [SerializeField] private PageContent[] pages;
+    [SerializeField] private PageLayout[] pages;
     
     private int _pageIndex;
     private bool _animating;
@@ -23,8 +22,8 @@ public class Book : MonoBehaviour
     private void Start()
     {
         StandbyPage.Disable();
-        LeftPage.EnableLeft(null, GetTextureByIndex(0));
-        RightPage.EnableRight(GetTextureByIndex(1), GetTextureByIndex(2));
+        LeftPage.EnableLeft(null, GetPageLayoutByIndex(0));
+        RightPage.EnableRight(GetPageLayoutByIndex(1), GetPageLayoutByIndex(2));
     }
 
     private void Update()
@@ -67,7 +66,7 @@ public class Book : MonoBehaviour
         
         _animating = true;
         RightPage.GoFromRightToLeft();
-        StandbyPage.EnableRight(GetTextureByIndex(newPageIndex + 1), GetTextureByIndex(newPageIndex + 2));
+        StandbyPage.EnableRight(GetPageLayoutByIndex(newPageIndex + 1), GetPageLayoutByIndex(newPageIndex + 2));
         
         yield return new WaitForSeconds(RightPage.GoRightAnimationLength);
         
@@ -83,7 +82,7 @@ public class Book : MonoBehaviour
         
         _animating = true;
         LeftPage.GoFromLeftToRight();
-        StandbyPage.EnableLeft(GetTextureByIndex(newPageIndex - 1), GetTextureByIndex(newPageIndex));
+        StandbyPage.EnableLeft(GetPageLayoutByIndex(newPageIndex - 1), GetPageLayoutByIndex(newPageIndex));
         
         yield return new WaitForSeconds(LeftPage.GoLeftAnimationLength);
         
@@ -93,14 +92,14 @@ public class Book : MonoBehaviour
         _pageIndex = newPageIndex;
     }
 
-    private Texture2D GetTextureByIndex(int index)
+    private PageLayout GetPageLayoutByIndex(int index)
     {
         if (index < 0 || index >= pages.Length)
         {
             return null;
         }
         
-        return pages[index].BackgroundTexture;
+        return pages[index];
     }
     
     /*
