@@ -4,7 +4,7 @@
 using System;
 using UnityEngine;
 
-namespace TypeReferences {
+namespace Helper.ClassTypeReference {
 
 	/// <summary>
 	/// Reference to a class <see cref="System.Type"/> with support for Unity serialization.

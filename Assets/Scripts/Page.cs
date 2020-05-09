@@ -5,8 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public  class Page : MonoBehaviour
 {
-    [SerializeField] private RectTransform leftTransformParent;
-    [SerializeField] private RectTransform rightTransformParent;
+    [SerializeField] private RectTransform leftTransformParent = null;
+    [SerializeField] private RectTransform rightTransformParent = null;
     
     private Animator _animator;
     
@@ -21,7 +21,7 @@ public  class Page : MonoBehaviour
     public float GoRightAnimationLength => _goRightAnimation.length;
     public float GoLeftAnimationLength => _goLeftAnimation.length;
 
-    private void Start()
+    private void OnEnable()
     {
         _animator = GetComponent<Animator>();
 

@@ -10,7 +10,7 @@ public class Book : MonoBehaviour
     [SerializeField] private Page page3 = null;
 
     [Header("Page Content")]
-    [SerializeField] private PageLayout[] pages;
+    [SerializeField] private PageLayout[] pages = new PageLayout[0];
     
     private int _pageIndex;
     private bool _animating;

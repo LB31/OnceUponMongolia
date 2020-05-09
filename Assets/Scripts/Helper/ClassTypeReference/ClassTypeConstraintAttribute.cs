@@ -4,7 +4,7 @@
 using System;
 using UnityEngine;
 
-namespace TypeReferences {
+namespace Helper.ClassTypeReference {
 
 	/// <summary>
 	/// Indicates how selectable classes should be collated in drop-down menu.

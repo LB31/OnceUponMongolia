@@ -5,8 +5,8 @@ public class CameraTargetAspect : MonoBehaviour
 {
     [SerializeField] private float initialCameraSize = 5f;
     
-    [SerializeField] private Camera cam;
-    [SerializeField] private RectTransform watchedTransform;
+    [SerializeField] private Camera cam = null;
+    [SerializeField] private RectTransform watchedTransform = null;
 
     private void Start()
     {

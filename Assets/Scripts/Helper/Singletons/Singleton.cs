@@ -1,43 +1,36 @@
 using UnityEngine;
 
-/// <summary>
-/// Singleton pattern.
-/// </summary>
-public class Singleton<T> : MonoBehaviour	where T : Component
+namespace Helper.Singletons
 {
-	protected static T _instance;
-
-	/// <summary>
-	/// Singleton design pattern
-	/// </summary>
-	/// <value>The instance.</value>
-	public static T Instance
+	public sealed class Singleton<T> : MonoBehaviour	where T : Component
 	{
-		get
+		private static T instance;
+
+		public static T Instance
 		{
-			if (_instance == null)
+			get
 			{
-				_instance = FindObjectOfType<T> ();
-				if (_instance == null)
+				if (instance == null)
 				{
-					GameObject obj = new GameObject ();
-					_instance = obj.AddComponent<T> ();
+					instance = FindObjectOfType<T> ();
+					if (instance == null)
+					{
+						GameObject obj = new GameObject ();
+						instance = obj.AddComponent<T> ();
+					}
 				}
+				return instance;
 			}
-			return _instance;
 		}
-	}
 
-	/// <summary>
-	/// On awake, we initialize our instance. Make sure to call base.Awake() in override if you need awake.
-	/// </summary>
-	protected virtual void Awake ()
-	{
-		if (!Application.isPlaying)
+		private void Awake ()
 		{
-			return;
-		}
+			if (!Application.isPlaying)
+			{
+				return;
+			}
 
-		_instance = this as T;			
+			instance = this as T;			
+		}
 	}
 }

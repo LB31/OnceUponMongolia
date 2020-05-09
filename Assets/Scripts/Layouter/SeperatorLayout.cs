@@ -1,5 +1,5 @@
 ﻿using System;
-using TypeReferences;
+using Helper.ClassTypeReference;
 using UnityEditor;
 using UnityEngine;
 
@@ -10,15 +10,15 @@ namespace Layouter
         private const string ChildNamePrefix = "Child ";
         private const int ChildCount = 2;
         
-        [SerializeField] private bool verticalSeperation;
+        [SerializeField] private bool verticalSeperation = false;
         [Range(0, 1)]
         [SerializeField] private float seperationAspectRatio = 0.5f;
 
         [ClassExtends(typeof(BaseLayout), Grouping = ClassGrouping.None)]
-        [SerializeField] private ClassTypeReference child1Type;
+        [SerializeField] private ClassTypeReference child1Type = null;
         
         [ClassExtends(typeof(BaseLayout), Grouping = ClassGrouping.None)]
-        [SerializeField] private ClassTypeReference child2Type;
+        [SerializeField] private ClassTypeReference child2Type = null;
         
         private RectTransform _childTransform1;
         private RectTransform _childTransform2;
@@ -47,7 +47,11 @@ namespace Layouter
         {
             for (var i = 1; i <= ChildCount; i++)
             {
-                SetChildTransform(i, GetChild(i));
+                var child = GetChild(i);
+                if (child == null)
+                    child = CreateChild(ChildNamePrefix + i, GetChildType(i));
+                
+                SetChildTransform(i, child);
             }
             UpdateChildTransforms();
         }

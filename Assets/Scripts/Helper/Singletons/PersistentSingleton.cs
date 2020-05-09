@@ -1,58 +1,46 @@
 using UnityEngine;
 
-/// <summary>
-/// Persistent singleton.
-/// </summary>
-public class PersistentSingleton<T> : MonoBehaviour	where T : Component
+namespace Helper.Singletons
 {
-	protected static T _instance;
-	protected bool _enabled;
-
-	/// <summary>
-	/// Singleton design pattern
-	/// </summary>
-	/// <value>The instance.</value>
-	public static T Instance
+	public sealed class PersistentSingleton<T> : MonoBehaviour	where T : Component
 	{
-		get
+		private static T instance;
+
+		public static T Instance
 		{
-			if (_instance == null)
+			get
 			{
-				_instance = FindObjectOfType<T> ();
-				if (_instance == null)
+				if (instance == null)
 				{
-					GameObject obj = new GameObject ();
-					_instance = obj.AddComponent<T> ();
+					instance = FindObjectOfType<T> ();
+					if (instance == null)
+					{
+						GameObject obj = new GameObject ();
+						instance = obj.AddComponent<T> ();
+					}
 				}
+				return instance;
 			}
-			return _instance;
-		}
-	}
-
-	/// <summary>
-	/// On awake, we check if there's already a copy of the object in the scene. If there's one, we destroy it.
-	/// </summary>
-	protected virtual void Awake ()
-	{
-		if (!Application.isPlaying)
-		{
-			return;
 		}
 
-		if(_instance == null)
+		private void Awake ()
 		{
-			//If I am the first instance, make me the Singleton
-			_instance = this as T;
-			DontDestroyOnLoad (transform.gameObject);
-			_enabled = true;
-		}
-		else
-		{
-			//If a Singleton already exists and you find
-			//another reference in scene, destroy it!
-			if(this != _instance)
+			if (!Application.isPlaying)
 			{
-				Destroy(this.gameObject);
+				return;
+			}
+
+			if(instance == null)
+			{
+				instance = this as T;
+				DontDestroyOnLoad (transform.gameObject);
+			}
+			else
+			{
+				if(this != instance)
+				{
+					Destroy(gameObject);
+				}
 			}
 		}
 	}
