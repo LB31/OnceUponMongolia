@@ -33,5 +33,6 @@ public class PlayerController : MonoBehaviour
             Walkie.Translate(transform.forward * input.axis.y / 10);
         }
 
+
     }
 }

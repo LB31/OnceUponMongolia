@@ -85,6 +85,14 @@
       "name": "/actions/mixedreality/in/ExternalCamera",
       "type": "pose",
       "requirement": "optional"
+    },
+    {
+      "name": "/actions/Mongolia/in/BookMenu",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/Mongolia/in/Teleport",
+      "type": "boolean"
     }
   ],
   "action_sets": [
@@ -102,6 +110,10 @@
     },
     {
       "name": "/actions/mixedreality",
+      "usage": "single"
+    },
+    {
+      "name": "/actions/Mongolia",
       "usage": "single"
     }
   ],
