@@ -51,7 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b482cdbe9ac548229e5af080a9cf2c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trigger: {fileID: 11400000, guid: af4b8f5d90c0ece47a25c4e59e860db2, type: 2}
 --- !u!222 &8060572939013959456
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -185,6 +184,7 @@ GameObject:
   - component: {fileID: 7416418467318152251}
   - component: {fileID: 4878005594703657140}
   - component: {fileID: 640301753775206205}
+  - component: {fileID: 2086647296485719647}
   m_Layer: 31
   m_Name: ContentParent
   m_TagString: Untagged
@@ -243,6 +243,19 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &2086647296485719647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6183587013160133393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18cdf60659749378da10b20d53b1d67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: {fileID: 11400000, guid: af4b8f5d90c0ece47a25c4e59e860db2, type: 2}
 --- !u!1 &8548135907243520209
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,24 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using Layouter.TriggeredAnimations;
 using UnityEngine;
 
 namespace Layouter
 {
     public class PageLayout : MonoBehaviour
     {
-        private List<TriggeredFadein> _triggeredFadeins = new List<TriggeredFadein>();
+        private readonly List<TriggeredAnimation> _triggeredAnimations = new List<TriggeredAnimation>();
 
-        public void RegisterTriggeredFadein(TriggeredFadein fadein)
+        public void RegisterTriggeredFadein(TriggeredAnimation triggeredAnimation)
         {
-            if (fadein == null || _triggeredFadeins.Contains(fadein))
+            if (triggeredAnimation == null || _triggeredAnimations.Contains(triggeredAnimation))
                 return;
             
-            _triggeredFadeins.Add(fadein);
+            _triggeredAnimations.Add(triggeredAnimation);
         }
         
         public void TriggerAll()
         {
-            foreach (var layout in _triggeredFadeins)
+            foreach (var layout in _triggeredAnimations)
             {
                 layout.Trigger();
             }
