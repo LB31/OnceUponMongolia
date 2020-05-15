@@ -1,43 +1,26 @@
 ﻿using System;
-using System.Collections;
-using Helper.SharedStates;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Layouter
 {
     public class PageLayout : MonoBehaviour
     {
-        [SerializeField] private SharedTrigger trigger = null;
+        private List<TriggeredFadein> _triggeredFadeins = new List<TriggeredFadein>();
 
-        private CanvasGroup _contentParent;
+        public void RegisterTriggeredFadein(TriggeredFadein fadein)
+        {
+            if (fadein == null || _triggeredFadeins.Contains(fadein))
+                return;
+            
+            _triggeredFadeins.Add(fadein);
+        }
         
-        private void Awake()
+        public void TriggerAll()
         {
-            _contentParent = transform.GetComponentInChildren<CanvasGroup>();
-            
-            if (trigger.Enabled)
-                return;
-
-            _contentParent.alpha = 0;
-        }
-
-        private IEnumerator FadeInAnimation()
-        {
-            while (_contentParent.alpha < 1f)
+            foreach (var layout in _triggeredFadeins)
             {
-                _contentParent.alpha += 0.01f;
-                yield return null;
-            }
-        }
-
-        public void Trigger()
-        {
-            if (trigger.Enabled)
-                return;
-            
-            if (trigger.Triggered)
-            {
-                StartCoroutine(FadeInAnimation());
+                layout.Trigger();
             }
         }
     }

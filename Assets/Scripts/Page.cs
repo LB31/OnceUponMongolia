@@ -91,11 +91,11 @@ public  class Page : MonoBehaviour
 
     public void TriggerLeftContent()
     {
-        _leftContent.Trigger();
+        _leftContent.TriggerAll();
     }
 
     public void TriggerRightContent()
     {
-        _rightContent.Trigger();
+        _rightContent.TriggerAll();
     }
 }
