@@ -24,6 +24,7 @@ public class Book : MonoBehaviour
         StandbyPage.Disable();
         LeftPage.EnableLeft(null, GetPageLayoutByIndex(0));
         RightPage.EnableRight(GetPageLayoutByIndex(1), GetPageLayoutByIndex(2));
+        TriggerPages();
     }
 
     private void Update()
@@ -69,13 +70,14 @@ public class Book : MonoBehaviour
         StandbyPage.EnableRight(GetPageLayoutByIndex(newPageIndex + 1), GetPageLayoutByIndex(newPageIndex + 2));
         
         yield return new WaitForSeconds(RightPage.GoRightAnimationLength);
-        
-        _animating = false;
-        LeftPage.Disable();
-        
         _pageIndex = newPageIndex;
+
+        TriggerPages();
+
+        _animating = false;
+        StandbyPage.Disable();
     }
-    
+
     private IEnumerator Backward()
     {
         var newPageIndex = _pageIndex - 2;
@@ -85,11 +87,18 @@ public class Book : MonoBehaviour
         StandbyPage.EnableLeft(GetPageLayoutByIndex(newPageIndex - 1), GetPageLayoutByIndex(newPageIndex));
         
         yield return new WaitForSeconds(LeftPage.GoLeftAnimationLength);
+        _pageIndex = newPageIndex;
+
+        TriggerPages();
         
         _animating = false;
-        RightPage.Disable();
-        
-        _pageIndex = newPageIndex;
+        StandbyPage.Disable();
+    }
+
+    private void TriggerPages()
+    {
+        LeftPage.TriggerLeftContent();
+        RightPage.TriggerRightContent();
     }
 
     private PageLayout GetPageLayoutByIndex(int index)

@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecee069892f930742b603851899249d7, type: 3}
   m_Name: Trigger_Page2
   m_EditorClassIdentifier: 
+  initialEnabled: 0
+  initialTriggered: 1

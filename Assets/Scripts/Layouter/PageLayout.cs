@@ -14,19 +14,11 @@ namespace Layouter
         private void Awake()
         {
             _contentParent = transform.GetComponentInChildren<CanvasGroup>();
-        }
-
-        private void Start()
-        {
+            
             if (trigger.Enabled)
                 return;
 
             _contentParent.alpha = 0;
-
-            if (trigger.Triggered)
-            {
-                StartCoroutine(FadeInAnimation());
-            }
         }
 
         private IEnumerator FadeInAnimation()
@@ -35,6 +27,17 @@ namespace Layouter
             {
                 _contentParent.alpha += 0.01f;
                 yield return null;
+            }
+        }
+
+        public void Trigger()
+        {
+            if (trigger.Enabled)
+                return;
+            
+            if (trigger.Triggered)
+            {
+                StartCoroutine(FadeInAnimation());
             }
         }
     }

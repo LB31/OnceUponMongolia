@@ -18,6 +18,9 @@ public  class Page : MonoBehaviour
     private AnimationClip _goRightAnimation;
     private AnimationClip _goLeftAnimation;
 
+    private PageLayout _leftContent;
+    private PageLayout _rightContent;
+
     public float GoRightAnimationLength => _goRightAnimation.length;
     public float GoLeftAnimationLength => _goLeftAnimation.length;
 
@@ -72,7 +75,7 @@ public  class Page : MonoBehaviour
         }
 
         if(leftTransformParent.childCount > 0) Destroy(leftTransformParent.GetChild(0).gameObject);
-        Instantiate(page, leftTransformParent);
+        _leftContent = Instantiate(page, leftTransformParent);
     }
 
     private void SetRightPage(PageLayout page)
@@ -83,6 +86,16 @@ public  class Page : MonoBehaviour
         }
 
         if(rightTransformParent.childCount > 0) Destroy(rightTransformParent.GetChild(0).gameObject);
-        Instantiate(page, rightTransformParent);
+        _rightContent = Instantiate(page, rightTransformParent);
+    }
+
+    public void TriggerLeftContent()
+    {
+        _leftContent.Trigger();
+    }
+
+    public void TriggerRightContent()
+    {
+        _rightContent.Trigger();
     }
 }
