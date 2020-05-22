@@ -32,34 +32,36 @@ public  class Page : MonoBehaviour
         _goLeftAnimation = _animator.runtimeAnimatorController.animationClips.FirstOrDefault(clip => clip.name.Equals("GoLeft"));
     }
 
-    public void GoFromRightToLeft()
+    public void GoFromRightToLeft(PageLayout leftPageLayout)
     {
+        SetLeftPage(leftPageLayout);
+        
         _animator.SetTrigger(Right);
         _animator.SetTrigger(GoRight);
     }
 
-    public void GoFromLeftToRight()
+    public void GoFromLeftToRight(PageLayout rightPageLayout)
     {
+        SetRightPage(rightPageLayout);
+        
         _animator.SetTrigger(Left);
         _animator.SetTrigger(GoLeft);
     }
 
-    public void EnableLeft(PageLayout pageLayout1, PageLayout pageLayout2)
+    public void EnableLeft(PageLayout leftPageLayout)
     {
         gameObject.SetActive(true);
         _animator.SetTrigger(Left);
         
-        SetRightPage(pageLayout1);
-        SetLeftPage(pageLayout2);
+        SetLeftPage(leftPageLayout);
     }
     
-    public void EnableRight(PageLayout pageLayout1, PageLayout pageLayout2)
+    public void EnableRight(PageLayout rightPageLayout)
     {
         gameObject.SetActive(true);
         _animator.SetTrigger(Right);
         
-        SetRightPage(pageLayout1);
-        SetLeftPage(pageLayout2);
+        SetRightPage(rightPageLayout);
     }
 
     public void Disable()
@@ -91,11 +93,11 @@ public  class Page : MonoBehaviour
 
     public void TriggerLeftContent()
     {
-        _leftContent.TriggerAll();
+        if(_leftContent != null) _leftContent.TriggerAll();
     }
 
     public void TriggerRightContent()
     {
-        _rightContent.TriggerAll();
+        if(_rightContent != null) _rightContent.TriggerAll();
     }
 }

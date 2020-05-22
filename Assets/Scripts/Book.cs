@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Layouter;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Book : MonoBehaviour
 {
@@ -12,87 +14,91 @@ public class Book : MonoBehaviour
     [Header("Page Content")]
     [SerializeField] private PageLayout[] pages = new PageLayout[0];
     
-    private int _pageIndex;
+    private int _contentIndex;
+    private int _pageIndex = 1;
     private bool _animating;
     
     private Page LeftPage => GetPageByIndex(_pageIndex);
-    private Page RightPage => GetPageByIndex(_pageIndex + 2);
-    private Page StandbyPage => GetPageByIndex(_pageIndex + 4);
+    private Page RightPage => GetPageByIndex(_pageIndex + 1);
+    private Page StandbyPage => GetPageByIndex(_pageIndex + 2);
 
     private void Start()
     {
         StandbyPage.Disable();
-        LeftPage.EnableLeft(null, GetPageLayoutByIndex(0));
-        RightPage.EnableRight(GetPageLayoutByIndex(1), GetPageLayoutByIndex(2));
+        LeftPage.EnableLeft(GetContentByIndex(_contentIndex));
+        RightPage.EnableRight(GetContentByIndex(_contentIndex + 1));
         TriggerPages();
     }
 
     private void Update()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
+        
         if (Input.GetMouseButtonDown(0))
         {
-            TryForward();
+            GoToContent(_contentIndex + 2);
         }
         if (Input.GetMouseButtonDown(1))
         {
-            TryBackward();
+            GoToContent(_contentIndex - 2);
         }
     }
-
-    private void TryForward()
+    
+    public void GoToContent(int index)
     {
         if (_animating)
+        {
+            Debug.Log($"Book is still animating and cant go to page {index}!");
             return;
+        }
 
-        if (_pageIndex == pages.Length - 2)
+        if (index < 0 || index > pages.Length - 2)
+        {
+            Debug.LogWarning($"Page index {index} is out of range!");
             return;
+        }
+
+        var oldIndex = _contentIndex;
+        _contentIndex = index % 2 == 1 ? index - 1 : index;
+
+        if (oldIndex == _contentIndex)
+        {
+            Debug.Log($"Already on page {_contentIndex}. No need to go there!");
+            return;
+        }
         
-        StartCoroutine(Forward());
+        StartCoroutine(_contentIndex < oldIndex ? AnimateBackward() : AnimateForward());
     }
 
-    private void TryBackward()
+    private IEnumerator AnimateBackward()
     {
-        if (_animating)
-            return;
-
-        if (_pageIndex == 0)
-            return;
-        
-        StartCoroutine(Backward());
-    }
-
-    private IEnumerator Forward()
-    {
-        var newPageIndex = _pageIndex + 2;
-        
         _animating = true;
-        RightPage.GoFromRightToLeft();
-        StandbyPage.EnableRight(GetPageLayoutByIndex(newPageIndex + 1), GetPageLayoutByIndex(newPageIndex + 2));
-        
-        yield return new WaitForSeconds(RightPage.GoRightAnimationLength);
-        _pageIndex = newPageIndex;
-
-        TriggerPages();
-
-        _animating = false;
-        StandbyPage.Disable();
-    }
-
-    private IEnumerator Backward()
-    {
-        var newPageIndex = _pageIndex - 2;
-        
-        _animating = true;
-        LeftPage.GoFromLeftToRight();
-        StandbyPage.EnableLeft(GetPageLayoutByIndex(newPageIndex - 1), GetPageLayoutByIndex(newPageIndex));
+        LeftPage.GoFromLeftToRight(GetContentByIndex(_contentIndex + 1));
+        StandbyPage.EnableLeft(GetContentByIndex(_contentIndex));
         
         yield return new WaitForSeconds(LeftPage.GoLeftAnimationLength);
-        _pageIndex = newPageIndex;
-
-        TriggerPages();
-        
         _animating = false;
+        
+        _pageIndex--;
         StandbyPage.Disable();
+        
+        TriggerPages();
+    }
+
+    private IEnumerator AnimateForward()
+    {
+        _animating = true;
+        RightPage.GoFromRightToLeft(GetContentByIndex(_contentIndex));
+        StandbyPage.EnableRight(GetContentByIndex(_contentIndex + 1));
+        
+        yield return new WaitForSeconds(RightPage.GoRightAnimationLength);
+        _animating = false;
+        
+        _pageIndex++;
+        StandbyPage.Disable();
+        
+        TriggerPages();
     }
 
     private void TriggerPages()
@@ -101,7 +107,7 @@ public class Book : MonoBehaviour
         RightPage.TriggerRightContent();
     }
 
-    private PageLayout GetPageLayoutByIndex(int index)
+    private PageLayout GetContentByIndex(int index)
     {
         if (index < 0 || index >= pages.Length)
         {
@@ -111,13 +117,8 @@ public class Book : MonoBehaviour
         return pages[index];
     }
     
-    /*
-     * In:  -2 | -1 | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | ...
-     * Out:  3 |  1 | 1 | 2 | 2 | 3 | 3 | 1 | 1 | 2 | ...
-     */
     private Page GetPageByIndex(int index)
     {
-        index = Mathf.CeilToInt(index / 2f) + 1;
         index = (index % 3 + 3) % 3;
         
         switch (index)
@@ -125,8 +126,7 @@ public class Book : MonoBehaviour
             case 1: return page1;
             case 2: return page2;
             case 0: return page3;
+            default: return null;
         }
-
-        return null;
     }
 }

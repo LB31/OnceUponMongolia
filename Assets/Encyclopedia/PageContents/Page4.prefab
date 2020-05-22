@@ -51,6 +51,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b482cdbe9ac548229e5af080a9cf2c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  x: 2
+  y: 3
 --- !u!222 &8060572939013959456
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -348,8 +350,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 1
-  m_fontSizeBase: 1
+  m_fontSize: 70.73245
+  m_fontSizeBase: 70.73245
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -424,3 +426,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2f6157159c8904da4d201c9bfa8b59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  relativeFontSize: 0.1

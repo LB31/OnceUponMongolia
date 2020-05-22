@@ -1,15 +1,14 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Helper.SharedStates
 {
     [CreateAssetMenu]
     public class SharedTrigger : ScriptableObject
     {
-        [SerializeField] private bool initialEnabled;
+        [SerializeField] private bool initialEnabled = false;
         public bool Enabled { get; private set; }
 
-        [SerializeField] private bool initialTriggered;
+        [SerializeField] private bool initialTriggered = false;
         private bool _triggered;
         public bool Triggered
         {
@@ -21,7 +20,7 @@ namespace Helper.SharedStates
                 }
                 return _triggered;
             }
-            set
+            private set
             {
                 if (!_triggered)
                 {

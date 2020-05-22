@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Layouter
 {
@@ -18,5 +17,7 @@ namespace Layouter
             rectTransform.offsetMin = Vector2.zero;
             rectTransform.offsetMax = Vector2.zero;
         }
+
+        public virtual void UpdateLayout() { }
     }
 }

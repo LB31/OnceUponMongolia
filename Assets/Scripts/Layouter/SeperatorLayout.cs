@@ -30,6 +30,13 @@ namespace Layouter
             ConnectChilds();
         }
 
+        public override void UpdateLayout()
+        {
+            base.UpdateLayout();
+            
+            ConnectChilds();
+        }
+
         private void OnBecameVisible()
         {
             ConnectChilds();
