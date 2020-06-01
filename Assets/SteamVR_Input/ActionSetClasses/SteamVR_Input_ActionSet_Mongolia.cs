@@ -88,5 +88,13 @@ namespace Valve.VR
                 return SteamVR_Actions.mongolia_Cancel;
             }
         }
+        
+        public virtual SteamVR_Action_Vibration Vibration
+        {
+            get
+            {
+                return SteamVR_Actions.mongolia_Vibration;
+            }
+        }
     }
 }

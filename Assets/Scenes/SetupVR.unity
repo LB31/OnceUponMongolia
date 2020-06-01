@@ -18843,6 +18843,8 @@ GameObject:
   - component: {fileID: 999798606}
   - component: {fileID: 999798607}
   - component: {fileID: 999798605}
+  - component: {fileID: 999798608}
+  - component: {fileID: 999798609}
   m_Layer: 0
   m_Name: ControllerTester
   m_TagString: Untagged
@@ -18857,7 +18859,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 999798604}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c448da13517a3bb4f91281e122296cc0, type: 3}
   m_Name: 
@@ -18898,6 +18900,54 @@ MonoBehaviour:
   disableAllOtherActionSets: 0
   activateOnStart: 1
   deactivateOnDestroy: 1
+--- !u!114 &999798608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999798604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3655638313180e64c815a157b7896d3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Input:
+    actionPath: /actions/Mongolia/in/Walking
+    needsReinit: 0
+  Confirm:
+    actionPath: /actions/Mongolia/in/Continue
+    needsReinit: 0
+  Speed: 4
+  Walkie: {fileID: 1830248576}
+--- !u!114 &999798609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999798604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132974a1fe90362469b114b722f6f155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BookMenu:
+    actionPath: /actions/Mongolia/in/BookMenu
+    needsReinit: 0
+  Map:
+    actionPath: /actions/Mongolia/in/Map
+    needsReinit: 0
+  PageLeft:
+    actionPath: /actions/Mongolia/in/TurnPageOrTeleportLeft
+    needsReinit: 0
+  PageRight:
+    actionPath: /actions/Mongolia/in/TurnPageOrTeleportRight
+    needsReinit: 0
+  Vibration:
+    actionPath: /actions/Mongolia/out/Vibration
+    needsReinit: 0
+  InBookMenu: 0
 --- !u!1001 &1002499642
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34598,23 +34648,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showControllers: 1
---- !u!114 &1875242802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1875242800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3655638313180e64c815a157b7896d3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  input:
-    actionPath: /actions/default/in/TouchPad
-    needsReinit: 0
-  WalkingSpeed: 4
-  Walkie: {fileID: 1830248576}
 --- !u!143 &1875242803
 CharacterController:
   m_ObjectHideFlags: 0

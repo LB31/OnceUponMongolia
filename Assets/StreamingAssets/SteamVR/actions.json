@@ -121,6 +121,10 @@
     {
       "name": "/actions/Mongolia/in/Cancel",
       "type": "boolean"
+    },
+    {
+      "name": "/actions/Mongolia/out/Vibration",
+      "type": "vibration"
     }
   ],
   "action_sets": [
