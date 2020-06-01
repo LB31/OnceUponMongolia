@@ -25,11 +25,67 @@ namespace Valve.VR
             }
         }
         
-        public virtual SteamVR_Action_Boolean Teleport
+        public virtual SteamVR_Action_Vector2 Walking
         {
             get
             {
-                return SteamVR_Actions.mongolia_Teleport;
+                return SteamVR_Actions.mongolia_Walking;
+            }
+        }
+        
+        public virtual SteamVR_Action_Boolean SnapTurnLeft
+        {
+            get
+            {
+                return SteamVR_Actions.mongolia_SnapTurnLeft;
+            }
+        }
+        
+        public virtual SteamVR_Action_Boolean SnapTurnRight
+        {
+            get
+            {
+                return SteamVR_Actions.mongolia_SnapTurnRight;
+            }
+        }
+        
+        public virtual SteamVR_Action_Boolean Map
+        {
+            get
+            {
+                return SteamVR_Actions.mongolia_Map;
+            }
+        }
+        
+        public virtual SteamVR_Action_Boolean TurnPageOrTeleportLeft
+        {
+            get
+            {
+                return SteamVR_Actions.mongolia_TurnPageOrTeleportLeft;
+            }
+        }
+        
+        public virtual SteamVR_Action_Boolean TurnPageOrTeleportRight
+        {
+            get
+            {
+                return SteamVR_Actions.mongolia_TurnPageOrTeleportRight;
+            }
+        }
+        
+        public virtual SteamVR_Action_Boolean Continue
+        {
+            get
+            {
+                return SteamVR_Actions.mongolia_Continue;
+            }
+        }
+        
+        public virtual SteamVR_Action_Boolean Cancel
+        {
+            get
+            {
+                return SteamVR_Actions.mongolia_Cancel;
             }
         }
     }

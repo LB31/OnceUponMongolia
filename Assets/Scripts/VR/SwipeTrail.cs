@@ -69,55 +69,9 @@ public class SwipeTrail : MonoBehaviour
             TrailRenderer.enabled = false;
             StoreRay();
             CreateLineObject();
-            print("exit");
         }
 
     }
-
-
-    void Update()
-    {
-
-        //bool fingerOnScreen = Input.GetMouseButton(0);
-
-        //if (fingerOnScreen)
-        //{
-        //    if (!TouchedAlready)
-        //    {
-        //        TouchedAlready = true;
-        //    }
-        //    RaycastHit hit;
-        //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        //    if (Physics.Raycast(ray, out hit) && !EventSystem.current.IsPointerOverGameObject())
-        //    {
-        //        transform.position = hit.point;
-        //    }
-        //}
-
-        //// To avoid an additional line
-        //if (fingerOnScreen && FirstTouch)
-        //{
-        //    FirstTouch = false;
-        //    setTrailColour(Color, TrailRenderer);
-        //}
-
-        //if (!fingerOnScreen)
-        //{
-        //    TrailRenderer.enabled = false;
-        //}
-
-        //// Check, if the user has released the screen to store the last drawn line
-        //if (!fingerOnScreen && TouchedAlready)
-        //{
-        //    StoreRay();
-        //    CreateLineObject();
-        //    TouchedAlready = false;
-        //}
-
-
-
-    }
-
 
 
     //! The created object is used for retracing the line
@@ -163,8 +117,6 @@ public class SwipeTrail : MonoBehaviour
 
         // Clears the "stage" so you can draw a new line
         TrailRenderer.Clear();
-        FirstTouch = true;
-        TrailRenderer.enabled = false;
     }
 
 

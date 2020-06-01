@@ -91,7 +91,35 @@
       "type": "boolean"
     },
     {
-      "name": "/actions/Mongolia/in/Teleport",
+      "name": "/actions/Mongolia/in/Walking",
+      "type": "vector2"
+    },
+    {
+      "name": "/actions/Mongolia/in/SnapTurnLeft",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/Mongolia/in/SnapTurnRight",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/Mongolia/in/Map",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/Mongolia/in/TurnPageOrTeleportLeft",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/Mongolia/in/TurnPageOrTeleportRight",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/Mongolia/in/Continue",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/Mongolia/in/Cancel",
       "type": "boolean"
     }
   ],
@@ -114,7 +142,7 @@
     },
     {
       "name": "/actions/Mongolia",
-      "usage": "single"
+      "usage": "leftright"
     }
   ],
   "default_bindings": [

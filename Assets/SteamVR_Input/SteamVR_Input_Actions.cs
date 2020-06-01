@@ -59,7 +59,21 @@ namespace Valve.VR
         
         private static SteamVR_Action_Boolean p_mongolia_BookMenu;
         
-        private static SteamVR_Action_Boolean p_mongolia_Teleport;
+        private static SteamVR_Action_Vector2 p_mongolia_Walking;
+        
+        private static SteamVR_Action_Boolean p_mongolia_SnapTurnLeft;
+        
+        private static SteamVR_Action_Boolean p_mongolia_SnapTurnRight;
+        
+        private static SteamVR_Action_Boolean p_mongolia_Map;
+        
+        private static SteamVR_Action_Boolean p_mongolia_TurnPageOrTeleportLeft;
+        
+        private static SteamVR_Action_Boolean p_mongolia_TurnPageOrTeleportRight;
+        
+        private static SteamVR_Action_Boolean p_mongolia_Continue;
+        
+        private static SteamVR_Action_Boolean p_mongolia_Cancel;
         
         public static SteamVR_Action_Boolean default_InteractUI
         {
@@ -229,11 +243,67 @@ namespace Valve.VR
             }
         }
         
-        public static SteamVR_Action_Boolean mongolia_Teleport
+        public static SteamVR_Action_Vector2 mongolia_Walking
         {
             get
             {
-                return SteamVR_Actions.p_mongolia_Teleport.GetCopy<SteamVR_Action_Boolean>();
+                return SteamVR_Actions.p_mongolia_Walking.GetCopy<SteamVR_Action_Vector2>();
+            }
+        }
+        
+        public static SteamVR_Action_Boolean mongolia_SnapTurnLeft
+        {
+            get
+            {
+                return SteamVR_Actions.p_mongolia_SnapTurnLeft.GetCopy<SteamVR_Action_Boolean>();
+            }
+        }
+        
+        public static SteamVR_Action_Boolean mongolia_SnapTurnRight
+        {
+            get
+            {
+                return SteamVR_Actions.p_mongolia_SnapTurnRight.GetCopy<SteamVR_Action_Boolean>();
+            }
+        }
+        
+        public static SteamVR_Action_Boolean mongolia_Map
+        {
+            get
+            {
+                return SteamVR_Actions.p_mongolia_Map.GetCopy<SteamVR_Action_Boolean>();
+            }
+        }
+        
+        public static SteamVR_Action_Boolean mongolia_TurnPageOrTeleportLeft
+        {
+            get
+            {
+                return SteamVR_Actions.p_mongolia_TurnPageOrTeleportLeft.GetCopy<SteamVR_Action_Boolean>();
+            }
+        }
+        
+        public static SteamVR_Action_Boolean mongolia_TurnPageOrTeleportRight
+        {
+            get
+            {
+                return SteamVR_Actions.p_mongolia_TurnPageOrTeleportRight.GetCopy<SteamVR_Action_Boolean>();
+            }
+        }
+        
+        public static SteamVR_Action_Boolean mongolia_Continue
+        {
+            get
+            {
+                return SteamVR_Actions.p_mongolia_Continue.GetCopy<SteamVR_Action_Boolean>();
+            }
+        }
+        
+        public static SteamVR_Action_Boolean mongolia_Cancel
+        {
+            get
+            {
+                return SteamVR_Actions.p_mongolia_Cancel.GetCopy<SteamVR_Action_Boolean>();
             }
         }
         
@@ -261,7 +331,14 @@ namespace Valve.VR
                     SteamVR_Actions.buggy_Reset,
                     SteamVR_Actions.mixedreality_ExternalCamera,
                     SteamVR_Actions.mongolia_BookMenu,
-                    SteamVR_Actions.mongolia_Teleport};
+                    SteamVR_Actions.mongolia_Walking,
+                    SteamVR_Actions.mongolia_SnapTurnLeft,
+                    SteamVR_Actions.mongolia_SnapTurnRight,
+                    SteamVR_Actions.mongolia_Map,
+                    SteamVR_Actions.mongolia_TurnPageOrTeleportLeft,
+                    SteamVR_Actions.mongolia_TurnPageOrTeleportRight,
+                    SteamVR_Actions.mongolia_Continue,
+                    SteamVR_Actions.mongolia_Cancel};
             Valve.VR.SteamVR_Input.actionsIn = new Valve.VR.ISteamVR_Action_In[] {
                     SteamVR_Actions.default_InteractUI,
                     SteamVR_Actions.default_Teleport,
@@ -283,7 +360,14 @@ namespace Valve.VR
                     SteamVR_Actions.buggy_Reset,
                     SteamVR_Actions.mixedreality_ExternalCamera,
                     SteamVR_Actions.mongolia_BookMenu,
-                    SteamVR_Actions.mongolia_Teleport};
+                    SteamVR_Actions.mongolia_Walking,
+                    SteamVR_Actions.mongolia_SnapTurnLeft,
+                    SteamVR_Actions.mongolia_SnapTurnRight,
+                    SteamVR_Actions.mongolia_Map,
+                    SteamVR_Actions.mongolia_TurnPageOrTeleportLeft,
+                    SteamVR_Actions.mongolia_TurnPageOrTeleportRight,
+                    SteamVR_Actions.mongolia_Continue,
+                    SteamVR_Actions.mongolia_Cancel};
             Valve.VR.SteamVR_Input.actionsOut = new Valve.VR.ISteamVR_Action_Out[] {
                     SteamVR_Actions.default_Haptic};
             Valve.VR.SteamVR_Input.actionsVibration = new Valve.VR.SteamVR_Action_Vibration[] {
@@ -303,14 +387,21 @@ namespace Valve.VR
                     SteamVR_Actions.buggy_Brake,
                     SteamVR_Actions.buggy_Reset,
                     SteamVR_Actions.mongolia_BookMenu,
-                    SteamVR_Actions.mongolia_Teleport};
+                    SteamVR_Actions.mongolia_SnapTurnLeft,
+                    SteamVR_Actions.mongolia_SnapTurnRight,
+                    SteamVR_Actions.mongolia_Map,
+                    SteamVR_Actions.mongolia_TurnPageOrTeleportLeft,
+                    SteamVR_Actions.mongolia_TurnPageOrTeleportRight,
+                    SteamVR_Actions.mongolia_Continue,
+                    SteamVR_Actions.mongolia_Cancel};
             Valve.VR.SteamVR_Input.actionsSingle = new Valve.VR.SteamVR_Action_Single[] {
                     SteamVR_Actions.default_Squeeze,
                     SteamVR_Actions.buggy_Throttle};
             Valve.VR.SteamVR_Input.actionsVector2 = new Valve.VR.SteamVR_Action_Vector2[] {
                     SteamVR_Actions.default_TouchPad,
                     SteamVR_Actions.platformer_Move,
-                    SteamVR_Actions.buggy_Steering};
+                    SteamVR_Actions.buggy_Steering,
+                    SteamVR_Actions.mongolia_Walking};
             Valve.VR.SteamVR_Input.actionsVector3 = new Valve.VR.SteamVR_Action_Vector3[0];
             Valve.VR.SteamVR_Input.actionsSkeleton = new Valve.VR.SteamVR_Action_Skeleton[] {
                     SteamVR_Actions.default_SkeletonLeftHand,
@@ -332,7 +423,14 @@ namespace Valve.VR
                     SteamVR_Actions.buggy_Brake,
                     SteamVR_Actions.buggy_Reset,
                     SteamVR_Actions.mongolia_BookMenu,
-                    SteamVR_Actions.mongolia_Teleport};
+                    SteamVR_Actions.mongolia_Walking,
+                    SteamVR_Actions.mongolia_SnapTurnLeft,
+                    SteamVR_Actions.mongolia_SnapTurnRight,
+                    SteamVR_Actions.mongolia_Map,
+                    SteamVR_Actions.mongolia_TurnPageOrTeleportLeft,
+                    SteamVR_Actions.mongolia_TurnPageOrTeleportRight,
+                    SteamVR_Actions.mongolia_Continue,
+                    SteamVR_Actions.mongolia_Cancel};
         }
         
         private static void PreInitActions()
@@ -358,7 +456,14 @@ namespace Valve.VR
             SteamVR_Actions.p_buggy_Reset = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/buggy/in/Reset")));
             SteamVR_Actions.p_mixedreality_ExternalCamera = ((SteamVR_Action_Pose)(SteamVR_Action.Create<SteamVR_Action_Pose>("/actions/mixedreality/in/ExternalCamera")));
             SteamVR_Actions.p_mongolia_BookMenu = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/Mongolia/in/BookMenu")));
-            SteamVR_Actions.p_mongolia_Teleport = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/Mongolia/in/Teleport")));
+            SteamVR_Actions.p_mongolia_Walking = ((SteamVR_Action_Vector2)(SteamVR_Action.Create<SteamVR_Action_Vector2>("/actions/Mongolia/in/Walking")));
+            SteamVR_Actions.p_mongolia_SnapTurnLeft = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/Mongolia/in/SnapTurnLeft")));
+            SteamVR_Actions.p_mongolia_SnapTurnRight = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/Mongolia/in/SnapTurnRight")));
+            SteamVR_Actions.p_mongolia_Map = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/Mongolia/in/Map")));
+            SteamVR_Actions.p_mongolia_TurnPageOrTeleportLeft = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/Mongolia/in/TurnPageOrTeleportLeft")));
+            SteamVR_Actions.p_mongolia_TurnPageOrTeleportRight = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/Mongolia/in/TurnPageOrTeleportRight")));
+            SteamVR_Actions.p_mongolia_Continue = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/Mongolia/in/Continue")));
+            SteamVR_Actions.p_mongolia_Cancel = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/Mongolia/in/Cancel")));
         }
     }
 }
