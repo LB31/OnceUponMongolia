@@ -16,7 +16,6 @@ public class BookMenuController : MonoBehaviour
     [HideInInspector]
     public bool InBookMenu;
 
-    // Start is called before the first frame update
     void Start()
     {
         BookMenu.AddOnStateDownListener(OpenBookMenu, SteamVR_Input_Sources.RightHand);
