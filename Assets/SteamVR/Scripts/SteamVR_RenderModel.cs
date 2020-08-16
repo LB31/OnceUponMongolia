@@ -452,10 +452,14 @@ namespace Valve.VR
                         texture.Apply();
                     }
 
-                    //material = new Material(shader != null ? shader : Shader.Find("Standard"));
+#if UNITY_URP
                     material = new Material(shader != null ? shader : Shader.Find("Universal Render Pipeline/Lit"));
-                    //material.mainTexture = texture;
-                    material.SetTexture("_BaseColorMap", texture);
+#else
+                    material = new Material(shader != null ? shader : Shader.Find("Standard"));
+#endif
+                    material = new Material(shader != null ? shader : Shader.Find("Universal Render Pipeline/Lit"));
+
+                    material.mainTexture = texture;
                     //material.hideFlags = HideFlags.DontUnloadUnusedAsset;
 
                     materials[renderModel.diffuseTextureId] = material;

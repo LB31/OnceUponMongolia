@@ -221,11 +221,6 @@ namespace Valve.VR
         {
             InitAfterDeserialize();
         }
-
-        public void AddOnStateDownListener(SteamVR_Action_Boolean teleportLeft, SteamVR_Input_Sources leftHand)
-        {
-            throw new NotImplementedException();
-        }
     }
 
     public class SteamVR_Action_Boolean_Source_Map : SteamVR_Action_In_Source_Map<SteamVR_Action_Boolean_Source>
