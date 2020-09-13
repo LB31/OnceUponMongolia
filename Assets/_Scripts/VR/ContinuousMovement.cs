@@ -11,7 +11,7 @@ public class ContinuousMovement : MonoBehaviour
     public XRNode InputSource;
     public float AdditionalHeight = 0.2f;
 
-    private XRRig rig; 
+    private XRRig rig;
     private Vector2 inputAxis;
     private CharacterController character;
     private InputDevice device;
@@ -26,8 +26,11 @@ public class ContinuousMovement : MonoBehaviour
     }
 
     void Update()
-    {  
-        device.TryGetFeatureValue(CommonUsages.secondary2DAxis, out inputAxis);
+    {
+        if (GameManager.Instance.OculusInUse)
+            device.TryGetFeatureValue(CommonUsages.primary2DAxis, out inputAxis);
+        else
+            device.TryGetFeatureValue(CommonUsages.secondary2DAxis, out inputAxis);
     }
 
     private void FixedUpdate()
