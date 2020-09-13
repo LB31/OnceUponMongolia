@@ -33,7 +33,6 @@ public class GirlController : MonoBehaviour
     void Update()
     {
         device.TryGetFeatureValue(CommonUsages.secondary2DAxis, out inputAxis);
-        print(inputAxis);
     }
 
     private void FixedUpdate()
