@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 
-public class HandPresence : MonoBehaviour
-{
+public class HandPresence : MonoBehaviour {
     public bool ShowController;
     public InputDeviceCharacteristics ControllerCharacteristics;
     public List<GameObject> ControllerPrefabs;
@@ -15,27 +14,26 @@ public class HandPresence : MonoBehaviour
     private GameObject spawnedHand;
     private Animator handAnimator;
 
-    private void Start()
-    {
+    private void Start() {
         TryInitialize();
     }
 
-    void TryInitialize()
-    {
+    void TryInitialize() {
         List<InputDevice> devices = new List<InputDevice>();
         InputDevices.GetDevicesWithCharacteristics(ControllerCharacteristics, devices);
 
         if (devices.Count == 0) return;
         targetDevice = devices[0];
 
+        print(targetDevice.name);
+        if (targetDevice.name.ToLower().Contains("oculus"))
+            GameManager.Instance.OculusInUse = true;
+
         GameObject prefab = ControllerPrefabs.Find(controller => controller.name == targetDevice.name);
 
-        if (prefab)
-        {
+        if (prefab) {
             spawnedController = Instantiate(prefab, transform);
-        }
-        else
-        {
+        } else {
             spawnedController = Instantiate(ControllerPrefabs[0], transform);
         }
 
@@ -46,29 +44,21 @@ public class HandPresence : MonoBehaviour
         handAnimator = spawnedHand.GetComponent<Animator>();
     }
 
-    private void UpdateHandAnimation()
-    {
-        if (targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerVal))
-        {
+    private void UpdateHandAnimation() {
+        if (targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerVal)) {
             handAnimator.SetFloat("Trigger", triggerVal);
-        }
-        else
-        {
+        } else {
             handAnimator.SetFloat("Trigger", 0);
         }
 
-        if (targetDevice.TryGetFeatureValue(CommonUsages.grip, out float gripVal))
-        {
+        if (targetDevice.TryGetFeatureValue(CommonUsages.grip, out float gripVal)) {
             handAnimator.SetFloat("Grip", gripVal);
-        }
-        else
-        {
+        } else {
             handAnimator.SetFloat("Grip", 0);
         }
     }
 
-    void Update()
-    {
+    void Update() {
         if (!targetDevice.isValid)
             TryInitialize();
         else if (!ShowController)
