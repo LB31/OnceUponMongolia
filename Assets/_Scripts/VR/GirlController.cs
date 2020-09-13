@@ -32,7 +32,10 @@ public class GirlController : MonoBehaviour
 
     void Update()
     {
-        device.TryGetFeatureValue(CommonUsages.secondary2DAxis, out inputAxis);
+        if (GameManager.Instance.OculusInUse)
+            device.TryGetFeatureValue(CommonUsages.primary2DAxis, out inputAxis);
+        else
+            device.TryGetFeatureValue(CommonUsages.secondary2DAxis, out inputAxis);
     }
 
     private void FixedUpdate()
