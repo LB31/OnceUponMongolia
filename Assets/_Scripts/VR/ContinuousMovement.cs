@@ -22,15 +22,13 @@ public class ContinuousMovement : MonoBehaviour
     {
         rig = GetComponent<XRRig>();
         character = GetComponent<CharacterController>();
-        device = InputDevices.GetDeviceAtXRNode(InputSource);
     }
 
-    void Update()
-    {
-        if (GameManager.Instance.OculusInUse)
-            device.TryGetFeatureValue(CommonUsages.primary2DAxis, out inputAxis);
-        else
-            device.TryGetFeatureValue(CommonUsages.secondary2DAxis, out inputAxis);
+    void Update() {
+        if (GameManager.Instance.OculusInUse) {
+            GameManager.Instance.LeftCon.TryGetFeatureValue(CommonUsages.primary2DAxis, out inputAxis);
+        } else
+            GameManager.Instance.LeftCon.TryGetFeatureValue(CommonUsages.secondary2DAxis, out inputAxis);
     }
 
     private void FixedUpdate()

@@ -1,15 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.PlayerLoop;
+﻿using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class GirlController : MonoBehaviour
-{
+public class GirlController : MonoBehaviour {
 
     public float Speed = 1;
     public XRNode InputSource;
+    public XRController Controller;
     public float AdditionalHeight = 0.2f;
 
     private XRRig rig;
@@ -23,25 +20,22 @@ public class GirlController : MonoBehaviour
     public Transform Walkie;
 
 
-    void Start()
-    {
+    void Start() {
         rig = GetComponent<XRRig>();
         character = Walkie.GetComponent<CharacterController>();
-        device = InputDevices.GetDeviceAtXRNode(InputSource);
+        //device = Controller.inputDevice;
+        //device = InputDevices.GetDeviceAtXRNode(InputSource);        
     }
 
-    void Update()
-    {
-        if (GameManager.Instance.OculusInUse)
-            device.TryGetFeatureValue(CommonUsages.primary2DAxis, out inputAxis);
-        else
-            device.TryGetFeatureValue(CommonUsages.secondary2DAxis, out inputAxis);
+    void Update() {
+        if (GameManager.Instance.OculusInUse) {
+            GameManager.Instance.LeftCon.TryGetFeatureValue(CommonUsages.primary2DAxis, out inputAxis);
+        } else
+            GameManager.Instance.LeftCon.TryGetFeatureValue(CommonUsages.secondary2DAxis, out inputAxis);
     }
 
-    private void FixedUpdate()
-    {
-        if (inputAxis.magnitude > 0.6f)
-        {
+    private void FixedUpdate() {
+        if (inputAxis.magnitude > 0.6f) {
             //Vector3 direction = Player.instance.hmdTransform.TransformDirection(new Vector3(input.axis.x, 0, input.axis.y));
             //characterController.Move(WalkingSpeed * Time.deltaTime * Vector3.ProjectOnPlane(direction, Vector3.up) - new Vector3(0, 9.81f, 0) * Time.deltaTime);
 
@@ -50,8 +44,7 @@ public class GirlController : MonoBehaviour
 
         float spinOffset = 0.8f;
 
-        if (inputAxis.y > spinOffset || inputAxis.y < -spinOffset)
-        {
+        if (inputAxis.y > spinOffset || inputAxis.y < -spinOffset) {
             character.Move(Walkie.forward * inputAxis.y / Speed);
         }
 
