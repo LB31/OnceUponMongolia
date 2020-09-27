@@ -35,14 +35,14 @@ public class GirlController : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        if (inputAxis.magnitude > 0.6f) {
+        if (inputAxis.magnitude > 0.5f) {
             //Vector3 direction = Player.instance.hmdTransform.TransformDirection(new Vector3(input.axis.x, 0, input.axis.y));
             //characterController.Move(WalkingSpeed * Time.deltaTime * Vector3.ProjectOnPlane(direction, Vector3.up) - new Vector3(0, 9.81f, 0) * Time.deltaTime);
 
             Walkie.Rotate(Vector3.up * inputAxis.x * Speed);
         }
 
-        float spinOffset = 0.8f;
+        float spinOffset = 0.7f;
 
         if (inputAxis.y > spinOffset || inputAxis.y < -spinOffset) {
             character.Move(Walkie.forward * inputAxis.y / Speed);
