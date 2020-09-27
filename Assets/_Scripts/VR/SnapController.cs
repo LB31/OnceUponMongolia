@@ -32,11 +32,9 @@ public class SnapController : MonoBehaviour
             InCollider = false;
             GrabbedObject = null;
             SelectedSnapZone = null;
-            Debug.LogError("in collider");
         }
         else
         {
-            Debug.LogError("not in collider");
             await Task.Delay(500);
             GrabbedObject.GetComponent<Rigidbody>().isKinematic = false;
             GrabbedObject.GetComponent<Rigidbody>().useGravity = true;
@@ -75,8 +73,7 @@ public class CollisionDetector : MonoBehaviour
             MeshRenderer.enabled = true;
             SnapController.InCollider = true;
             //SnapController.GrabbedObject = other.gameObject;
-            SnapController.SelectedSnapZone = this.transform;
-            print("trigger enter");
+            SnapController.SelectedSnapZone = transform;
         }
     }
 
@@ -88,7 +85,6 @@ public class CollisionDetector : MonoBehaviour
             SnapController.InCollider = false;
             //SnapController.GrabbedObject = null;
             SnapController.SelectedSnapZone = null;
-            print("trigger exit");
         }
     }
 }
