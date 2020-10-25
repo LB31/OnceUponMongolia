@@ -10,9 +10,12 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public bool OculusInUse;
-    public SnapTurnProvider stp;
+    public SnapTurnProvider SnapTurnProvider;
 
     public InputDevice LeftCon;
+    public InputDevice RightCon;
+
+    public InputFeatureUsage<Vector2> Axis2D;
 
     private void Awake() {
         if (Instance)
@@ -22,10 +25,10 @@ public class GameManager : MonoBehaviour
 
     public void ChangeHeadsetDependencies()
     {
-        stp = FindObjectOfType<SnapTurnProvider>();
+        SnapTurnProvider = FindObjectOfType<SnapTurnProvider>();
         if (OculusInUse)
-            stp.turnUsage = SnapTurnProvider.InputAxes.Primary2DAxis;
+            SnapTurnProvider.turnUsage = SnapTurnProvider.InputAxes.Primary2DAxis;
         else
-            stp.turnUsage = SnapTurnProvider.InputAxes.Secondary2DAxis;
+            SnapTurnProvider.turnUsage = SnapTurnProvider.InputAxes.Secondary2DAxis;
     }
 }

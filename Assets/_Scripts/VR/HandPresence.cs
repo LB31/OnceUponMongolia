@@ -23,12 +23,25 @@ public class HandPresence : MonoBehaviour {
 
         if (devices.Count == 0) return;
         targetDevice = devices[0];
-        if (targetDevice.name.ToLower().Contains("left"))
-            GameManager.Instance.LeftCon = targetDevice;
 
-        print(targetDevice.name);
         if (targetDevice.name.ToLower().Contains("oculus"))
             GameManager.Instance.OculusInUse = true;
+
+        if (targetDevice.name.ToLower().Contains("left"))
+        {
+            GameManager.Instance.LeftCon = targetDevice;
+        }
+            
+        if (targetDevice.name.ToLower().Contains("left"))
+            GameManager.Instance.RightCon = targetDevice;
+
+        if (GameManager.Instance.OculusInUse)
+            GameManager.Instance.Axis2D = CommonUsages.primary2DAxis;
+        else
+            GameManager.Instance.Axis2D = CommonUsages.secondary2DAxis;
+
+
+
         GameManager.Instance.ChangeHeadsetDependencies();
 
         GameObject prefab = ControllerPrefabs.Find(controller => controller.name == targetDevice.name);

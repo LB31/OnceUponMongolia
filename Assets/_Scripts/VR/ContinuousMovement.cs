@@ -25,10 +25,7 @@ public class ContinuousMovement : MonoBehaviour
     }
 
     void Update() {
-        if (GameManager.Instance.OculusInUse) {
-            GameManager.Instance.LeftCon.TryGetFeatureValue(CommonUsages.primary2DAxis, out inputAxis);
-        } else
-            GameManager.Instance.LeftCon.TryGetFeatureValue(CommonUsages.secondary2DAxis, out inputAxis);
+        GameManager.Instance.LeftCon.TryGetFeatureValue(GameManager.Instance.Axis2D, out inputAxis);
     }
 
     private void FixedUpdate()
