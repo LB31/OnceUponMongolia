@@ -29,20 +29,20 @@ public class SnapController : MonoBehaviour
             SelectedSnapZone.GetComponent<MeshRenderer>().enabled = false;
             SelectedSnapZone.GetChild(0).gameObject.SetActive(true);
 
-            InCollider = false;
-            GrabbedObject = null;
+            InCollider = false;       
             SelectedSnapZone = null;
         }
         else
         {
             await Task.Delay(500);
-            GrabbedObject.GetComponent<Rigidbody>().isKinematic = false;
-            GrabbedObject.GetComponent<Rigidbody>().useGravity = true;
+            Rigidbody rg = GrabbedObject.GetComponent<Rigidbody>();
+            rg.isKinematic = false;
+            rg.useGravity = true;
 
             GrabbedObject.GetComponent<Collider>().isTrigger = false;
-
-            GrabbedObject = null;
         }
+
+        GrabbedObject = null;
     }
 
     public void RegisterGrabbedOjbect(GameObject obj)
