@@ -7,14 +7,18 @@ public class DrawTest : MonoBehaviour
     public Texture2D TextureToDrawOn;
     public Color ColorToFill = Color.blue;
     public Color ColorToDraw = Color.red;
-
+    public Material BrushTipMat;
     public int pixelsAround = 5;
+    public float distancteToDraw = 0.2f;
 
     private Texture2D backupTex;
 
     private int width;
     private int height;
     private bool[,] usedPositions;
+
+    private int layerMask = 1 << 9;
+    private bool selectingColor;
 
     void Start()
     {
@@ -24,18 +28,18 @@ public class DrawTest : MonoBehaviour
 
         backupTex = new Texture2D(width, height);
         Graphics.CopyTexture(TextureToDrawOn, backupTex);
+
+        ColorToDraw = BrushTipMat.color;
     }
 
     void Update()
     {
-        if (!Input.GetMouseButton(0))
-            return;
+        if (selectingColor) return;
 
         RaycastHit hit;
-        if (!Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
-            return;
+        Vector3 fwd = transform.TransformDirection(Vector3.forward);     
 
-        if (!hit.transform.Equals(transform))
+        if (!Physics.Raycast(transform.position, fwd, out hit, distancteToDraw, layerMask))
             return;
 
         Vector2 pixelUV = hit.textureCoord;
@@ -81,9 +85,36 @@ public class DrawTest : MonoBehaviour
         TextureToDrawOn.Apply();
     }
 
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.name.Contains("color"))
+        {
+            Material material = other.GetComponent<Renderer>().material;
+            ColorToDraw = material.color;
+            BrushTipMat.color = material.color;
+        }
+
+        if (other.name.ToLower().Contains("table"))
+        {
+            selectingColor = true;
+        }
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.name.ToLower().Contains("table"))
+        {
+            selectingColor = false;
+        }
+    }
+
+
     private void OnApplicationQuit()
     {
         Graphics.CopyTexture(backupTex, TextureToDrawOn);
+        BrushTipMat.color = Color.red;
     }
 
 }
