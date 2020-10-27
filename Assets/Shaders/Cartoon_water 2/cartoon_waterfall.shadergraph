@@ -4,7 +4,7 @@
             "typeInfo": {
                 "fullName": "UnityEditor.ShaderGraph.Internal.ColorShaderProperty"
             },
-            "JSONnodeData": "{\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"bf9bbe0f-b858-4552-8fc2-9be4e1183990\"\n    },\n    \"m_Name\": \"BaseColour\",\n    \"m_DefaultReferenceName\": \"Color_DC05B774\",\n    \"m_OverrideReferenceName\": \"\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Precision\": 0,\n    \"m_GPUInstanced\": false,\n    \"m_Hidden\": false,\n    \"m_Value\": {\n        \"r\": 0.46885353326797488,\n        \"g\": 1.0920132398605347,\n        \"b\": 1.1335572004318238,\n        \"a\": 1.0\n    },\n    \"m_ColorMode\": 1\n}"
+            "JSONnodeData": "{\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"bf9bbe0f-b858-4552-8fc2-9be4e1183990\"\n    },\n    \"m_Name\": \"BaseColour\",\n    \"m_DefaultReferenceName\": \"Color_DC05B774\",\n    \"m_OverrideReferenceName\": \"\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Precision\": 0,\n    \"m_GPUInstanced\": false,\n    \"m_Hidden\": false,\n    \"m_Value\": {\n        \"r\": 0.39033445715904238,\n        \"g\": 0.9684575796127319,\n        \"b\": 1.3135064840316773,\n        \"a\": 1.0\n    },\n    \"m_ColorMode\": 1\n}"
         },
         {
             "typeInfo": {
@@ -34,7 +34,7 @@
             "typeInfo": {
                 "fullName": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty"
             },
-            "JSONnodeData": "{\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"d09bfae8-472a-4537-abc6-b1ab4fd4af44\"\n    },\n    \"m_Name\": \"WaveSpeed\",\n    \"m_DefaultReferenceName\": \"Vector1_A467ADCD\",\n    \"m_OverrideReferenceName\": \"\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Precision\": 0,\n    \"m_GPUInstanced\": false,\n    \"m_Hidden\": false,\n    \"m_Value\": 3.0,\n    \"m_FloatType\": 0,\n    \"m_RangeValues\": {\n        \"x\": 0.0,\n        \"y\": 1.0\n    }\n}"
+            "JSONnodeData": "{\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"d09bfae8-472a-4537-abc6-b1ab4fd4af44\"\n    },\n    \"m_Name\": \"WaveSpeed\",\n    \"m_DefaultReferenceName\": \"Vector1_A467ADCD\",\n    \"m_OverrideReferenceName\": \"\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Precision\": 0,\n    \"m_GPUInstanced\": false,\n    \"m_Hidden\": false,\n    \"m_Value\": 3.0,\n    \"m_FloatType\": 3,\n    \"m_RangeValues\": {\n        \"x\": 0.0,\n        \"y\": 3.0\n    }\n}"
         }
     ],
     "m_SerializedKeywords": [],
