@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using TMPro;
 using UnityEngine;
 
 public class DrawTest : MonoBehaviour
@@ -10,15 +12,18 @@ public class DrawTest : MonoBehaviour
     public Material BrushTipMat;
     public int pixelsAround = 5;
     public float distancteToDraw = 0.2f;
+    public bool FillingWall;
 
     private Texture2D backupTex;
 
     private int width;
     private int height;
-    private bool[,] usedPositions;
+    private static bool[,] usedPositions;
 
     private int layerMask = 1 << 9;
     private bool selectingColor;
+    private Color returnColor;
+    private bool fillHit;
 
     void Start()
     {
@@ -30,17 +35,35 @@ public class DrawTest : MonoBehaviour
         Graphics.CopyTexture(TextureToDrawOn, backupTex);
 
         ColorToDraw = BrushTipMat.color;
+        returnColor = BrushTipMat.color;
     }
 
-    void Update()
+    private async void Update()
     {
         if (selectingColor) return;
 
+
         RaycastHit hit;
-        Vector3 fwd = transform.TransformDirection(Vector3.forward);     
+        Vector3 fwd = transform.TransformDirection(Vector3.forward);
 
         if (!Physics.Raycast(transform.position, fwd, out hit, distancteToDraw, layerMask))
+        {
+            print("outstide");
+
+            fillHit = true;
             return;
+        }
+            
+
+        if (FillingWall)
+        {
+            if (fillHit)
+            {
+                fillHit = false;
+                StartCoroutine(SetFullColor());
+            }
+            return;
+        }
 
         Vector2 pixelUV = hit.textureCoord;
         pixelUV.x *= width;
@@ -58,31 +81,36 @@ public class DrawTest : MonoBehaviour
         for (int x = -pixelsAround; x <= pixelsAround; x++)
         {
             for (int y = -pixelsAround; y <= pixelsAround; y++)
-            {         
+            {
                 try
                 {
                     tex.SetPixel((int)pixel.x - x, (int)pixel.y - y, ColorToDraw);
                     usedPositions[(int)pixel.x - x, (int)pixel.y - y] = true;
                 }
-                catch (System.IndexOutOfRangeException) { }    
+                catch (System.IndexOutOfRangeException) { }
             }
         }
     }
 
-    [ContextMenu("Fill Color")]
-    private void SetFullColor()
+    private IEnumerator SetFullColor()
     {
-        for (int x = 0; x < width; x++)
+        for (int x = 0; x < TextureToDrawOn.mipmapCount; ++x)
         {
-            for (int y = 0; y < height; y++)
+            Color[] colors = TextureToDrawOn.GetPixels(x);
+            for (int y = 0; y < colors.Length; ++y)
             {
-                if (usedPositions[x, y])
-                    continue;
-                TextureToDrawOn.SetPixel(x, y, ColorToFill);
+                //if (usedPositions[x, y])
+                //    colors[y] = TextureToDrawOn.GetPixel(x, y);
+                //else
+                    colors[y] = ColorToDraw;
+                //TextureToDrawOn.SetPixel(x, y, ColorToDraw);               
             }
+            TextureToDrawOn.SetPixels(colors, x);
         }
 
-        TextureToDrawOn.Apply();
+        TextureToDrawOn.Apply(false);
+        //FillingWall = true;
+        yield return null;
     }
 
 
@@ -114,7 +142,7 @@ public class DrawTest : MonoBehaviour
     private void OnApplicationQuit()
     {
         Graphics.CopyTexture(backupTex, TextureToDrawOn);
-        BrushTipMat.color = Color.red;
+        BrushTipMat.color = returnColor;
     }
 
 }
