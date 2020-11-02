@@ -1,0 +1,6 @@
+vero bei unity ausprobieren
+
+- um die yurte teleportieren zum malen
+- tisch steht immer rechts vom spieler an jeder position
+- verschiedene werkzeuge zum zeichnen
+  - die ganze fläche nimmt die farbe an beim fetten pinsel
