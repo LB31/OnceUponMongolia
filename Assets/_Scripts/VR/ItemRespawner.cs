@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ItemRespawner : MonoBehaviour
 {
-    public string AllowedCollisionTag;
+    public List<string> AllowedCollisionTags;
+    public bool JurteLevel;
 
     private Vector3 originPos;
     private Rigidbody rg;
@@ -17,13 +18,20 @@ public class ItemRespawner : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!collision.transform.CompareTag(AllowedCollisionTag))
+        if(!AllowedCollisionTags.Contains(collision.transform.tag))
         {
             transform.position = originPos;
-            rg.useGravity = false;
-            rg.velocity = Vector3.zero;
-            rg.angularVelocity = Vector3.zero;
-            transform.rotation = Quaternion.identity;
+            if (JurteLevel)
+            {
+                rg.useGravity = false;
+                rg.velocity = Vector3.zero;
+                rg.angularVelocity = Vector3.zero;
+                transform.rotation = Quaternion.identity;
+            }
+            else
+            {
+                transform.localPosition = Vector3.zero;
+            }
         }
     }
 }
