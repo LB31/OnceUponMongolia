@@ -25,7 +25,6 @@ public class GamblingManager : MonoBehaviour
         if (stonesInside == 4)
         {
             ShowOracleMessage();
-            Debug.LogError("all inside");
         }
     }
 
