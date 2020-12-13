@@ -1,173 +1,114 @@
 {
-    "people": [
-        {
-            "id": 0,
-            "characterName": "Vero",
-			"hints": [
-                "hint1": "Wo bin ich?",
-                "hint2": "Geh mal zum Jungen, lak shu",
-                "hint3": "Ana la ma baba ma sikim"
+   "people":[
+      {
+         "id":0,
+         "characterName":"Vero",
+         "veroTexts":{
+            "hints":[
+               "Wo bin ich?",
+               "geh mal zum Jungen, lak shu",
+               "Tadelü"
             ],
-			"answers": [
-                "oma": "Wo bin ich?",
-                "vater": "Geh mal zum Jungen, lak shu",
-                "girl": "Ana la ma baba ma sikim",
-				"boy": "Ana la ma baba ma sikim"
+            "grandma":[
+               "Oma1",
+               "Oma2"
             ],
-			"itemFound": [
-                "item1": "Wo bin ich?",
-                "item2": "Geh mal zum Jungen, lak shu",
-                "item3": "Ana la ma baba ma sikim"
+            "father":[
+               "Father1"
+            ],
+            "girl":[
+               "girlo",
+               "tastic",
+               "damn",
+               "muha"
+            ],
+            "boy":[
+               "boyto",
+               "ban",
+               "tsu",
+               "basa"
+            ],
+            "itemFound":[
+               "cool thing",
+               "always needed this",
+               "best stuff ever"
             ]
-        },
-        {
-            "id": 1,
-            "kamiName": "Oma",
-			"dialogs": [
-				"dialog1":[
-                "You litte human, how dare you to intrude in my sanctum. Did my stupid Yokais let you in?",
-                "I'm Susanno, the mightiest hero who ever lived. Yamata no Orochi, the most feared eight-headed dragon, was slayed only by myself.",
-                "Probably you've already noticed that all worlds became darker then ever before. Even with my endless powers I cannot make a difference.",
-                "However, there is a way to restore the balance. Behind you there is a shrine with a sacred treasure. Bring it to me and prove your faith.",
-                "Take care of the water"],
-				"dialog2": "penispumpe"
-            ],
-			"quests": [
-                "task1": [
-					"task": "mach ma, du arsch"
-					"hint": "mach ma, du arsch"
-					"ready": "mach ma, du arsch"
-				],
-                "task2": [
-					"task": "mach ma, du arsch"
-					"hint": "mach ma, du arsch"
-					"ready": "mach ma, du arsch"
-				],
-				"task3": [
-					"task": "würfel, du arsch"
-					"hint": ""
-					"ready":[ 
-						"answer1": "würfel antwort 1",
-						"answer2": "würfel antwort 2"
-					]
-				]
-            ],            
-			"randomAnswers": [
-				"answer1": "muhahaha"
-				"answer2": "penispumpe"
-            ]
-        },
-		{
-            "id": 2,
-            "kamiName": "Boy",
-			"dialogs": [
-				"dialog1":[
-                "You litte human, how dare you to intrude in my sanctum. Did my stupid Yokais let you in?",
-                "I'm Susanno, the mightiest hero who ever lived. Yamata no Orochi, the most feared eight-headed dragon, was slayed only by myself.",
-                "Probably you've already noticed that all worlds became darker then ever before. Even with my endless powers I cannot make a difference.",
-                "However, there is a way to restore the balance. Behind you there is a shrine with a sacred treasure. Bring it to me and prove your faith.",
-                "Take care of the water"],
-				"dialog2": "penispumpe"
-            ],
-			"quests": [
-                "task1": [
-					"task": ""
-					"hint": "mach ma, du arsch"
-					"ready": ""
-				],
-                "task4": [
-					"task": "wir gehen sachen sammeln"
-					"hint": "beeil dich"
-					"ready":[ 
-						"answer1": "das ist eine wurzel",
-						"answer1": "das ist ein kondom"
-					]
-				],
-				"task12": [
-					"task": "wenn alle quest erledigt sind"
-					"hint": ""
-					"ready": "schau, glühwürmchen"
-				],
-            ],
-			"randomAnswers": [
-				"answer1": "muhahaha"
-				"answer2": "penispumpe"
-            ],		
-        },
-		{
-            "id": 3,
-            "kamiName": "Father",
-			"dialogs": [
-				"dialog1":[
-                "You litte human, how dare you to intrude in my sanctum. Did my stupid Yokais let you in?",
-                "I'm Susanno, the mightiest hero who ever lived. Yamata no Orochi, the most feared eight-headed dragon, was slayed only by myself.",
-                "Probably you've already noticed that all worlds became darker then ever before. Even with my endless powers I cannot make a difference.",
-                "However, there is a way to restore the balance. Behind you there is a shrine with a sacred treasure. Bring it to me and prove your faith.",
-                "Take care of the water"],
-				"dialog2": "penispumpe"
-            ],
-			"quests": [
-                "task1": [
-					"task": "ich geh mal ein tier erschießen"
-					"hint": "komm ma mit"
-					"ready": "dit war ne tolle jagd"
-				],
-                "task4": [
-					"task": "wir gehen sachen sammeln"
-					"hint": "beeil dich"
-					"ready":[ 
-						"answer1": "das ist eine wurzel",
-						"answer1": "das ist ein kondom"
-					]
-				],
-				"task12": [
-					"task": "wenn alle quest erledigt sind"
-					"hint": ""
-					"ready": "schau, glühwürmchen"
-				],
-            ],
-			"randomAnswers": [
-				"answer1": "..."
-				"answer2": "..."
-            ],		
-        },
-		{
-            "id": 4,
-            "kamiName": "Girl",
-			"dialogs": [
-				"dialog1":[
-                "You litte human, how dare you to intrude in my sanctum. Did my stupid Yokais let you in?",
-                "I'm Susanno, the mightiest hero who ever lived. Yamata no Orochi, the most feared eight-headed dragon, was slayed only by myself.",
-                "Probably you've already noticed that all worlds became darker then ever before. Even with my endless powers I cannot make a difference.",
-                "However, there is a way to restore the balance. Behind you there is a shrine with a sacred treasure. Bring it to me and prove your faith.",
-                "Take care of the water"],
-				"dialog2": "penispumpe für frauen"
-            ],
-			"quests": [
-                "task1": [
-					"task": "ich geh mal ein tier erschießen"
-					"hint": "komm ma mit"
-					"ready": "dit war ne tolle jagd"
-				],
-                "task4": [
-					"task": "wir gehen sachen sammeln"
-					"hint": "beeil dich"
-					"ready":[ 
-						"answer1": "das ist eine wurzel",
-						"answer2": "das ist ein kondom"
-					]
-				],
-				"task12": [
-					"task": "wenn alle quest erledigt sind"
-					"hint": ""
-					"ready": "schau, glühwürmchen"
-				],
-            ],
-			"randomAnswers": [
-				"answer1": "..."
-				"answer2": "..."
-            ],		
-        }
-
-    ]
+         }
+      },
+      {
+         "id":1,
+         "characterName":"Grandmother",
+         "veroTexts": null,
+         "dialogs":[
+            {
+               "text":[
+                  "You litte human, how dare you to intrude in my sanctum. Did my stupid Yokais let you in?",
+                  "I'm Susanno, the mightiest hero who ever lived. Yamata no Orochi",
+                  "Probably you've already noticed that all worlds became darker then ever before. ",
+                  "However, there is a way to restore the balance. Behind you there is a shrine with a sacred treasure.",
+                  "Take care of the water"
+               ]
+            },
+            {
+               "text":[
+                  "muh"
+               ]
+            }
+         ],
+         "quests":[
+            {
+               "task":[
+                  "mach ma, du arsch",
+                  "mimimi"
+               ],
+               "hint":[
+                  "boobies",
+                  "death"
+               ],
+               "ready":[
+                  "toches"
+               ]
+            },
+            {
+               "task":[
+                  "mach ma, du arsch",
+                  "mimimi"
+               ],
+               "hint":[
+                  "boobies",
+                  "ops"
+               ],
+               "ready":[
+                  "toches"
+               ]
+            },
+            {
+               "task":[
+                  "mach ma, du arsch",
+                  "mimimi"
+               ],
+               "hint":[
+                  
+               ],
+               "ready":[
+                  "toches"
+               ]
+            }
+         ],
+         "randomAnswers":[
+            {
+               "answer":[
+                  "obama cares",
+                  "so much"
+               ]
+            },
+            {
+               "answer":[
+                  "adi cares",
+                  "not so much"
+               ]
+            }
+         ]
+      }
+   ]
 }
