@@ -3,12 +3,17 @@ guid: e6ded2edf9f3139409193c8b53e77a1c
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Horse
+    second: {fileID: 2100000, guid: 83e573d3b78170c429f6963dd7a94dfe, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

@@ -33,3 +33,6 @@ MonoBehaviour:
     variableCategoryIDs: 
   events:
   - jurteLevelReady
+  - Area A
+  - 'Tutorial '
+  - Quest
