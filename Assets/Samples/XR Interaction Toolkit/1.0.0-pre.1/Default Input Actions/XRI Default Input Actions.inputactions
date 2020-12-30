@@ -36,11 +36,33 @@
                 },
                 {
                     "name": "",
+                    "id": "be62f587-7d51-4a51-9a15-87e27a3916e5",
+                    "path": "<WMRHMD>/centerEyePosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "WMR",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "e2017383-a3f6-4c46-acb1-012b8eece9cc",
                     "path": "<XRHMD>/centerEyeRotation",
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4b3c1a2a-aec2-44e5-810d-a60af20488db",
+                    "path": "<WMRHMD>/centerEyeRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "WMR",
                     "action": "Rotation",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -181,6 +203,17 @@
                 },
                 {
                     "name": "",
+                    "id": "0e44a4c1-3ce0-4e4e-bfcf-aee1b96d9a57",
+                    "path": "<WMRSpatialController>/deviceRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "8da6ed3a-f621-49fe-8c76-1f6b7d7754d6",
                     "path": "<XRController>{LeftHand}/Primary2DAxis",
                     "interactions": "Sector(directions=1)",
@@ -241,6 +274,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8f74a51f-d223-4dcd-96a6-36f901be894f",
+                    "path": "<WMRSpatialController>/devicePosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "Position",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -557,6 +601,17 @@
                 },
                 {
                     "name": "",
+                    "id": "48c452c9-d66f-4082-bd92-c5c8d17075ce",
+                    "path": "<WMRSpatialController>/deviceRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "WMR",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "62690862-4688-4010-975b-b3d9c6062157",
                     "path": "<XRController>{RightHand}/Primary2DAxis",
                     "interactions": "Sector(directions=1)",
@@ -617,6 +672,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f16d04b7-c32b-4ba8-8631-b45b2d4e38d9",
+                    "path": "<WMRSpatialController>/devicePosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "WMR",
                     "action": "Position",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -843,6 +909,27 @@
                 },
                 {
                     "devicePath": "<XRController>{RightHand}",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "WMR",
+            "bindingGroup": "WMR",
+            "devices": [
+                {
+                    "devicePath": "<XRInputV1::WindowsMRHeadsetMEDIONMixedReality>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<XRInputV1::Vendor1118Product1627Version0::SpatialControllerRight>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<OpenVRControllerWMR>",
                     "isOptional": false,
                     "isOR": false
                 }
