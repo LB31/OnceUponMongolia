@@ -6,22 +6,16 @@ using static DialogManager;
 
 public class Dialog : MonoBehaviour
 {
+    public Person SpeakingPerson;
     public TextMeshProUGUI CharacterName;
     public TextMeshProUGUI DialogText;
 
-    public Person SpeakingPerson;
-
-    
-
     private void Awake()
     {
-        CharacterName = transform.Find("NameBox/NameText").GetComponent<TextMeshProUGUI>();
-        DialogText = transform.Find("DialogText").GetComponent<TextMeshProUGUI>();
+        //CharacterName = transform.Find("NameBox/NameText").GetComponent<TextMeshProUGUI>();
+        //DialogText = transform.Find("DialogText").GetComponent<TextMeshProUGUI>();
 
         CharacterName.text = SpeakingPerson.ToString();
-
-        // Testing
-        //StartCoroutine(BuildDialog(TypeMessage.dialog, 0));
     }
 
     

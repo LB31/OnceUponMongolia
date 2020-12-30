@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class DialogManager : Singleton<DialogManager>
@@ -11,19 +12,25 @@ public class DialogManager : Singleton<DialogManager>
     public float ScrollingSpeed = 0.01f;
 
     private Dialog currentDialog;
+    private List<string> outputText = new List<string>();
+    private int currentTextIndex;
+
+    private IEnumerator runningDialog;
+    private bool dialogIsRunning;
 
 
     protected override void Awake()
     {
         base.Awake();
 
-        ParseJson();
+        ParseJson();     
     }
 
-    private void Start()
+    private async void Start()
     {
         //StartDialog(Person.Vero, 1, TypeMessage.veroText, QuestType.none, VeroType.grandma);
-        //StartDialog(Person.Grandmother, 1, TypeMessage.quest, QuestType.task);
+        //await Task.Delay(3000);
+        StartDialog(Person.Grandmother, 0, TypeMessage.dialog, QuestType.none);
     }
 
     private void ParseJson()
@@ -33,7 +40,7 @@ public class DialogManager : Singleton<DialogManager>
         foreach (ItemTexts dialogs in dialogJson.people)
         {
             //dialog.puzzleText = dialog.puzzleText.Replace("\\n", "\n");
-
+            // Debug
             Dialogues.Add(dialogs);
 
             try
@@ -66,7 +73,7 @@ public class DialogManager : Singleton<DialogManager>
         ItemTexts itemTexts = Dialogues.
             Find(name => name.characterName == person.ToString());
 
-        List<string> outputText = new List<string>();
+        outputText.Clear();
 
         switch (messageType)
         {
@@ -88,7 +95,8 @@ public class DialogManager : Singleton<DialogManager>
                 break;
         }
 
-        StartCoroutine(ScrollDialog(outputText));
+        runningDialog = ScrollDialog();
+        StartCoroutine(runningDialog);
 
     }
 
@@ -96,7 +104,8 @@ public class DialogManager : Singleton<DialogManager>
     {
         ItemTexts itemTexts = Dialogues.
             Find(name => name.characterName == Person.Vero.ToString());
-        List<string> outputText = new List<string>();
+
+        outputText.Clear();
         string output = "";
 
         switch (veroType)
@@ -108,12 +117,16 @@ public class DialogManager : Singleton<DialogManager>
                 output = itemTexts.veroTexts.grandma[entryNumber];
                 break;
             case VeroType.father:
+                output = itemTexts.veroTexts.father[entryNumber];
                 break;
             case VeroType.girl:
+                output = itemTexts.veroTexts.girl[entryNumber];
                 break;
             case VeroType.boy:
+                output = itemTexts.veroTexts.boy[entryNumber];
                 break;
             case VeroType.itemfound:
+                output = itemTexts.veroTexts.itemfound[entryNumber];
                 break;
             default:
                 break;
@@ -121,16 +134,45 @@ public class DialogManager : Singleton<DialogManager>
 
         outputText.Add(output);
 
-        StartCoroutine(ScrollDialog(outputText));
+        runningDialog = ScrollDialog();
+        StartCoroutine(runningDialog);
     }
 
-    private IEnumerator ScrollDialog(List<string> outputText)
+    private IEnumerator ScrollDialog()
     {
+        dialogIsRunning = true;
         currentDialog.DialogText.text = "";
-        foreach (char letter in outputText[0]) // TODO replace zero
+        foreach (char letter in outputText[currentTextIndex]) 
         {
             currentDialog.DialogText.text += letter;
             yield return new WaitForSeconds(ScrollingSpeed);
+        }
+        dialogIsRunning = false;
+    }
+
+    public void ContinueDialog()
+    {
+        // When dialog scrolling, show all
+        if (dialogIsRunning)
+        {
+            StopCoroutine(runningDialog);
+            currentDialog.DialogText.text = outputText[currentTextIndex]; // TODO no zero
+            dialogIsRunning = false;
+        }
+        // When there is more to say, show next
+        else if(outputText.Count - 1 > currentTextIndex)
+        {
+            currentTextIndex++;
+            runningDialog = ScrollDialog();
+            StartCoroutine(runningDialog);
+        }
+        // Send event, when dialog finished
+        else
+        {
+            PlayMakerFSM.BroadcastEvent("DialogFinished");
+            currentTextIndex = 0;
+            currentDialog.DialogText.text = "";
+            currentDialog.gameObject.SetActive(false);
         }
     }
 
