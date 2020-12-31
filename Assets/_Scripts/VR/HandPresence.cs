@@ -2,7 +2,8 @@
 using UnityEngine;
 using UnityEngine.XR;
 
-public class HandPresence : MonoBehaviour {
+public class HandPresence : MonoBehaviour
+{
     public bool ShowController;
     public InputDeviceCharacteristics ControllerCharacteristics;
     public List<GameObject> ControllerPrefabs;
@@ -13,12 +14,15 @@ public class HandPresence : MonoBehaviour {
     private GameObject spawnedHand;
     private Animator handAnimator;
 
-    private void Start() {
+    private void Start()
+    {
         TryInitialize();
     }
 
-    void TryInitialize() {
+    void TryInitialize()
+    {
         List<InputDevice> devices = new List<InputDevice>();
+
         InputDevices.GetDevicesWithCharacteristics(ControllerCharacteristics, devices);
 
         if (devices.Count == 0) return;
@@ -28,52 +32,50 @@ public class HandPresence : MonoBehaviour {
             GameManager.Instance.OculusInUse = true;
 
         if (targetDevice.name.ToLower().Contains("left"))
-        {
             GameManager.Instance.LeftCon = targetDevice;
-        }
-            
         if (targetDevice.name.ToLower().Contains("left"))
             GameManager.Instance.RightCon = targetDevice;
 
+        // Selecting Josystick
         if (GameManager.Instance.OculusInUse)
             GameManager.Instance.Axis2D = CommonUsages.primary2DAxis;
         else
             GameManager.Instance.Axis2D = CommonUsages.secondary2DAxis;
 
-
-
         GameManager.Instance.ChangeHeadsetDependencies();
 
         GameObject prefab = ControllerPrefabs.Find(controller => controller.name == targetDevice.name);
 
-        if (prefab) {
+        if (prefab)
             spawnedController = Instantiate(prefab, transform);
-        } else {
+        // Use the default controller
+        else
             spawnedController = Instantiate(ControllerPrefabs[0], transform);
+
+        if (!ShowController)
+        {
+            spawnedHand = Instantiate(HandModelPrefab, transform);
+            handAnimator = spawnedHand.GetComponent<Animator>();
+            spawnedController.SetActive(false);
         }
-
-        spawnedHand = Instantiate(HandModelPrefab, transform);
-
-        spawnedController.SetActive(ShowController);
-        spawnedHand.SetActive(!ShowController);
-        handAnimator = spawnedHand.GetComponent<Animator>();
+        
     }
 
-    private void UpdateHandAnimation() {
-        if (targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerVal)) {
+    private void UpdateHandAnimation()
+    {
+        if (targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerVal))     
             handAnimator.SetFloat("Trigger", triggerVal);
-        } else {
+        else
             handAnimator.SetFloat("Trigger", 0);
-        }
 
-        if (targetDevice.TryGetFeatureValue(CommonUsages.grip, out float gripVal)) {
+        if (targetDevice.TryGetFeatureValue(CommonUsages.grip, out float gripVal))
             handAnimator.SetFloat("Grip", gripVal);
-        } else {
+        else
             handAnimator.SetFloat("Grip", 0);
-        }
     }
 
-    void Update() {
+    void Update()
+    {
         if (!targetDevice.isValid)
             TryInitialize();
         else if (!ShowController)
