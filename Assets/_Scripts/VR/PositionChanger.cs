@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.XR;
 
 public class PositionChanger : MonoBehaviour
@@ -17,8 +19,19 @@ public class PositionChanger : MonoBehaviour
         currentPositions = AreaPositions[0].PlayerPositions;
         currentPosition = currentPositions.IndexOf(AreaPositions[0].StartPos);
         ChangeTransform();
+        RegisterButtonEvents();
     }
 
+    private void RegisterButtonEvents()
+    {
+        XRInput[] inputs = GetComponents<XRInput>();
+        int indexLeft = Array.IndexOf(inputs, inputs.First(con => con.controller.name.ToLower().Contains("left")));
+        XRInput inputRight = inputs[indexLeft == 0 ? 1 : 0];
+        XRInput inputLeft = inputs[indexLeft];
+
+        inputLeft.bindings.Add(new XRBinding(XRButton.Trigger, PressType.End, () => Teleport(false)));
+        inputRight.bindings.Add(new XRBinding(XRButton.Trigger, PressType.End, () => Teleport(true)));
+    }
 
     public void Teleport(bool right)
     {

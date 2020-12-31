@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR;
@@ -7,8 +8,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class XRInput : MonoBehaviour
 {
 #pragma warning disable 0649
-    [SerializeField] XRController controller;
-    [SerializeField] XRBinding[] bindings;
+    public XRController controller;
+    public List<XRBinding> bindings;
 #pragma warning restore 0649
 
     private void Update()
@@ -24,11 +25,18 @@ public class XRBinding
 #pragma warning disable 0649
     [SerializeField] XRButton button;
     [SerializeField] PressType pressType;
-    [SerializeField] UnityEvent OnActive;
+    [SerializeField] UnityEvent OnActive = new UnityEvent();
 #pragma warning restore 0649
 
     bool isPressed;
     bool wasPressed;
+
+    public XRBinding(XRButton button, PressType pressType, UnityAction eventMethod)
+    {
+        this.button = button;
+        this.pressType = pressType;
+        OnActive.AddListener(eventMethod);
+    }
 
     public void Update(InputDevice device)
     {
