@@ -24,13 +24,12 @@ public class PositionChanger : MonoBehaviour
 
     private void RegisterButtonEvents()
     {
-        XRInput[] inputs = GetComponents<XRInput>();
-        int indexLeft = Array.IndexOf(inputs, inputs.First(con => con.controller.name.ToLower().Contains("left")));
-        XRInput inputRight = inputs[indexLeft == 0 ? 1 : 0];
-        XRInput inputLeft = inputs[indexLeft];
+        XRButton teleportButton = GameManager.Instance.OculusInUse ? XRButton.PrimaryButton : XRButton.Primary2DAxisClick;
 
-        inputLeft.bindings.Add(new XRBinding(XRButton.Trigger, PressType.End, () => Teleport(false)));
-        inputRight.bindings.Add(new XRBinding(XRButton.Trigger, PressType.End, () => Teleport(true)));
+        GameManager.Instance.XRInputLeft.bindings.
+            Add(new XRBinding(teleportButton, PressType.End, () => Teleport(false)));
+        GameManager.Instance.XRInputRight.bindings.
+            Add(new XRBinding(teleportButton, PressType.End, () => Teleport(true)));
     }
 
     public void Teleport(bool right)

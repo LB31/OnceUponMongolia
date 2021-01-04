@@ -14,7 +14,7 @@ public class HandPresence : MonoBehaviour
     private GameObject spawnedHand;
     private Animator handAnimator;
 
-    private void Start()
+    private void Awake()
     {
         TryInitialize();
     }
