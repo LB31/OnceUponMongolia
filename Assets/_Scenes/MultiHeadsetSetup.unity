@@ -736,8 +736,48 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5601499130302856072, guid: 4e45289a562290f449761dc6dfe851b2,
         type: 3}
+      propertyPath: bindings.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856072, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: bindings.Array.data[1].OnActive.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856072, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856072, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: bindings.Array.data[1].pressType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856072, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: bindings.Array.data[1].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1955547330}
+    - target: {fileID: 5601499130302856072, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: bindings.Array.data[1].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Teleport
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856072, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: bindings.Array.data[1].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856072, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: bindings.Array.data[1].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856072, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: bindings.Array.data[1].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5601499130302856073, guid: 4e45289a562290f449761dc6dfe851b2,
         type: 3}
@@ -771,6 +811,11 @@ PrefabInstance:
       objectReference: {fileID: 1955143277}
     - target: {fileID: 5601499130302856075, guid: 4e45289a562290f449761dc6dfe851b2,
         type: 3}
+      propertyPath: bindings.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856075, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -798,6 +843,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1955547320}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1955547330 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5601499130302856073, guid: 4e45289a562290f449761dc6dfe851b2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1955547320}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955547322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f1fdad91cb277948972af92eaa5e471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2082510434
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,6 +886,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OculusInUse: 0
   SnapTurnProvider: {fileID: 0}
+  XRInputLeft: {fileID: 0}
+  XRInputRight: {fileID: 0}
 --- !u!4 &2082510436
 Transform:
   m_ObjectHideFlags: 0

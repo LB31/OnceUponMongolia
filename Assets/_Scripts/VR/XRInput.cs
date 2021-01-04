@@ -58,8 +58,8 @@ public class XRBinding
 public enum XRButton
 {
     Trigger,
-    Grip,
-    Primary,
+    GripButton,
+    PrimaryButton,
     PrimaryTouch,
     Secondary,
     SecondaryTouch,
@@ -82,8 +82,8 @@ public static class XRStatics
         switch (button)
         {
             case XRButton.Trigger: return CommonUsages.triggerButton;
-            case XRButton.Grip: return CommonUsages.gripButton;
-            case XRButton.Primary: return CommonUsages.primaryButton;
+            case XRButton.GripButton: return CommonUsages.gripButton;
+            case XRButton.PrimaryButton: return CommonUsages.primaryButton;
             case XRButton.PrimaryTouch: return CommonUsages.primaryTouch;
             case XRButton.Secondary: return CommonUsages.secondaryButton;
             case XRButton.SecondaryTouch: return CommonUsages.secondaryTouch;
