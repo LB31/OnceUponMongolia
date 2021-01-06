@@ -61,7 +61,7 @@ public enum XRButton
     GripButton,
     PrimaryButton,
     PrimaryTouch,
-    Secondary,
+    SecondaryButton,
     SecondaryTouch,
     Primary2DAxisClick,
     Primary2DAxisTouch,
@@ -85,7 +85,7 @@ public static class XRStatics
             case XRButton.GripButton: return CommonUsages.gripButton;
             case XRButton.PrimaryButton: return CommonUsages.primaryButton;
             case XRButton.PrimaryTouch: return CommonUsages.primaryTouch;
-            case XRButton.Secondary: return CommonUsages.secondaryButton;
+            case XRButton.SecondaryButton: return CommonUsages.secondaryButton;
             case XRButton.SecondaryTouch: return CommonUsages.secondaryTouch;
             case XRButton.Primary2DAxisClick: return CommonUsages.primary2DAxisClick;
             case XRButton.Primary2DAxisTouch: return CommonUsages.primary2DAxisTouch;

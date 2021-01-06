@@ -33,7 +33,7 @@ public class HandPresence : MonoBehaviour
 
         if (targetDevice.name.ToLower().Contains("left"))
             GameManager.Instance.LeftCon = targetDevice;
-        if (targetDevice.name.ToLower().Contains("left"))
+        if (targetDevice.name.ToLower().Contains("right"))
             GameManager.Instance.RightCon = targetDevice;
 
         // Selecting Josystick

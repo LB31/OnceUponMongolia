@@ -14,7 +14,6 @@ public class ContinuousMovement : MonoBehaviour
     private XRRig rig;
     private Vector2 inputAxis;
     private CharacterController character;
-    private InputDevice device;
     private float gravity = -9.81f;
     private float fallingSpeed;
 

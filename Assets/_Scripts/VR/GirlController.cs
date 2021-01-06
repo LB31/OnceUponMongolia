@@ -6,16 +6,14 @@ public class GirlController : MonoBehaviour
 {
 
     public float Speed = 1;
-    public XRNode InputSource;
-    public XRController Controller;
-    public float AdditionalHeight = 0.2f;
+    public float TurnSmoothTime = 0.1f;
 
-    private XRRig rig;
     private Vector2 inputAxis;
-    private CharacterController character;
-    private InputDevice device;
+    private CharacterController characterController;
     private float gravity = -9.81f;
     private float fallingSpeed;
+
+    private float turnSmoothVelocity;
 
     // Testing
     public Transform Walkie;
@@ -23,10 +21,7 @@ public class GirlController : MonoBehaviour
 
     void Start()
     {
-        rig = GetComponent<XRRig>();
-        character = Walkie.GetComponent<CharacterController>();
-        //device = Controller.inputDevice;
-        //device = InputDevices.GetDeviceAtXRNode(InputSource);        
+        characterController = Walkie.GetComponent<CharacterController>();    
     }
 
     void Update()
@@ -36,28 +31,27 @@ public class GirlController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (inputAxis.magnitude > 0.5f)
+        if (inputAxis.magnitude > 0.2f)
         {
-            //Vector3 direction = Player.instance.hmdTransform.TransformDirection(new Vector3(input.axis.x, 0, input.axis.y));
-            //characterController.Move(WalkingSpeed * Time.deltaTime * Vector3.ProjectOnPlane(direction, Vector3.up) - new Vector3(0, 9.81f, 0) * Time.deltaTime);
+            Vector3 direction = new Vector3(inputAxis.x, 0, inputAxis.y).normalized;
+            
+            // rotate
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
+            float angle = Mathf.SmoothDampAngle(Walkie.eulerAngles.y, targetAngle, ref turnSmoothVelocity, TurnSmoothTime);
+            Walkie.rotation = Quaternion.Euler(0f, angle, 0f);
+            // move
+            Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            characterController.Move(moveDirection.normalized * Speed * Time.deltaTime);
 
-            Walkie.Rotate(Vector3.up * inputAxis.x * Speed);
-        }
-
-        float spinOffset = 0.7f;
-
-        if (inputAxis.y > spinOffset || inputAxis.y < -spinOffset)
-        {
-            character.Move(Walkie.forward * inputAxis.y / Speed);
         }
 
         // gravity 
-        if (character.isGrounded)
+        if (characterController.isGrounded)
             fallingSpeed = 0;
         else
             fallingSpeed += gravity * Time.fixedDeltaTime;
 
-        character.Move(Vector3.up * fallingSpeed * Time.fixedDeltaTime);
+        characterController.Move(Vector3.up * fallingSpeed * Time.fixedDeltaTime);
     }
 
 
