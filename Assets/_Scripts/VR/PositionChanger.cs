@@ -13,27 +13,68 @@ public class PositionChanger : MonoBehaviour
     private List<Transform> currentPositions;
     private int currentPosition;
 
+    private XRBinding teleportBindingLeft;
+    private XRBinding teleportBindingRight;
+
 
     void Start()
     {
         currentPositions = AreaPositions[0].PlayerPositions;
         currentPosition = currentPositions.IndexOf(AreaPositions[0].StartPos);
         ChangeTransform();
+        //RegisterButtonEvents();
+    }
+
+    private void OnEnable()
+    {
         RegisterButtonEvents();
+    }
+
+    private void OnDisable()
+    {
+        if (teleportBindingLeft != null)
+        {
+            GameManager.Instance.XRInputLeft.bindings.Remove(teleportBindingLeft);
+            GameManager.Instance.XRInputRight.bindings.Remove(teleportBindingRight);
+        }
     }
 
     private void RegisterButtonEvents()
     {
-        XRButton teleportButton = GameManager.Instance.OculusInUse ? XRButton.PrimaryButton : XRButton.Primary2DAxisClick;
+        XRButton teleportLeft;
+        XRButton teleportRight;
 
-        GameManager.Instance.XRInputLeft.bindings.
-            Add(new XRBinding(teleportButton, PressType.End, () => Teleport(false)));
+        if (GameManager.Instance.OculusInUse)
+        {
+            teleportLeft = XRButton.SecondaryButton;
+            teleportRight = XRButton.PrimaryButton;
+        }
+        else
+        {
+            teleportLeft = XRButton.Primary2DAxisClick;
+            teleportRight = XRButton.Primary2DAxisClick;
+        }
+
         GameManager.Instance.XRInputRight.bindings.
-            Add(new XRBinding(teleportButton, PressType.End, () => Teleport(true)));
+            Add(teleportBindingRight = new XRBinding(teleportLeft, PressType.End, () => Teleport(false)));
+        GameManager.Instance.XRInputRight.bindings.
+            Add(teleportBindingRight = new XRBinding(teleportRight, PressType.End, () => Teleport(true)));
     }
 
     public void Teleport(bool right)
     {
+        if (!GameManager.Instance.OculusInUse)
+        {
+            float offsetTouch = 0.4f;
+            GameManager.Instance.RightCon.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 rightTouchpad);
+            if (rightTouchpad.y < -offsetTouch)
+                right = false;
+            else if (rightTouchpad.y > offsetTouch)
+                right = true;
+            else
+                return;
+        }
+
         if (right)
         {
             currentPosition++;
