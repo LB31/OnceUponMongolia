@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -15413,7 +15413,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &306349104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52530,7 +52530,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: ac179e0f14b6af54db92a333437d1815, type: 2}
+  sharedProfile: {fileID: 0}
 --- !u!4 &981727025
 Transform:
   m_ObjectHideFlags: 0
@@ -98031,13 +98031,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scenePrefabInstances:
   - _gameObject: {fileID: 73594756}
-    _prefab: Assets/VillageModels/kugel.fbx
+    _prefab: Assets/Models/VillageModels/kugel.fbx
   - _gameObject: {fileID: 463319023}
-    _prefab: Assets/laxer Assets/wood bridge/Prefabs with collision/wood plank 1.prefab
+    _prefab: Assets/_ExternalAssets/WoodBridge/Prefabs with collision/wood plank
+      1.prefab
   - _gameObject: {fileID: 145949374}
-    _prefab: Assets/laxer Assets/wood bridge/Models/wood plank 2.fbx
+    _prefab: Assets/_ExternalAssets/WoodBridge/Models/wood plank 2.fbx
   - _gameObject: {fileID: 141647287}
-    _prefab: Assets/Assets Characters/bride_normal.fbx
+    _prefab: Assets/Models/AssetsCharacters/bride_normal.fbx
   - _gameObject: {fileID: 97865621}
     _prefab: Assets/Prefabs/Ruins/TempleRuins.prefab
   - _gameObject: {fileID: 2494063589147044097}
@@ -98059,9 +98060,9 @@ MonoBehaviour:
   - _gameObject: {fileID: 904346365}
     _prefab: Assets/Prefabs/Ruins/TempleRuins.prefab
   - _gameObject: {fileID: 517627874}
-    _prefab: Assets/Assets Characters/Granny_festival_backup.FBX
+    _prefab: Assets/Models/AssetsCharacters/Granny_festival_backup.FBX
   - _gameObject: {fileID: 799085410}
-    _prefab: Assets/Animations on character/Vero/RIGGED_vero_blender_mixamo.fbx
+    _prefab: Assets/Animations/AnimationsOnCharacter/Vero/RIGGED_vero_blender_mixamo.fbx
   - _gameObject: {fileID: 1440725408}
     _prefab: Assets/Prefabs/BlockoutWall.prefab
   - _gameObject: {fileID: 835333061}
@@ -98223,261 +98224,287 @@ MonoBehaviour:
   - _gameObject: {fileID: 453119749}
     _prefab: Assets/Prefabs/BlockoutWall.prefab
   - _gameObject: {fileID: 1443623782}
-    _prefab: Assets/VillageModels/yurte_combined.fbx
+    _prefab: Assets/Models/VillageModels/yurte_combined.fbx
   - _gameObject: {fileID: 1337265747}
-    _prefab: Assets/VillageModels/yurte_combined.fbx
+    _prefab: Assets/Models/VillageModels/yurte_combined.fbx
   - _gameObject: {fileID: 640636032}
-    _prefab: Assets/VillageModels/yurte_combined.fbx
+    _prefab: Assets/Models/VillageModels/yurte_combined.fbx
   - _gameObject: {fileID: 2083913687}
-    _prefab: Assets/VillageModels/yurte_combined_opendoor.fbx
+    _prefab: Assets/Models/VillageModels/yurte_combined_opendoor.fbx
   - _gameObject: {fileID: 819131277}
-    _prefab: Assets/VillageModels/yurte_combined_opendoor.fbx
+    _prefab: Assets/Models/VillageModels/yurte_combined_opendoor.fbx
   - _gameObject: {fileID: 856176298}
-    _prefab: Assets/VillageModels/yurte_combined.fbx
+    _prefab: Assets/Models/VillageModels/yurte_combined.fbx
   - _gameObject: {fileID: 164160192}
-    _prefab: Assets/VillageModels/yurte_combined.fbx
+    _prefab: Assets/Models/VillageModels/yurte_combined.fbx
   - _gameObject: {fileID: 1466085203}
-    _prefab: Assets/VillageModels/yurte_combined_opendoor.fbx
+    _prefab: Assets/Models/VillageModels/yurte_combined_opendoor.fbx
   - _gameObject: {fileID: 1218403226}
-    _prefab: Assets/VillageModels/smallchair.obj
+    _prefab: Assets/Models/VillageModels/smallchair.obj
   - _gameObject: {fileID: 2135731619}
-    _prefab: Assets/VillageModels/Chair.obj
+    _prefab: Assets/Models/VillageModels/Chair.obj
   - _gameObject: {fileID: 1988205439}
-    _prefab: Assets/VillageModels/kitchenCounter.obj
+    _prefab: Assets/Models/VillageModels/kitchenCounter.obj
   - _gameObject: {fileID: 1393838313}
-    _prefab: Assets/VillageModels/ottoman_chair.obj
+    _prefab: Assets/Models/VillageModels/ottoman_chair.obj
   - _gameObject: {fileID: 794531558}
-    _prefab: Assets/VillageModels/boxesandchests.obj
+    _prefab: Assets/Models/VillageModels/boxesandchests.obj
   - _gameObject: {fileID: 1068399722}
-    _prefab: Assets/VillageModels/smallTable.obj
+    _prefab: Assets/Models/VillageModels/smallTable.obj
   - _gameObject: {fileID: 40280691}
-    _prefab: Assets/VillageModels/Sofabed.obj
+    _prefab: Assets/Models/VillageModels/Sofabed.obj
   - _gameObject: {fileID: 5242299}
-    _prefab: Assets/VillageModels/basket.obj
+    _prefab: Assets/Models/VillageModels/basket.obj
   - _gameObject: {fileID: 51102509}
-    _prefab: Assets/VillageModels/basket.obj
+    _prefab: Assets/Models/VillageModels/basket.obj
   - _gameObject: {fileID: 957394819}
-    _prefab: Assets/VillageModels/smallchair.obj
+    _prefab: Assets/Models/VillageModels/smallchair.obj
   - _gameObject: {fileID: 1077979788}
-    _prefab: Assets/VillageModels/basket.obj
+    _prefab: Assets/Models/VillageModels/basket.obj
   - _gameObject: {fileID: 578763147}
-    _prefab: Assets/VillageModels/smallchair.obj
+    _prefab: Assets/Models/VillageModels/smallchair.obj
   - _gameObject: {fileID: 756254547}
-    _prefab: Assets/VillageModels/Chair.obj
+    _prefab: Assets/Models/VillageModels/Chair.obj
   - _gameObject: {fileID: 275179779}
-    _prefab: Assets/VillageModels/kitchenCounter.obj
+    _prefab: Assets/Models/VillageModels/kitchenCounter.obj
   - _gameObject: {fileID: 1687863807}
-    _prefab: Assets/VillageModels/boxesandchests.obj
+    _prefab: Assets/Models/VillageModels/boxesandchests.obj
   - _gameObject: {fileID: 1939357048}
-    _prefab: Assets/VillageModels/Sofabed.obj
+    _prefab: Assets/Models/VillageModels/Sofabed.obj
   - _gameObject: {fileID: 979755318}
-    _prefab: Assets/VillageModels/basket.obj
+    _prefab: Assets/Models/VillageModels/basket.obj
   - _gameObject: {fileID: 1756347781}
-    _prefab: Assets/Prefabs/PolygonAdventure/Prefabs/Props/SM_Prop_Stall_Table_01.prefab
+    _prefab: Assets/_ExternalAssets/PolygonAdventure/Prefabs/Props/SM_Prop_Stall_Table_01.prefab
   - _gameObject: {fileID: 2137374706}
-    _prefab: Assets/VillageModels/basket.obj
+    _prefab: Assets/Models/VillageModels/basket.obj
   - _gameObject: {fileID: 1275760162}
-    _prefab: Assets/VillageModels/drinkingtrug.obj
+    _prefab: Assets/Models/VillageModels/drinkingtrug.obj
   - _gameObject: {fileID: 1247884626}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 1894710461}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 1373292188}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 1118305466}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 1112147429}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 614057029}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 1824102147}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 1781366238}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 1137343902}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 583461732}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 249319568}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 500961582}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 940126214}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 1860922883}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 553739858}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 497348828}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 678512869}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 1792959069}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 244109687}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 1957239395}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 1965386144}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 1201175686}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 1409917506}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 1534651040}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 983841206}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 2143320159}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 1940003110}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 1859651606}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 1649363735}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 1790799118}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 1267042791}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 1416441313}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 863080458}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 345481225}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 406359103}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 1406438645}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 503180311}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 1667067344}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 1142702341}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 835189272}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 2071978160}
-    _prefab: Assets/Prefabs/PolygonAdventure/Models/SM_Env_Bridge_01.fbx
+    _prefab: Assets/_ExternalAssets/PolygonAdventure/Models/SM_Env_Bridge_01.fbx
   - _gameObject: {fileID: 1865906887}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 1355980169}
-    _prefab: Assets/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/Fence1.obj
   - _gameObject: {fileID: 236714265}
-    _prefab: Assets/Prefabs/PolygonAdventure/Models/SM_Env_CampFire_01.fbx
+    _prefab: Assets/_ExternalAssets/PolygonAdventure/Models/SM_Env_CampFire_01.fbx
   - _gameObject: {fileID: 1573235387}
-    _prefab: Assets/laxer Assets/wood bridge/Prefabs with collision/wood bridge 2.prefab
+    _prefab: Assets/_ExternalAssets/WoodBridge/Prefabs with collision/wood bridge
+      2.prefab
   - _gameObject: {fileID: 1191963519}
-    _prefab: Assets/laxer Assets/wood bridge/Prefabs with collision/wood bridge 1.prefab
+    _prefab: Assets/_ExternalAssets/WoodBridge/Prefabs with collision/wood bridge
+      1.prefab
   - _gameObject: {fileID: 1830833040}
-    _prefab: Assets/laxer Assets/wood bridge/Prefabs with collision/wood bridge 1.prefab
+    _prefab: Assets/_ExternalAssets/WoodBridge/Prefabs with collision/wood bridge
+      1.prefab
   - _gameObject: {fileID: 522799534}
-    _prefab: Assets/laxer Assets/wood bridge/Prefabs with collision/wood bridge 1.prefab
+    _prefab: Assets/_ExternalAssets/WoodBridge/Prefabs with collision/wood bridge
+      1.prefab
   - _gameObject: {fileID: 742622751}
-    _prefab: Assets/VillageModels/basket.obj
+    _prefab: Assets/Models/VillageModels/basket.obj
   - _gameObject: {fileID: 1484474653}
-    _prefab: Assets/laxer Assets/wood bridge/Prefabs with collision/wood plank 1.prefab
+    _prefab: Assets/_ExternalAssets/WoodBridge/Prefabs with collision/wood plank
+      1.prefab
   - _gameObject: {fileID: 1765106609}
-    _prefab: Assets/laxer Assets/wood bridge/Models/wood plank 2.fbx
+    _prefab: Assets/_ExternalAssets/WoodBridge/Models/wood plank 2.fbx
   - _gameObject: {fileID: 315527300}
-    _prefab: Assets/laxer Assets/wood bridge/Models/wood plank 2.fbx
+    _prefab: Assets/_ExternalAssets/WoodBridge/Models/wood plank 2.fbx
   - _gameObject: {fileID: 159648352}
-    _prefab: Assets/laxer Assets/wood bridge/Models/wood plank 2.fbx
+    _prefab: Assets/_ExternalAssets/WoodBridge/Models/wood plank 2.fbx
   - _gameObject: {fileID: 751096129}
-    _prefab: Assets/laxer Assets/wood bridge/Models/wood plank 2.fbx
+    _prefab: Assets/_ExternalAssets/WoodBridge/Models/wood plank 2.fbx
   - _gameObject: {fileID: 818262665}
-    _prefab: Assets/laxer Assets/wood bridge/Models/wood plank 2.fbx
+    _prefab: Assets/_ExternalAssets/WoodBridge/Models/wood plank 2.fbx
   - _gameObject: {fileID: 316495658}
-    _prefab: Assets/laxer Assets/wood bridge/Models/wood plank 2.fbx
+    _prefab: Assets/_ExternalAssets/WoodBridge/Models/wood plank 2.fbx
   - _gameObject: {fileID: 77284691}
-    _prefab: Assets/laxer Assets/wood bridge/Prefabs with collision/wood plank 1.prefab
+    _prefab: Assets/_ExternalAssets/WoodBridge/Prefabs with collision/wood plank
+      1.prefab
   - _gameObject: {fileID: 826181143}
-    _prefab: Assets/laxer Assets/wood bridge/Prefabs with collision/wood plank 1.prefab
+    _prefab: Assets/_ExternalAssets/WoodBridge/Prefabs with collision/wood plank
+      1.prefab
   - _gameObject: {fileID: 1626704031}
-    _prefab: Assets/laxer Assets/wood bridge/Prefabs with collision/wood plank 1.prefab
+    _prefab: Assets/_ExternalAssets/WoodBridge/Prefabs with collision/wood plank
+      1.prefab
   - _gameObject: {fileID: 823276683}
-    _prefab: Assets/laxer Assets/wood bridge/Models/wood plank 2.fbx
+    _prefab: Assets/_ExternalAssets/WoodBridge/Models/wood plank 2.fbx
   - _gameObject: {fileID: 706884880}
-    _prefab: Assets/laxer Assets/wood bridge/Models/wood plank 2.fbx
+    _prefab: Assets/_ExternalAssets/WoodBridge/Models/wood plank 2.fbx
   - _gameObject: {fileID: 1189723457}
-    _prefab: Assets/laxer Assets/wood bridge/Prefabs with collision/wood plank 1.prefab
+    _prefab: Assets/_ExternalAssets/WoodBridge/Prefabs with collision/wood plank
+      1.prefab
   - _gameObject: {fileID: 866422645}
-    _prefab: Assets/laxer Assets/wood bridge/Prefabs with collision/wood plank 1.prefab
+    _prefab: Assets/_ExternalAssets/WoodBridge/Prefabs with collision/wood plank
+      1.prefab
   - _gameObject: {fileID: 530510613}
-    _prefab: Assets/laxer Assets/wood bridge/Models/wood plank 2.fbx
+    _prefab: Assets/_ExternalAssets/WoodBridge/Models/wood plank 2.fbx
   - _gameObject: {fileID: 812488914}
-    _prefab: Assets/laxer Assets/wood bridge/Models/wood plank 2.fbx
+    _prefab: Assets/_ExternalAssets/WoodBridge/Models/wood plank 2.fbx
   - _gameObject: {fileID: 328174774}
-    _prefab: Assets/laxer Assets/wood bridge/Models/wood plank 2.fbx
+    _prefab: Assets/_ExternalAssets/WoodBridge/Models/wood plank 2.fbx
   - _gameObject: {fileID: 977579481}
-    _prefab: Assets/laxer Assets/wood bridge/Prefabs with collision/wood plank 1.prefab
+    _prefab: Assets/_ExternalAssets/WoodBridge/Prefabs with collision/wood plank
+      1.prefab
   - _gameObject: {fileID: 1292297891}
-    _prefab: Assets/laxer Assets/wood bridge/Prefabs with collision/wood plank 1.prefab
+    _prefab: Assets/_ExternalAssets/WoodBridge/Prefabs with collision/wood plank
+      1.prefab
   - _gameObject: {fileID: 1126743899}
-    _prefab: Assets/laxer Assets/wood bridge/Prefabs with collision/wood plank 1.prefab
+    _prefab: Assets/_ExternalAssets/WoodBridge/Prefabs with collision/wood plank
+      1.prefab
   - _gameObject: {fileID: 1130710149}
-    _prefab: Assets/laxer Assets/wood bridge/Models/wood plank 2.fbx
+    _prefab: Assets/_ExternalAssets/WoodBridge/Models/wood plank 2.fbx
   - _gameObject: {fileID: 207333314}
-    _prefab: Assets/laxer Assets/wood bridge/Models/wood plank 2.fbx
+    _prefab: Assets/_ExternalAssets/WoodBridge/Models/wood plank 2.fbx
   - _gameObject: {fileID: 86930172}
-    _prefab: Assets/laxer Assets/wood bridge/Prefabs with collision/wood plank 1.prefab
+    _prefab: Assets/_ExternalAssets/WoodBridge/Prefabs with collision/wood plank
+      1.prefab
   - _gameObject: {fileID: 1143173863}
-    _prefab: Assets/laxer Assets/wood bridge/Models/wood plank 2.fbx
+    _prefab: Assets/_ExternalAssets/WoodBridge/Models/wood plank 2.fbx
   - _gameObject: {fileID: 1504189813}
-    _prefab: Assets/laxer Assets/wood bridge/Prefabs with collision/wood plank 1.prefab
+    _prefab: Assets/_ExternalAssets/WoodBridge/Prefabs with collision/wood plank
+      1.prefab
   - _gameObject: {fileID: 1532540056}
-    _prefab: Assets/laxer Assets/wood bridge/Models/wood plank 2.fbx
+    _prefab: Assets/_ExternalAssets/WoodBridge/Models/wood plank 2.fbx
   - _gameObject: {fileID: 798692188}
-    _prefab: Assets/laxer Assets/wood bridge/Models/wood plank 2.fbx
+    _prefab: Assets/_ExternalAssets/WoodBridge/Models/wood plank 2.fbx
   - _gameObject: {fileID: 529183563}
-    _prefab: Assets/laxer Assets/wood bridge/Prefabs with collision/wood plank 1.prefab
+    _prefab: Assets/_ExternalAssets/WoodBridge/Prefabs with collision/wood plank
+      1.prefab
   - _gameObject: {fileID: 747606202}
-    _prefab: Assets/laxer Assets/wood bridge/Prefabs with collision/wood plank 1.prefab
+    _prefab: Assets/_ExternalAssets/WoodBridge/Prefabs with collision/wood plank
+      1.prefab
   - _gameObject: {fileID: 530723950}
-    _prefab: Assets/laxer Assets/wood bridge/Prefabs with collision/wood plank 1.prefab
+    _prefab: Assets/_ExternalAssets/WoodBridge/Prefabs with collision/wood plank
+      1.prefab
   - _gameObject: {fileID: 674115402}
-    _prefab: Assets/laxer Assets/wood bridge/Models/wood plank 2.fbx
+    _prefab: Assets/_ExternalAssets/WoodBridge/Models/wood plank 2.fbx
   - _gameObject: {fileID: 448079064}
-    _prefab: Assets/laxer Assets/wood bridge/Models/wood plank 2.fbx
+    _prefab: Assets/_ExternalAssets/WoodBridge/Models/wood plank 2.fbx
   - _gameObject: {fileID: 177515295}
-    _prefab: Assets/laxer Assets/wood bridge/Models/wood plank 2.fbx
+    _prefab: Assets/_ExternalAssets/WoodBridge/Models/wood plank 2.fbx
   - _gameObject: {fileID: 686313265}
-    _prefab: Assets/laxer Assets/wood bridge/Prefabs with collision/wood plank 1.prefab
+    _prefab: Assets/_ExternalAssets/WoodBridge/Prefabs with collision/wood plank
+      1.prefab
   - _gameObject: {fileID: 26432941}
-    _prefab: Assets/laxer Assets/wood bridge/Models/wood plank 2.fbx
+    _prefab: Assets/_ExternalAssets/WoodBridge/Models/wood plank 2.fbx
   - _gameObject: {fileID: 1542572954}
-    _prefab: Assets/laxer Assets/wood bridge/Models/wood plank 2.fbx
+    _prefab: Assets/_ExternalAssets/WoodBridge/Models/wood plank 2.fbx
   - _gameObject: {fileID: 785780713}
-    _prefab: Assets/laxer Assets/wood bridge/Prefabs with collision/wood plank 1.prefab
+    _prefab: Assets/_ExternalAssets/WoodBridge/Prefabs with collision/wood plank
+      1.prefab
   - _gameObject: {fileID: 1119206984}
-    _prefab: Assets/laxer Assets/wood bridge/Prefabs with collision/wood plank 1.prefab
+    _prefab: Assets/_ExternalAssets/WoodBridge/Prefabs with collision/wood plank
+      1.prefab
   - _gameObject: {fileID: 553903660}
-    _prefab: Assets/laxer Assets/wood bridge/Prefabs with collision/wood plank 1.prefab
+    _prefab: Assets/_ExternalAssets/WoodBridge/Prefabs with collision/wood plank
+      1.prefab
   - _gameObject: {fileID: 454426844}
-    _prefab: Assets/laxer Assets/wood bridge/Models/wood plank 2.fbx
+    _prefab: Assets/_ExternalAssets/WoodBridge/Models/wood plank 2.fbx
   - _gameObject: {fileID: 1681679049}
-    _prefab: Assets/laxer Assets/wood bridge/Models/wood plank 2.fbx
+    _prefab: Assets/_ExternalAssets/WoodBridge/Models/wood plank 2.fbx
   - _gameObject: {fileID: 1117158065}
-    _prefab: Assets/laxer Assets/wood bridge/Models/wood plank 2.fbx
+    _prefab: Assets/_ExternalAssets/WoodBridge/Models/wood plank 2.fbx
   - _gameObject: {fileID: 1166340004}
-    _prefab: Assets/laxer Assets/wood bridge/Models/wood plank 2.fbx
+    _prefab: Assets/_ExternalAssets/WoodBridge/Models/wood plank 2.fbx
   - _gameObject: {fileID: 1235531101}
-    _prefab: Assets/laxer Assets/wood bridge/Models/wood plank 2.fbx
+    _prefab: Assets/_ExternalAssets/WoodBridge/Models/wood plank 2.fbx
   - _gameObject: {fileID: 1378194947}
-    _prefab: Assets/laxer Assets/wood bridge/Prefabs with collision/wood plank 1.prefab
+    _prefab: Assets/_ExternalAssets/WoodBridge/Prefabs with collision/wood plank
+      1.prefab
   - _gameObject: {fileID: 267381811}
-    _prefab: Assets/laxer Assets/wood bridge/Prefabs with collision/wood plank 1.prefab
+    _prefab: Assets/_ExternalAssets/WoodBridge/Prefabs with collision/wood plank
+      1.prefab
   - _gameObject: {fileID: 1107784205}
-    _prefab: Assets/laxer Assets/wood bridge/Models/wood plank 2.fbx
+    _prefab: Assets/_ExternalAssets/WoodBridge/Models/wood plank 2.fbx
   - _gameObject: {fileID: 1181812917}
-    _prefab: Assets/laxer Assets/wood bridge/Models/wood plank 2.fbx
+    _prefab: Assets/_ExternalAssets/WoodBridge/Models/wood plank 2.fbx
   - _gameObject: {fileID: 1005969211}
-    _prefab: Assets/laxer Assets/wood bridge/Prefabs with collision/wood plank 1.prefab
+    _prefab: Assets/_ExternalAssets/WoodBridge/Prefabs with collision/wood plank
+      1.prefab
   - _gameObject: {fileID: 83069490}
-    _prefab: Assets/laxer Assets/wood bridge/Prefabs with collision/wood plank 1.prefab
+    _prefab: Assets/_ExternalAssets/WoodBridge/Prefabs with collision/wood plank
+      1.prefab
   - _gameObject: {fileID: 815820461}
-    _prefab: Assets/laxer Assets/wood bridge/Models/wood plank 2.fbx
+    _prefab: Assets/_ExternalAssets/WoodBridge/Models/wood plank 2.fbx
   - _gameObject: {fileID: 1142059224}
     _prefab: 
   - _gameObject: {fileID: 1497745366}
@@ -98528,6 +98555,10 @@ MonoBehaviour:
     _prefab: 
   - _gameObject: {fileID: 558128361}
     _prefab: 
+  - _gameObject: {fileID: 1955547322}
+    _prefab: Assets/Prefabs/VR_Rig.prefab
+  - _gameObject: {fileID: 1955547321}
+    _prefab: Assets/Prefabs/TeleportReticle.prefab
 --- !u!4 &1931328221
 Transform:
   m_ObjectHideFlags: 11
@@ -98540,7 +98571,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1931981375
 PrefabInstance:
@@ -99650,6 +99681,224 @@ Transform:
   m_Father: {fileID: 739102513}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1955547320
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5601499129632598975, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856064, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 30.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856064, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856064, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 125.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856064, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856064, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.09931108
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856064, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856064, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99505645
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856064, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856064, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856064, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -11.399
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856064, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856068, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: m_TurnAmount
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856071, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856071, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: Speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856072, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: bindings.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856072, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: bindings.Array.data[1].OnActive.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856072, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856072, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: bindings.Array.data[1].pressType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856072, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: bindings.Array.data[1].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1955547330}
+    - target: {fileID: 5601499130302856072, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: bindings.Array.data[1].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Teleport
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856072, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: bindings.Array.data[1].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856072, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: bindings.Array.data[1].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856072, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: bindings.Array.data[1].OnActive.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856073, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: AreaPositions.Array.data[0].PlayerPositions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856073, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856073, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: AreaPositions.Array.data[0].PlayerPositions.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856073, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: AreaPositions.Array.data[0].PlayerPositions.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856073, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: AreaPositions.Array.data[0].PlayerPositions.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856073, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: AreaPositions.Array.data[0].StartPos
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856075, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: bindings.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856075, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856125, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856125, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: Walkie
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856125, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: Speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856126, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: m_Name
+      value: VR_Rig
+      objectReference: {fileID: 0}
+    - target: {fileID: 7813155965489580147, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4e45289a562290f449761dc6dfe851b2, type: 3}
+--- !u!1 &1955547321 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4468272784531944813, guid: 4e45289a562290f449761dc6dfe851b2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1955547320}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1955547322 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5601499130302856126, guid: 4e45289a562290f449761dc6dfe851b2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1955547320}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1955547330 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5601499130302856073, guid: 4e45289a562290f449761dc6dfe851b2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1955547320}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955547322}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f1fdad91cb277948972af92eaa5e471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1955846242
 GameObject:
   m_ObjectHideFlags: 0
@@ -105974,6 +106223,53 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2082280759}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2082510434
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2082510436}
+  - component: {fileID: 2082510435}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2082510435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082510434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ef978a447f1f44eaa930df4d7f2137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OculusInUse: 0
+  SnapTurnProvider: {fileID: 0}
+  XRInputLeft: {fileID: 0}
+  XRInputRight: {fileID: 0}
+--- !u!4 &2082510436
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082510434}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.21785688, y: 1.5480025, z: -1.3014574}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2082563844
 GameObject:
   m_ObjectHideFlags: 0
