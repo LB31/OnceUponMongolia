@@ -18,12 +18,14 @@ public class ItemRespawner : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        // When the hit object doesn't have an allowed colision tag
         if(!AllowedCollisionTags.Contains(collision.transform.tag))
         {
             transform.position = originPos;
             if (JurteLevel)
             {
                 rg.useGravity = false;
+                rg.isKinematic = true;
                 rg.velocity = Vector3.zero;
                 rg.angularVelocity = Vector3.zero;
                 transform.rotation = Quaternion.identity;

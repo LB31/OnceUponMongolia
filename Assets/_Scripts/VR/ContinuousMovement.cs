@@ -25,6 +25,8 @@ public class ContinuousMovement : MonoBehaviour
 
     void Update() {
         GameManager.Instance.LeftCon.TryGetFeatureValue(GameManager.Instance.Axis2D, out inputAxis);
+
+        InputHelpers.Button m_RotateAnchorLeft = InputHelpers.Button.PrimaryAxis2DLeft;
     }
 
     private void FixedUpdate()

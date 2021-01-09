@@ -7,9 +7,10 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class SnapController : MonoBehaviour
 {
     public Transform SnapParent;
-    public bool InCollider;
-    public GameObject GrabbedObject;
-    public Transform SelectedSnapZone;
+    [HideInInspector] public bool InCollider;
+    [HideInInspector] public Transform SelectedSnapZone;
+    private GameObject GrabbedObject;
+    
 
     private void Start()
     {
@@ -20,7 +21,8 @@ public class SnapController : MonoBehaviour
         }
     }
 
-    [ContextMenu("Do Something")]
+    // Called in XRDirectInteractor by On Selected Exited Interactor Event by hands/rays
+    [ContextMenu("CheckIfSnap")]
     public async void CheckIfSnap()
     {
         if (InCollider)
@@ -45,6 +47,7 @@ public class SnapController : MonoBehaviour
         GrabbedObject = null;
     }
 
+    // Called in XRGrabInteractable by On Select Entered Interactable Event by grabbed object
     public void RegisterGrabbedOjbect(GameObject obj)
     {
         GrabbedObject = obj;
