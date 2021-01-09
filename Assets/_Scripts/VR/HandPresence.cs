@@ -58,7 +58,9 @@ public class HandPresence : MonoBehaviour
             handAnimator = spawnedHand.GetComponent<Animator>();
             spawnedController.SetActive(false);
         }
-        
+
+        FindObjectOfType<PositionChanger>().RegisterButtonEvents();
+
     }
 
     private void UpdateHandAnimation()
