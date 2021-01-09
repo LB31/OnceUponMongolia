@@ -26,11 +26,24 @@ MonoBehaviour:
     objectVariables: []
     materialVariables: []
     textureVariables: []
-    arrayVariables: []
+    arrayVariables:
+    - useVariable: 1
+      name: NeededBy
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      type: 14
+      objectTypeName: Person
+      floatValues: []
+      intValues: 
+      boolValues: 
+      stringValues: []
+      vector4Values: []
+      objectReferences: []
     enumVariables: []
     categories:
     - 
-    variableCategoryIDs: 
+    variableCategoryIDs: 00000000
   events:
   - jurteLevelReady
   - Area A
