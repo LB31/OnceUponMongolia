@@ -620,8 +620,8 @@ MonoBehaviour:
   m_ActivateUsage: 2
   m_UIPressUsage: 2
   m_AxisToPressThreshold: 0.1
-  m_RotateAnchorLeft: 16
-  m_RotateAnchorRight: 17
+  m_RotateAnchorLeft: 0
+  m_RotateAnchorRight: 0
   m_MoveObjectIn: 14
   m_MoveObjectOut: 15
   m_PoseProvider: {fileID: 0}
@@ -1558,29 +1558,57 @@ PrefabInstance:
       propertyPath: JurteLevel
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1488738642, guid: 63ad646e36a4dec4184b6778e73fb232, type: 3}
+      propertyPath: m_MovementType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1488738643, guid: 63ad646e36a4dec4184b6778e73fb232, type: 3}
       propertyPath: JurteLevel
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1488738644, guid: 63ad646e36a4dec4184b6778e73fb232, type: 3}
+      propertyPath: m_MovementType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1488738645, guid: 63ad646e36a4dec4184b6778e73fb232, type: 3}
       propertyPath: JurteLevel
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1488738646, guid: 63ad646e36a4dec4184b6778e73fb232, type: 3}
+      propertyPath: m_MovementType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1488738647, guid: 63ad646e36a4dec4184b6778e73fb232, type: 3}
       propertyPath: JurteLevel
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1488738648, guid: 63ad646e36a4dec4184b6778e73fb232, type: 3}
+      propertyPath: m_MovementType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1488738649, guid: 63ad646e36a4dec4184b6778e73fb232, type: 3}
       propertyPath: JurteLevel
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1488738650, guid: 63ad646e36a4dec4184b6778e73fb232, type: 3}
+      propertyPath: m_MovementType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1488738651, guid: 63ad646e36a4dec4184b6778e73fb232, type: 3}
       propertyPath: JurteLevel
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1488738652, guid: 63ad646e36a4dec4184b6778e73fb232, type: 3}
+      propertyPath: m_MovementType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1488738653, guid: 63ad646e36a4dec4184b6778e73fb232, type: 3}
       propertyPath: JurteLevel
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1488738654, guid: 63ad646e36a4dec4184b6778e73fb232, type: 3}
+      propertyPath: m_MovementType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1488738655, guid: 63ad646e36a4dec4184b6778e73fb232, type: 3}
       propertyPath: JurteLevel
@@ -1589,6 +1617,10 @@ PrefabInstance:
     - target: {fileID: 1488738656, guid: 63ad646e36a4dec4184b6778e73fb232, type: 3}
       propertyPath: m_AttachTransform
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1488738656, guid: 63ad646e36a4dec4184b6778e73fb232, type: 3}
+      propertyPath: m_MovementType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1601057603, guid: 63ad646e36a4dec4184b6778e73fb232, type: 3}
       propertyPath: m_IsActive
