@@ -6090,7 +6090,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5601499129632598974
 Transform:
   m_ObjectHideFlags: 0
@@ -6785,7 +6785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_System: {fileID: 0}
-  m_TurnAmount: 45
+  m_TurnAmount: 25
   m_DebounceTime: 0.2
   m_EnableTurnLeftRight: 1
   m_EnableTurnAround: 1
@@ -6806,23 +6806,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 5601499128942922326}
-  bindings:
-  - button: 0
-    pressType: 1
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5601499130302856073}
-          m_MethodName: Teleport
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  bindings: []
 --- !u!114 &5601499130302856075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6836,28 +6820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 5601499129391738848}
-  bindings:
-  - button: 0
-    pressType: 1
-    OnActive:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5601499130302856073}
-          m_MethodName: Teleport
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-  - button: 8
-    pressType: 2
-    OnActive:
-      m_PersistentCalls:
-        m_Calls: []
+  bindings: []
 --- !u!114 &5601499130302856071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6870,7 +6833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc024598aa99aa42a086f285b826e1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 2
+  Speed: 5
   InputSource: 4
   AdditionalHeight: 0.2
 --- !u!114 &5601499130302856073
@@ -6880,7 +6843,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5601499130302856126}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f1fdad91cb277948972af92eaa5e471, type: 3}
   m_Name: 
@@ -6889,7 +6852,6 @@ MonoBehaviour:
   - AreaName: StartArea
     StartPos: {fileID: 0}
     PlayerPositions:
-    - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
@@ -6905,7 +6867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3655638313180e64c815a157b7896d3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 3
+  Speed: 2
   TurnSmoothTime: 0.1
   Walkie: {fileID: 0}
 --- !u!114 &5601499130302856066
@@ -7000,7 +6962,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7813155965489580146
 Transform:
   m_ObjectHideFlags: 0

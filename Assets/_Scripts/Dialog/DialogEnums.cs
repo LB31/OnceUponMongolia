@@ -4,7 +4,10 @@
     Grandmother,
     Father,
     Girl,
-    Boy
+    Boy,
+    LoverGuy,
+    OldMan,
+    OldWife
 }
 
 public enum TypeMessage
