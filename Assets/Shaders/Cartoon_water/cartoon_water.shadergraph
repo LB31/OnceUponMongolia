@@ -16,7 +16,7 @@
             "typeInfo": {
                 "fullName": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty"
             },
-            "JSONnodeData": "{\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"0cf179df-8b10-49e3-8133-e8a8864b7135\"\n    },\n    \"m_Name\": \"RippleDensity\",\n    \"m_DefaultReferenceName\": \"Vector1_F61C1CDA\",\n    \"m_OverrideReferenceName\": \"\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Precision\": 0,\n    \"m_GPUInstanced\": false,\n    \"m_Hidden\": false,\n    \"m_Value\": 25.0,\n    \"m_FloatType\": 3,\n    \"m_RangeValues\": {\n        \"x\": 0.0,\n        \"y\": 12.0\n    }\n}"
+            "JSONnodeData": "{\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"0cf179df-8b10-49e3-8133-e8a8864b7135\"\n    },\n    \"m_Name\": \"RippleDensity\",\n    \"m_DefaultReferenceName\": \"Vector1_F61C1CDA\",\n    \"m_OverrideReferenceName\": \"\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Precision\": 0,\n    \"m_GPUInstanced\": false,\n    \"m_Hidden\": false,\n    \"m_Value\": 50.0,\n    \"m_FloatType\": 3,\n    \"m_RangeValues\": {\n        \"x\": 0.0,\n        \"y\": 12.0\n    }\n}"
         },
         {
             "typeInfo": {
