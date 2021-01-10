@@ -13,7 +13,7 @@ public class PositionChanger : MonoBehaviour
     private List<Transform> currentPositions;
     private int currentPosition;
 
-    private XRBinding teleportBindingLeft;
+    //private XRBinding teleportBindingLeft;
     private XRBinding teleportBindingRight;
 
 
@@ -32,15 +32,22 @@ public class PositionChanger : MonoBehaviour
 
     private void OnDisable()
     {
-        if (teleportBindingLeft != null)
+        RemoveButtonEvents();
+    }
+
+    public void RemoveButtonEvents()
+    {
+        if (teleportBindingRight != null)
         {
-            GameManager.Instance.XRInputLeft.bindings.Remove(teleportBindingLeft);
+            //GameManager.Instance.XRInputLeft.bindings.Remove(teleportBindingLeft);
             GameManager.Instance.XRInputRight.bindings.Remove(teleportBindingRight);
         }
     }
 
-    private void RegisterButtonEvents()
+    public void RegisterButtonEvents()
     {
+        RemoveButtonEvents();
+
         XRButton teleportLeft;
         XRButton teleportRight;
 
