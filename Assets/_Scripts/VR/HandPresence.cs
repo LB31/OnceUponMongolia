@@ -59,6 +59,7 @@ public class HandPresence : MonoBehaviour
             spawnedController.SetActive(false);
         }
 
+        // TODO do it smarter
         FindObjectOfType<PositionChanger>().RegisterButtonEvents();
 
     }
