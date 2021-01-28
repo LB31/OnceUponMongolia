@@ -43,7 +43,6 @@ public class SnapController : MonoBehaviour
 
             GrabbedObject.GetComponent<Collider>().isTrigger = false;
         }
-
         GrabbedObject = null;
     }
 
@@ -52,6 +51,7 @@ public class SnapController : MonoBehaviour
     {
         GrabbedObject = obj;
         GrabbedObject.GetComponent<Collider>().isTrigger = true;
+        GrabbedObject.transform.localScale *= 3;
     }
 
 

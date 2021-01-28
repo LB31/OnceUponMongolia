@@ -8,11 +8,13 @@ public class ItemRespawner : MonoBehaviour
     public bool JurteLevel;
 
     private Vector3 originPos;
+    private Vector3 originScale;
     private Rigidbody rg;
 
     private void Start()
     {
         originPos = transform.position;
+        originScale = transform.localScale;
         rg = GetComponent<Rigidbody>();
     }
 
@@ -22,6 +24,8 @@ public class ItemRespawner : MonoBehaviour
         if(!AllowedCollisionTags.Contains(collision.transform.tag))
         {
             transform.position = originPos;
+            transform.localScale = originScale;
+
             if (JurteLevel)
             {
                 rg.useGravity = false;
