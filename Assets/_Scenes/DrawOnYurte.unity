@@ -1376,6 +1376,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OculusInUse: 0
   SnapTurnProvider: {fileID: 0}
+  XRInputLeft: {fileID: 0}
+  XRInputRight: {fileID: 0}
 --- !u!4 &798937694
 Transform:
   m_ObjectHideFlags: 0
@@ -1875,22 +1877,25 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OnFirstHoverEnter:
+  m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnLastHoverExit:
+  m_OnLastHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -2629,22 +2634,25 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OnFirstHoverEnter:
+  m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnLastHoverExit:
+  m_OnLastHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -3108,7 +3116,7 @@ MonoBehaviour:
   - _gameObject: {fileID: 19214576}
     _prefab: Assets/Prefabs/TeleportReticle.prefab
   - _gameObject: {fileID: 690659911}
-    _prefab: Assets/Prefabs/PolygonAdventure/Prefabs/Props/SM_Prop_Stall_Table_01.prefab
+    _prefab: Assets/_ExternalAssets/PolygonAdventure/Prefabs/Props/SM_Prop_Stall_Table_01.prefab
   - _gameObject: {fileID: 268204644}
     _prefab: Assets/Prefabs/Bucket.prefab
   - _gameObject: {fileID: 170286879}
