@@ -2307,14 +2307,12 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 2deb6c9a9de8f88408e4986ee1d51b17, type: 3}
 --- !u!4 &40280690 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2deb6c9a9de8f88408e4986ee1d51b17,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 40280689}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &40280691 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2deb6c9a9de8f88408e4986ee1d51b17,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 40280689}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &41877099
@@ -31111,14 +31109,12 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: c42c2a48d78c4894aa0b49545c1da391, type: 3}
 --- !u!4 &578763146 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c42c2a48d78c4894aa0b49545c1da391,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 578763145}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &578763147 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c42c2a48d78c4894aa0b49545c1da391,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 578763145}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &580007715
@@ -32486,7 +32482,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 82
-        y: 100
+        y: 116
         width: 116
         height: 32
       isBreakpoint: 0
@@ -32546,7 +32542,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 66.375
-        y: 192.85938
+        y: 208.85938
         width: 152
         height: 32
       isBreakpoint: 0
@@ -32606,7 +32602,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 57.21875
-        y: 307.17188
+        y: 323.17188
         width: 166.5
         height: 16
       isBreakpoint: 0
@@ -32657,9 +32653,61 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 316
-        y: 307
+        x: 299.5547
+        y: 115.96875
         width: 142.8
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
+    - name: Zustand 1
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 597.15625
+        y: 105.72656
+        width: 100
         height: 16
       isBreakpoint: 0
       isSequence: 0
@@ -32708,6 +32756,9 @@ MonoBehaviour:
     - name: FINISHED
       isSystemEvent: 1
       isGlobal: 0
+    - name: BuildYurte
+      isSystemEvent: 0
+      isGlobal: 0
     - name: FinishedVeroTutorial
       isSystemEvent: 0
       isGlobal: 0
@@ -32720,6 +32771,14 @@ MonoBehaviour:
         isSystemEvent: 0
         isGlobal: 0
       toState: Riddle Solved
+      linkStyle: 0
+      linkConstraint: 0
+      colorIndex: 0
+    - fsmEvent:
+        name: BuildYurte
+        isSystemEvent: 0
+        isGlobal: 0
+      toState: Zustand 1
       linkStyle: 0
       linkConstraint: 0
       colorIndex: 0
@@ -34323,7 +34382,7 @@ Transform:
   m_LocalScale: {x: 1.16, y: 1.16, z: 1.16}
   m_Children: []
   m_Father: {fileID: 1687863806}
-  m_RootOrder: 22
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -51.096, z: 0}
 --- !u!23 &631662767
 MeshRenderer:
@@ -40357,14 +40416,12 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: b3361d937a744bc41a13331061cffc36, type: 3}
 --- !u!4 &756254546 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b3361d937a744bc41a13331061cffc36,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 756254545}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &756254547 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b3361d937a744bc41a13331061cffc36,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 756254545}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &757799199
@@ -42157,10 +42214,14 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 794531556}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &794531558 stripped
+--- !u!4 &794531558 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 794531556}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &794531559 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 46c7238534305564898eb30e17dd7b4f,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 794531556}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &794582929
@@ -51527,14 +51588,12 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: c42c2a48d78c4894aa0b49545c1da391, type: 3}
 --- !u!4 &957394818 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c42c2a48d78c4894aa0b49545c1da391,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 957394817}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &957394819 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c42c2a48d78c4894aa0b49545c1da391,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 957394817}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &958230548
@@ -52820,7 +52879,7 @@ Transform:
   m_LocalScale: {x: 1.16, y: 1.16, z: 1.16}
   m_Children: []
   m_Father: {fileID: 794531557}
-  m_RootOrder: 22
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -51.096, z: 0}
 --- !u!23 &980508258
 MeshRenderer:
@@ -56619,14 +56678,12 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: a1e1d9fb221c3d34996da74ef7fe1611, type: 3}
 --- !u!4 &1068399721 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a1e1d9fb221c3d34996da74ef7fe1611,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1068399720}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1068399722 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a1e1d9fb221c3d34996da74ef7fe1611,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1068399720}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1068817217
@@ -60591,7 +60648,6 @@ Transform:
   m_Children:
   - {fileID: 1756347780}
   - {fileID: 2137374705}
-  - {fileID: 1275760161}
   - {fileID: 1247884625}
   - {fileID: 1894710460}
   - {fileID: 1373292187}
@@ -60610,6 +60666,7 @@ Transform:
   - {fileID: 497348827}
   - {fileID: 678512868}
   - {fileID: 1792959068}
+  - {fileID: 1275760161}
   - {fileID: 244109686}
   - {fileID: 1957239394}
   - {fileID: 1965386143}
@@ -64823,14 +64880,12 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: c42c2a48d78c4894aa0b49545c1da391, type: 3}
 --- !u!4 &1218403225 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c42c2a48d78c4894aa0b49545c1da391,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1218403224}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1218403226 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c42c2a48d78c4894aa0b49545c1da391,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1218403224}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1221374387
@@ -67421,14 +67476,12 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: afa0fa7c9ed9b2442879d33337b51a68, type: 3}
 --- !u!4 &1275760161 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: afa0fa7c9ed9b2442879d33337b51a68,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1275760160}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1275760162 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: afa0fa7c9ed9b2442879d33337b51a68,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1275760160}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1275912166
@@ -72389,14 +72442,12 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 4b4a695d0afabb543841e5060d19cf69, type: 3}
 --- !u!4 &1393838312 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4b4a695d0afabb543841e5060d19cf69,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1393838311}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1393838313 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4b4a695d0afabb543841e5060d19cf69,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1393838311}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1397674826
@@ -81957,22 +82008,22 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1218403225}
-  - {fileID: 2135731618}
-  - {fileID: 1988205438}
-  - {fileID: 1393838312}
-  - {fileID: 794531557}
-  - {fileID: 1068399721}
   - {fileID: 40280690}
-  - {fileID: 5242298}
-  - {fileID: 51102508}
-  - {fileID: 957394818}
-  - {fileID: 1077979787}
   - {fileID: 578763146}
+  - {fileID: 1988205438}
   - {fileID: 756254546}
+  - {fileID: 794531558}
+  - {fileID: 957394818}
+  - {fileID: 5242298}
+  - {fileID: 1068399721}
+  - {fileID: 51102508}
+  - {fileID: 1218403225}
+  - {fileID: 1077979787}
+  - {fileID: 1393838312}
+  - {fileID: 1687863807}
   - {fileID: 275179778}
-  - {fileID: 1687863806}
   - {fileID: 1939357047}
+  - {fileID: 2135731618}
   - {fileID: 979755317}
   m_Father: {fileID: 1829268471}
   m_RootOrder: 1
@@ -86083,10 +86134,14 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1687863805}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1687863807 stripped
+--- !u!4 &1687863807 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1687863805}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1687863808 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 46c7238534305564898eb30e17dd7b4f,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1687863805}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1688781459
@@ -98434,7 +98489,7 @@ MonoBehaviour:
   - _gameObject: {fileID: 517627874}
     _prefab: Assets/Models/AssetsCharacters/Granny_festival_backup.FBX
   - _gameObject: {fileID: 799085410}
-    _prefab: Assets/Animations/AnimationsOnCharacter/Vero/RIGGED_vero_blender_mixamo.fbx
+    _prefab: Assets/Models/AssetsCharacters/RIGGED_vero_blender_mixamo.fbx
   - _gameObject: {fileID: 1440725408}
     _prefab: Assets/Prefabs/BlockoutWall.prefab
   - _gameObject: {fileID: 835333061}
@@ -98596,147 +98651,147 @@ MonoBehaviour:
   - _gameObject: {fileID: 453119749}
     _prefab: Assets/Prefabs/BlockoutWall.prefab
   - _gameObject: {fileID: 1443623782}
-    _prefab: Assets/Models/VillageModels/yurte_combined.fbx
+    _prefab: Assets/Models/VillageModels/outdoor/yurte_combined.fbx
   - _gameObject: {fileID: 1337265747}
-    _prefab: Assets/Models/VillageModels/yurte_combined.fbx
+    _prefab: Assets/Models/VillageModels/outdoor/yurte_combined.fbx
   - _gameObject: {fileID: 640636032}
-    _prefab: Assets/Models/VillageModels/yurte_combined.fbx
+    _prefab: Assets/Models/VillageModels/outdoor/yurte_combined.fbx
   - _gameObject: {fileID: 2083913687}
-    _prefab: Assets/Models/VillageModels/yurte_combined_opendoor.fbx
+    _prefab: Assets/Models/VillageModels/outdoor/yurte_combined_opendoor.fbx
   - _gameObject: {fileID: 819131277}
-    _prefab: Assets/Models/VillageModels/yurte_combined_opendoor.fbx
+    _prefab: Assets/Models/VillageModels/outdoor/yurte_combined_opendoor.fbx
   - _gameObject: {fileID: 856176298}
-    _prefab: Assets/Models/VillageModels/yurte_combined.fbx
+    _prefab: Assets/Models/VillageModels/outdoor/yurte_combined.fbx
   - _gameObject: {fileID: 164160192}
-    _prefab: Assets/Models/VillageModels/yurte_combined.fbx
+    _prefab: Assets/Models/VillageModels/outdoor/yurte_combined.fbx
   - _gameObject: {fileID: 1466085203}
-    _prefab: Assets/Models/VillageModels/yurte_combined_opendoor.fbx
-  - _gameObject: {fileID: 1218403226}
-    _prefab: Assets/Models/VillageModels/smallchair.obj
-  - _gameObject: {fileID: 2135731619}
-    _prefab: Assets/Models/VillageModels/Chair.obj
-  - _gameObject: {fileID: 1988205439}
-    _prefab: Assets/Models/VillageModels/kitchenCounter.obj
-  - _gameObject: {fileID: 1393838313}
-    _prefab: Assets/Models/VillageModels/ottoman_chair.obj
-  - _gameObject: {fileID: 794531558}
-    _prefab: Assets/Models/VillageModels/boxesandchests.obj
-  - _gameObject: {fileID: 1068399722}
-    _prefab: Assets/Models/VillageModels/smallTable.obj
+    _prefab: Assets/Models/VillageModels/outdoor/yurte_combined_opendoor.fbx
   - _gameObject: {fileID: 40280691}
-    _prefab: Assets/Models/VillageModels/Sofabed.obj
-  - _gameObject: {fileID: 5242299}
-    _prefab: Assets/Models/VillageModels/basket.obj
-  - _gameObject: {fileID: 51102509}
-    _prefab: Assets/Models/VillageModels/basket.obj
-  - _gameObject: {fileID: 957394819}
-    _prefab: Assets/Models/VillageModels/smallchair.obj
-  - _gameObject: {fileID: 1077979788}
-    _prefab: Assets/Models/VillageModels/basket.obj
+    _prefab: 
   - _gameObject: {fileID: 578763147}
-    _prefab: Assets/Models/VillageModels/smallchair.obj
+    _prefab: 
+  - _gameObject: {fileID: 1988205439}
+    _prefab: Assets/Models/VillageModels/indoor/kitchenCounter.obj
   - _gameObject: {fileID: 756254547}
-    _prefab: Assets/Models/VillageModels/Chair.obj
+    _prefab: 
+  - _gameObject: {fileID: 794531559}
+    _prefab: 
+  - _gameObject: {fileID: 957394819}
+    _prefab: 
+  - _gameObject: {fileID: 5242299}
+    _prefab: Assets/Models/VillageModels/outdoor/basket.obj
+  - _gameObject: {fileID: 1068399722}
+    _prefab: 
+  - _gameObject: {fileID: 51102509}
+    _prefab: Assets/Models/VillageModels/outdoor/basket.obj
+  - _gameObject: {fileID: 1218403226}
+    _prefab: 
+  - _gameObject: {fileID: 1077979788}
+    _prefab: Assets/Models/VillageModels/outdoor/basket.obj
+  - _gameObject: {fileID: 1393838313}
+    _prefab: 
+  - _gameObject: {fileID: 1687863808}
+    _prefab: 
   - _gameObject: {fileID: 275179779}
-    _prefab: Assets/Models/VillageModels/kitchenCounter.obj
-  - _gameObject: {fileID: 1687863807}
-    _prefab: Assets/Models/VillageModels/boxesandchests.obj
+    _prefab: Assets/Models/VillageModels/indoor/kitchenCounter.obj
   - _gameObject: {fileID: 1939357048}
-    _prefab: Assets/Models/VillageModels/Sofabed.obj
+    _prefab: 
+  - _gameObject: {fileID: 2135731619}
+    _prefab: 
   - _gameObject: {fileID: 979755318}
-    _prefab: Assets/Models/VillageModels/basket.obj
+    _prefab: Assets/Models/VillageModels/outdoor/basket.obj
   - _gameObject: {fileID: 1756347781}
     _prefab: Assets/_ExternalAssets/PolygonAdventure/Prefabs/Props/SM_Prop_Stall_Table_01.prefab
   - _gameObject: {fileID: 2137374706}
-    _prefab: Assets/Models/VillageModels/basket.obj
-  - _gameObject: {fileID: 1275760162}
-    _prefab: Assets/Models/VillageModels/drinkingtrug.obj
+    _prefab: Assets/Models/VillageModels/outdoor/basket.obj
   - _gameObject: {fileID: 1247884626}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 1894710461}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 1373292188}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 1118305466}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 1112147429}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 614057029}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 1824102147}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 1781366238}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 1137343902}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 583461732}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 249319568}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 500961582}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 940126214}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 1860922883}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 553739858}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 497348828}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 678512869}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 1792959069}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
+  - _gameObject: {fileID: 1275760162}
+    _prefab: 
   - _gameObject: {fileID: 244109687}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 1957239395}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 1965386144}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 1201175686}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 1409917506}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 1534651040}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 983841206}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 2143320159}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 1940003110}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 1859651606}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 1649363735}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 1790799118}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 1267042791}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 1416441313}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 863080458}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 345481225}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 406359103}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 1406438645}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 503180311}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 1667067344}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 1142702341}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 835189272}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 2071978160}
     _prefab: Assets/_ExternalAssets/PolygonAdventure/Models/SM_Env_Bridge_01.fbx
   - _gameObject: {fileID: 1865906887}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 1355980169}
-    _prefab: Assets/Models/VillageModels/Fence1.obj
+    _prefab: Assets/Models/VillageModels/outdoor/Fence1.obj
   - _gameObject: {fileID: 236714265}
     _prefab: Assets/_ExternalAssets/PolygonAdventure/Models/SM_Env_CampFire_01.fbx
   - _gameObject: {fileID: 1573235387}
@@ -98752,7 +98807,7 @@ MonoBehaviour:
     _prefab: Assets/_ExternalAssets/WoodBridge/Prefabs with collision/wood bridge
       1.prefab
   - _gameObject: {fileID: 742622751}
-    _prefab: Assets/Models/VillageModels/basket.obj
+    _prefab: Assets/Models/VillageModels/outdoor/basket.obj
   - _gameObject: {fileID: 1484474653}
     _prefab: Assets/_ExternalAssets/WoodBridge/Prefabs with collision/wood plank
       1.prefab
@@ -99381,14 +99436,12 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 2deb6c9a9de8f88408e4986ee1d51b17, type: 3}
 --- !u!4 &1939357047 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2deb6c9a9de8f88408e4986ee1d51b17,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1939357046}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1939357048 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2deb6c9a9de8f88408e4986ee1d51b17,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1939357046}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1940003108
@@ -110087,14 +110140,12 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: b3361d937a744bc41a13331061cffc36, type: 3}
 --- !u!4 &2135731618 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b3361d937a744bc41a13331061cffc36,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 2135731617}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2135731619 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b3361d937a744bc41a13331061cffc36,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 2135731617}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2137374704
