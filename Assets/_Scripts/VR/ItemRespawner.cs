@@ -18,6 +18,12 @@ public class ItemRespawner : MonoBehaviour
         rg = GetComponent<Rigidbody>();
     }
 
+    public void ReturnToOriginalPos()
+    {
+        transform.position = originPos;
+        transform.localScale = originScale;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         // When the hit object doesn't have an allowed colision tag
