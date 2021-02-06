@@ -10,17 +10,22 @@ public class PositionChanger : MonoBehaviour
 {
     public List<AreaPositions> AreaPositions;
 
+    // Debug
+    public Transform CurrentVeroPosition;
+
     private List<Transform> currentPositions;
     private int currentPosition;
 
     //private XRBinding teleportBindingLeft;
-    private XRBinding teleportBindingRight;
+    private XRBinding teleportBindingRightA;
+    private XRBinding teleportBindingRightB;
 
 
-    void Start()
+    void Awake()
     {
         currentPositions = AreaPositions[0].PlayerPositions;
         currentPosition = currentPositions.IndexOf(AreaPositions[0].StartPos);
+        CurrentVeroPosition = currentPositions[currentPosition];
         ChangeTransform();
         //RegisterButtonEvents();
     }
@@ -37,10 +42,11 @@ public class PositionChanger : MonoBehaviour
 
     public void RemoveButtonEvents()
     {
-        if (teleportBindingRight != null)
+        if (teleportBindingRightA != null)
         {
             //GameManager.Instance.XRInputLeft.bindings.Remove(teleportBindingLeft);
-            GameManager.Instance.XRInputRight.bindings.Remove(teleportBindingRight);
+            GameManager.Instance.XRInputRight.bindings.Remove(teleportBindingRightA);
+            GameManager.Instance.XRInputRight.bindings.Remove(teleportBindingRightB);
         }
     }
 
@@ -63,9 +69,9 @@ public class PositionChanger : MonoBehaviour
         }
 
         GameManager.Instance.XRInputRight.bindings.
-            Add(teleportBindingRight = new XRBinding(teleportLeft, PressType.End, () => Teleport(false)));
+            Add(teleportBindingRightB = new XRBinding(teleportLeft, PressType.End, () => Teleport(false)));
         GameManager.Instance.XRInputRight.bindings.
-            Add(teleportBindingRight = new XRBinding(teleportRight, PressType.End, () => Teleport(true)));
+            Add(teleportBindingRightA = new XRBinding(teleportRight, PressType.End, () => Teleport(true)));
     }
 
     public void Teleport(bool right)
@@ -93,6 +99,9 @@ public class PositionChanger : MonoBehaviour
             currentPosition--;
             if (currentPosition < 0)
                 currentPosition = currentPositions.Count - 1;
+            
+                
+
         }
 
         ChangeTransform();
@@ -101,7 +110,8 @@ public class PositionChanger : MonoBehaviour
     private void ChangeTransform()
     {
         transform.position = currentPositions[currentPosition].position;
-        transform.rotation = currentPositions[currentPosition].rotation;
+        transform.rotation = currentPositions[currentPosition].localRotation;
+        CurrentVeroPosition = currentPositions[currentPosition];
     }
 
     public void ChangeArea(string name)

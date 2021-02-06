@@ -7249,6 +7249,7 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
+  CurrentVeroPosition: {fileID: 0}
 --- !u!114 &5601499130302856125
 MonoBehaviour:
   m_ObjectHideFlags: 0

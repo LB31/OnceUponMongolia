@@ -16,8 +16,9 @@ public class GirlController : MonoBehaviour
     private float fallingSpeed;
 
     private float turnSmoothVelocity;
-    private float velocity;
 
+    // Animation
+    private float velocity;
     private Animator animator;
     private int velocityHash;
     private int timeHash;
@@ -25,6 +26,9 @@ public class GirlController : MonoBehaviour
     private bool increasingTime = true;
     private bool moving;
 
+    // Debug
+    private Vector3 offset;
+    private PositionChanger pc;
 
     void Start()
     {
@@ -32,6 +36,10 @@ public class GirlController : MonoBehaviour
         animator = Walkie.GetComponent<Animator>();
         velocityHash = Animator.StringToHash("Velocity");
         timeHash = Animator.StringToHash("Time");
+
+
+        //offset = new Vector3(Walkie.position.x, Walkie.position.y + 8.0f, Walkie.position.z + 7.0f);
+        pc = GetComponent<PositionChanger>();
     }
 
     void Update()
@@ -92,6 +100,14 @@ public class GirlController : MonoBehaviour
             fallingSpeed += gravity * Time.fixedDeltaTime;
 
         characterController.Move(Vector3.up * fallingSpeed * Time.fixedDeltaTime);
+    }
+
+    // Debug
+    private void LateUpdate()
+    {
+        //offset = Quaternion.AngleAxis(inputAxis.x, Vector3.up) * offset;
+        Quaternion rotation = Quaternion.Euler(50, Walkie.rotation.y, 100);
+        transform.position = Walkie.position + pc.CurrentVeroPosition.localPosition;
     }
 
 
