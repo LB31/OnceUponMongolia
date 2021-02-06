@@ -9,15 +9,18 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class GameManager : Singleton<GameManager>
 {
+    public Transform SkyDome;
+    public float SkySpeed = 0.1f;
 
     public bool OculusInUse;
-    public DeviceBasedSnapTurnProvider SnapTurnProvider;
+    
 
     public InputDevice LeftCon;
     public InputDevice RightCon;
 
-    public XRInput XRInputLeft;
-    public XRInput XRInputRight;
+    [HideInInspector] public DeviceBasedSnapTurnProvider SnapTurnProvider;
+    [HideInInspector] public XRInput XRInputLeft;
+    [HideInInspector] public XRInput XRInputRight;
 
     public InputFeatureUsage<Vector2> Axis2D;
 
@@ -42,5 +45,10 @@ public class GameManager : Singleton<GameManager>
             SnapTurnProvider.turnUsage = DeviceBasedSnapTurnProvider.InputAxes.Primary2DAxis;
         else
             SnapTurnProvider.turnUsage = DeviceBasedSnapTurnProvider.InputAxes.Secondary2DAxis;
+    }
+
+    private void Update()
+    {
+        SkyDome.Rotate(new Vector3(0, SkySpeed, 0));
     }
 }
