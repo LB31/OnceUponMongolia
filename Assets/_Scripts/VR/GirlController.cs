@@ -4,6 +4,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class GirlController : MonoBehaviour
 {
+    public Transform Walkie;
 
     public float Speed = 1;
     public float TurnSmoothTime = 0.1f;
@@ -14,14 +15,19 @@ public class GirlController : MonoBehaviour
     private float fallingSpeed;
 
     private float turnSmoothVelocity;
+    // Debug
+    public float velocity;
 
-    // Testing
-    public Transform Walkie;
+    private Animator animator;
+    private int velocityHash;
+
 
 
     void Start()
     {
-        characterController = Walkie.GetComponent<CharacterController>();    
+        characterController = Walkie.GetComponent<CharacterController>();
+        animator = Walkie.GetComponent<Animator>();
+        velocityHash = Animator.StringToHash("Velocity");
     }
 
     void Update()
@@ -33,6 +39,8 @@ public class GirlController : MonoBehaviour
     {
         if (inputAxis.magnitude > 0.2f)
         {
+            velocity = inputAxis.magnitude;
+
             Vector3 direction = new Vector3(inputAxis.x, 0, inputAxis.y).normalized;
             
             // rotate
@@ -44,6 +52,14 @@ public class GirlController : MonoBehaviour
             characterController.Move(moveDirection.normalized * Speed * Time.deltaTime);
 
         }
+        else
+        {
+            velocity = 0;
+        }
+
+
+        animator.SetFloat(velocityHash, velocity);
+
 
         // gravity 
         if (characterController.isGrounded)

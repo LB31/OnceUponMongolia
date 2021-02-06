@@ -7261,9 +7261,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3655638313180e64c815a157b7896d3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Walkie: {fileID: 0}
   Speed: 2
   TurnSmoothTime: 0.1
-  Walkie: {fileID: 0}
+  velocity: 0
 --- !u!114 &5601499130302856066
 MonoBehaviour:
   m_ObjectHideFlags: 0
