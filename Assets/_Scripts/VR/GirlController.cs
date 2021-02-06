@@ -23,6 +23,7 @@ public class GirlController : MonoBehaviour
     private int timeHash;
     private float animTime;
     private bool increasingTime = true;
+    private bool moving;
 
 
     void Start()
@@ -57,6 +58,7 @@ public class GirlController : MonoBehaviour
 
         if (inputAxis.magnitude > 0.2f)
         {
+            moving = true;
             velocity = inputAxis.magnitude;
 
             Vector3 direction = new Vector3(inputAxis.x, 0, inputAxis.y).normalized;
@@ -67,11 +69,14 @@ public class GirlController : MonoBehaviour
             Walkie.rotation = Quaternion.Euler(0f, angle, 0f);
             // move
             Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            characterController.Move(moveDirection.normalized * Speed * Time.deltaTime);
+            characterController.Move(moveDirection.normalized * Speed * Time.deltaTime * inputAxis.magnitude);
 
         }
-        else
+        else if (moving)
         {
+            moving = false;
+            animTime = 0;
+            increasingTime = true;
             velocity = 0;
         }
 
