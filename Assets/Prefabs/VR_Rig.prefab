@@ -7264,7 +7264,7 @@ MonoBehaviour:
   Walkie: {fileID: 0}
   Speed: 2
   TurnSmoothTime: 0.1
-  velocity: 0
+  AnimationTime: 5
 --- !u!114 &5601499130302856066
 MonoBehaviour:
   m_ObjectHideFlags: 0
