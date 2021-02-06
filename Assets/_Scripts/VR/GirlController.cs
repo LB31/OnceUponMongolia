@@ -8,6 +8,7 @@ public class GirlController : MonoBehaviour
 
     public float Speed = 1;
     public float TurnSmoothTime = 0.1f;
+    public float AnimationTime = 5f;
 
     private Vector2 inputAxis;
     private CharacterController characterController;
@@ -15,12 +16,13 @@ public class GirlController : MonoBehaviour
     private float fallingSpeed;
 
     private float turnSmoothVelocity;
-    // Debug
-    public float velocity;
+    private float velocity;
 
     private Animator animator;
     private int velocityHash;
-
+    private int timeHash;
+    private float animTime;
+    private bool increasingTime = true;
 
 
     void Start()
@@ -28,6 +30,7 @@ public class GirlController : MonoBehaviour
         characterController = Walkie.GetComponent<CharacterController>();
         animator = Walkie.GetComponent<Animator>();
         velocityHash = Animator.StringToHash("Velocity");
+        timeHash = Animator.StringToHash("Time");
     }
 
     void Update()
@@ -37,12 +40,27 @@ public class GirlController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (increasingTime)
+            animTime += Time.deltaTime;
+        else
+            animTime -= Time.deltaTime;
+
+        if (animTime >= AnimationTime)
+        {
+            increasingTime = !increasingTime;
+        }
+        if (animTime <= 0)
+        {
+            increasingTime = !increasingTime;
+        }
+
+
         if (inputAxis.magnitude > 0.2f)
         {
             velocity = inputAxis.magnitude;
 
             Vector3 direction = new Vector3(inputAxis.x, 0, inputAxis.y).normalized;
-            
+
             // rotate
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(Walkie.eulerAngles.y, targetAngle, ref turnSmoothVelocity, TurnSmoothTime);
@@ -59,6 +77,7 @@ public class GirlController : MonoBehaviour
 
 
         animator.SetFloat(velocityHash, velocity);
+        animator.SetFloat(timeHash, animTime);
 
 
         // gravity 

@@ -2466,6 +2466,11 @@ PrefabInstance:
       propertyPath: Speed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856125, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: AnimationTime
+      value: 21
+      objectReference: {fileID: 0}
     - target: {fileID: 5601499130302856126, guid: 4e45289a562290f449761dc6dfe851b2,
         type: 3}
       propertyPath: m_Name
@@ -2853,7 +2858,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 3
+  m_Height: 2.6
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
