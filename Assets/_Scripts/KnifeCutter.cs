@@ -24,6 +24,11 @@ public class KnifeCutter : MonoBehaviour
         crossMat = new Material(Shader.Find("Universal Render Pipeline/Lit"));
     }
 
+    private void PlaySound()
+    {
+
+    }
+
     private void PrepareNewHull(GameObject hull)
     {
         float newPos = Random.Range(-0.005f, 0.02f);
@@ -39,12 +44,12 @@ public class KnifeCutter : MonoBehaviour
     [ContextMenu("Do Something")]
     public async void CutObject()
     {
-        crossMat = CutMaterials.FirstOrDefault(e => objToCut.name.Contains(e.FoodName)).MaterialAfterCut;
+        crossMat = CutMaterials.FirstOrDefault(e => objToCut.name.ToLower().Contains(e.FoodName)).MaterialAfterCut;
         if (!crossMat) return;
 
         if (!recursiveSlice)
         {
-
+            GetComponent<AudioSource>().Play();
             SlicedHull hull = objToCut.Slice(transform.position, transform.up, crossMat);
 
             if (hull != null)

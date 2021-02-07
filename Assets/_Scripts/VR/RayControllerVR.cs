@@ -21,7 +21,7 @@ public class RayControllerVR : MonoBehaviour
         //xrController.moveObjectOut = InputHelpers.Button.SecondaryAxis2DUp;
         xrController.moveObjectOut = InputHelpers.Button.None;
         xrController.rotateObjectLeft = InputHelpers.Button.None;
-        xrController.rotateObjectRight = InputHelpers.Button.None;
+        //xrController.rotateObjectRight = InputHelpers.Button.None;
 
         rayInteractor.translateSpeed = 3;
         rayInteractor.raycastTriggerInteraction = QueryTriggerInteraction.Collide;
