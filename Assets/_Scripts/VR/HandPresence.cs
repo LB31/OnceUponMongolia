@@ -60,7 +60,7 @@ public class HandPresence : MonoBehaviour
         }
 
         // TODO do it smarter
-        FindObjectOfType<PositionChanger>().RegisterButtonEvents();
+        FindObjectOfType<PositionChanger>()?.RegisterButtonEvents();
 
     }
 
