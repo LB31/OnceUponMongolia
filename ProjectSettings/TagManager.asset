@@ -8,8 +8,6 @@ TagManager:
   - Plate
   - Dice
   - Ground
-  - Knife
-  - Food
   layers:
   - Default
   - TransparentFX
