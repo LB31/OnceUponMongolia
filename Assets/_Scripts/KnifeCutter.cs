@@ -12,16 +12,19 @@ public class KnifeCutter : MonoBehaviour
 {
 
     public List<CutMaterial> CutMaterials;
+    public bool recursiveSlice;
+
 
     private GameObject objToCut;
     private Material crossMat;
-    public bool recursiveSlice;
 
     private bool cutting;
+    private AudioSource audioSource;
 
     private void Awake()
     {
         crossMat = new Material(Shader.Find("Universal Render Pipeline/Lit"));
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void PlaySound()
@@ -49,7 +52,9 @@ public class KnifeCutter : MonoBehaviour
 
         if (!recursiveSlice)
         {
-            GetComponent<AudioSource>().Play();
+            audioSource.time = 0.5f;
+            audioSource.Play();
+
             SlicedHull hull = objToCut.Slice(transform.position, transform.up, crossMat);
 
             if (hull != null)
