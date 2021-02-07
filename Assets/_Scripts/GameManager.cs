@@ -13,7 +13,7 @@ public class GameManager : Singleton<GameManager>
     public float SkySpeed = 0.1f;
 
     public bool OculusInUse;
-    
+
 
     public InputDevice LeftCon;
     public InputDevice RightCon;
@@ -24,7 +24,8 @@ public class GameManager : Singleton<GameManager>
 
     public InputFeatureUsage<Vector2> Axis2D;
 
-    protected override void Awake() {
+    protected override void Awake()
+    {
         base.Awake();
 
         GetXRInputs();
@@ -49,6 +50,7 @@ public class GameManager : Singleton<GameManager>
 
     private void Update()
     {
-        SkyDome.Rotate(new Vector3(0, SkySpeed, 0));
+        if (SkyDome)
+            SkyDome.Rotate(new Vector3(0, SkySpeed, 0));
     }
 }

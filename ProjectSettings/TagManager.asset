@@ -8,6 +8,8 @@ TagManager:
   - Plate
   - Dice
   - Ground
+  - Knife
+  - Food
   layers:
   - Default
   - TransparentFX
@@ -21,9 +23,9 @@ TagManager:
   - Draw
   - Grab
   - Body
-  - 
-  - 
-  - 
+  - Food
+  - Knife
+  - Hand
   - 
   - 
   - 

@@ -26,7 +26,8 @@ public class PositionChanger : MonoBehaviour
         currentPositions = AreaPositions[0].PlayerPositions;
         currentPosition = currentPositions.IndexOf(AreaPositions[0].StartPos);
         CurrentVeroPosition = currentPositions[currentPosition];
-        ChangeTransform();
+        if (enabled)
+            ChangeTransform();
         //RegisterButtonEvents();
     }
 
@@ -99,8 +100,8 @@ public class PositionChanger : MonoBehaviour
             currentPosition--;
             if (currentPosition < 0)
                 currentPosition = currentPositions.Count - 1;
-            
-                
+
+
 
         }
 
