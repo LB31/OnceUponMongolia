@@ -81,6 +81,7 @@ public class PositionChanger : MonoBehaviour
         {
             float offsetTouch = 0.4f;
             GameManager.Instance.RightCon.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 rightTouchpad);
+
             if (rightTouchpad.y < -offsetTouch)
                 right = false;
             else if (rightTouchpad.y > offsetTouch)
@@ -100,9 +101,6 @@ public class PositionChanger : MonoBehaviour
             currentPosition--;
             if (currentPosition < 0)
                 currentPosition = currentPositions.Count - 1;
-
-
-
         }
 
         ChangeTransform();
@@ -123,6 +121,22 @@ public class PositionChanger : MonoBehaviour
     public void RecenterPlayer()
     {
 
+    }
+
+    public void TestMove()
+    {
+        StartCoroutine(MoveIntoCharacter(GameObject.Find("GurlToMove").transform));
+    }
+
+    public IEnumerator MoveIntoCharacter(Transform goal)
+    {
+        while (Vector3.Distance(transform.position, goal.position) > 0.1f)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, goal.position, Time.deltaTime * 5);
+            yield return null;
+        }
+
+        goal.gameObject.SetActive(false);
     }
 
 }
