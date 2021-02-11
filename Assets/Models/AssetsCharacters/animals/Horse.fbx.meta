@@ -2,7 +2,10 @@ fileFormatVersion: 2
 guid: 6799f3a82e5556945a247618897aa0a3
 ModelImporter:
   serializedVersion: 19301
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -6055822671460218246
+    second: Horse|HorseAction
   externalObjects:
   - first:
       type: UnityEngine:Material
