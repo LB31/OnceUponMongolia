@@ -7096,6 +7096,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5601499130302856064}
+  - component: {fileID: 1007582274975861686}
   - component: {fileID: 5601499130302856065}
   - component: {fileID: 5601499130302856070}
   - component: {fileID: 5601499130302856068}
@@ -7130,6 +7131,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -11.399, z: 0}
+--- !u!114 &1007582274975861686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5601499130302856126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 166d9aff4d8437c4c8051325225d588e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterController: {fileID: 0}
+  continuousMovement: {fileID: 0}
+  snapTurnProvider: {fileID: 0}
+  positionChanger: {fileID: 0}
+  girlController: {fileID: 0}
 --- !u!114 &5601499130302856065
 MonoBehaviour:
   m_ObjectHideFlags: 0
