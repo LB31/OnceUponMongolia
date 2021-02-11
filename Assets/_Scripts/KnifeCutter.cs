@@ -29,7 +29,8 @@ public class KnifeCutter : MonoBehaviour
 
     private void PlaySound()
     {
-
+        audioSource.time = 0.5f;
+        audioSource.Play();
     }
 
     private void PrepareNewHull(GameObject hull)
@@ -52,8 +53,7 @@ public class KnifeCutter : MonoBehaviour
 
         if (!recursiveSlice)
         {
-            audioSource.time = 0.5f;
-            audioSource.Play();
+            PlaySound();  
 
             SlicedHull hull = objToCut.Slice(transform.position, transform.up, crossMat);
 
