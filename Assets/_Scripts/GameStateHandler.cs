@@ -30,7 +30,8 @@ public class GameStateHandler : MonoBehaviour
         DisableAllComponents();
 
         // test
-        MoveFreely();
+        //MoveFreely();
+        ControlGirl();
     }
 
     public void DisableAllComponents(bool snapTurn = true)
@@ -57,6 +58,13 @@ public class GameStateHandler : MonoBehaviour
 
         positionChanger.enabled = true;
         girlController.enabled = true;
+    }
+
+    public void PortIntoCharacter()
+    {
+        DisableAllComponents();
+
+        positionChanger.enabled = true;
     }
 
 
