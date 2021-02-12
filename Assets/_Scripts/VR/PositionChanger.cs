@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.XR;
 
 public class PositionChanger : MonoBehaviour
@@ -20,6 +22,8 @@ public class PositionChanger : MonoBehaviour
     private XRBinding teleportBindingRightA;
     private XRBinding teleportBindingRightB;
 
+    private Volume volume;
+    private LensDistortion lensDistortion;
 
     void Awake()
     {
@@ -29,6 +33,9 @@ public class PositionChanger : MonoBehaviour
         if (enabled)
             ChangeTransform();
         //RegisterButtonEvents();
+
+        volume = FindObjectOfType<Volume>();
+        volume.profile.TryGet(out lensDistortion);
     }
 
     private void OnEnable()
@@ -130,9 +137,14 @@ public class PositionChanger : MonoBehaviour
 
     public IEnumerator MoveIntoCharacter(Transform goal)
     {
-        while (Vector3.Distance(transform.position, goal.position) > 0.1f)
+        float distance = Mathf.Infinity;
+        while (distance > 0.1f)
         {
+            distance = Vector3.Distance(transform.position, goal.position);
             transform.position = Vector3.MoveTowards(transform.position, goal.position, Time.deltaTime * 5);
+
+            lensDistortion.intensity.value = 1 - (1 / distance);
+
             yield return null;
         }
 
