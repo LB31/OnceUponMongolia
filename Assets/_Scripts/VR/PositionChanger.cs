@@ -40,64 +40,38 @@ public class PositionChanger : MonoBehaviour
 
     private void OnEnable()
     {
-        RegisterButtonEvents();
+        XRControls.Instance.ControllerEventButton -= Teleport;
+        XRControls.Instance.ControllerEventButton += Teleport;
+
+        XRControls.Instance.TestLength();
+
+        print("added teleport");
     }
 
     private void OnDisable()
     {
-        RemoveButtonEvents();
+        XRControls.Instance.RemoveButtonEvents();
     }
 
-    public void RemoveButtonEvents()
+
+
+    public void Teleport(bool left)
     {
-        if (teleportBindingRightA != null)
-        {
-            //GameManager.Instance.XRInputLeft.bindings.Remove(teleportBindingLeft);
-            GameManager.Instance.XRInputRight.bindings.Remove(teleportBindingRightA);
-            GameManager.Instance.XRInputRight.bindings.Remove(teleportBindingRightB);
-        }
-    }
-
-    public void RegisterButtonEvents()
-    {
-        RemoveButtonEvents();
-
-        XRButton teleportLeft;
-        XRButton teleportRight;
-
-        if (GameManager.Instance.OculusInUse)
-        {
-            teleportLeft = XRButton.SecondaryButton;
-            teleportRight = XRButton.PrimaryButton;
-        }
-        else
-        {
-            teleportLeft = XRButton.Primary2DAxisClick;
-            teleportRight = XRButton.Primary2DAxisClick;
-        }
-
-        GameManager.Instance.XRInputRight.bindings.
-            Add(teleportBindingRightB = new XRBinding(teleportLeft, PressType.End, () => Teleport(false)));
-        GameManager.Instance.XRInputRight.bindings.
-            Add(teleportBindingRightA = new XRBinding(teleportRight, PressType.End, () => Teleport(true)));
-    }
-
-    public void Teleport(bool right)
-    {
+        // WMR Headset
         if (!GameManager.Instance.OculusInUse)
         {
             float offsetTouch = 0.4f;
             GameManager.Instance.RightCon.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 rightTouchpad);
 
             if (rightTouchpad.y < -offsetTouch)
-                right = false;
+                left = false;
             else if (rightTouchpad.y > offsetTouch)
-                right = true;
+                left = true;
             else
                 return;
         }
 
-        if (right)
+        if (left)
         {
             currentPosition++;
             if (currentPosition > currentPositions.Count - 1)
