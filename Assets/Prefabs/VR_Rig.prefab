@@ -5391,7 +5391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 856b72dbfd1fca14f89457060d5ff130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShowController: 1
+  HideController: 0
   ControllerCharacteristics: 576
   ControllerPrefabs:
   - {fileID: 7634514334346526944, guid: 0540e32b498ef284f8e1dcf80dfccd58, type: 3}
@@ -5443,7 +5443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 856b72dbfd1fca14f89457060d5ff130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShowController: 0
+  HideController: 0
   ControllerCharacteristics: 320
   ControllerPrefabs:
   - {fileID: 7634514334346526944, guid: 0540e32b498ef284f8e1dcf80dfccd58, type: 3}
@@ -7281,7 +7281,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3655638313180e64c815a157b7896d3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Walkie: {fileID: 0}
   Speed: 4
   TurnSmoothTime: 0.1
   AnimationTime: 20
