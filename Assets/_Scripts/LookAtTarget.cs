@@ -6,6 +6,7 @@ public class LookAtTarget : MonoBehaviour
 {
     public Transform Target;
     public Vector3 LookAxis;
+    public bool ForDialogs;
 
     private void Start()
     {
@@ -18,5 +19,8 @@ public class LookAtTarget : MonoBehaviour
     void Update()
     {
         transform.LookAt(Target, LookAxis);
+        if (ForDialogs)
+            transform.rotation *= Quaternion.Euler(0, 180, 0);
+
     }
 }

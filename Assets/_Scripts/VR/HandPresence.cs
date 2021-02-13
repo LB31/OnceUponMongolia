@@ -4,7 +4,7 @@ using UnityEngine.XR;
 
 public class HandPresence : MonoBehaviour
 {
-    public bool ShowController;
+    public bool HideController;
     public InputDeviceCharacteristics ControllerCharacteristics;
     public List<GameObject> ControllerPrefabs;
     public GameObject HandModelPrefab;
@@ -31,11 +31,6 @@ public class HandPresence : MonoBehaviour
         if (targetDevice.name.ToLower().Contains("oculus"))
             GameManager.Instance.OculusInUse = true;
 
-        if (targetDevice.name.ToLower().Contains("left"))
-            GameManager.Instance.LeftCon = targetDevice;
-        if (targetDevice.name.ToLower().Contains("right"))
-            GameManager.Instance.RightCon = targetDevice;
-
         // Selecting Josystick
         if (GameManager.Instance.OculusInUse)
             GameManager.Instance.Axis2D = CommonUsages.primary2DAxis;
@@ -52,15 +47,22 @@ public class HandPresence : MonoBehaviour
         else
             spawnedController = Instantiate(ControllerPrefabs[0], transform);
 
-        if (!ShowController)
+        if (HideController)
         {
             spawnedHand = Instantiate(HandModelPrefab, transform);
             handAnimator = spawnedHand.GetComponent<Animator>();
             spawnedController.SetActive(false);
         }
 
-        // TODO do it smarter
-        FindObjectOfType<PositionChanger>()?.RegisterButtonEvents();
+        if (targetDevice.name.ToLower().Contains("left"))
+            GameManager.Instance.LeftCon = targetDevice;
+        if (targetDevice.name.ToLower().Contains("right"))
+        {
+            GameManager.Instance.RightCon = targetDevice;
+            // TODO do it smarter
+            XRControls.Instance.RegisterButtonEvents();
+        }
+
 
     }
 
@@ -81,7 +83,7 @@ public class HandPresence : MonoBehaviour
     {
         if (!targetDevice.isValid)
             TryInitialize();
-        else if (!ShowController)
+        else if (HideController)
             UpdateHandAnimation();
 
         //targetDevice.TryGetFeatureValue(CommonUsages.menuButton, out bool primaryButtonVal);

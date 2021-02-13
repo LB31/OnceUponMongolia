@@ -26,40 +26,27 @@ public class DialogManager : Singleton<DialogManager>
         ParseJson();     
     }
 
-    private async void Start()
+    private void Start()
     {
         //StartDialog(Person.Vero, 1, TypeMessage.veroText, QuestType.none, VeroType.grandma);
         //await Task.Delay(3000);
-        StartDialog(Person.Grandmother, 0, TypeMessage.dialog, QuestType.none);
+        StartDialog(Person.SevenStar, 0, TypeMessage.dialog);
     }
 
     private void ParseJson()
     {
         VillagerTexts dialogJson = JsonUtility.FromJson<VillagerTexts>(AllDialogues.text);
-        Dialogues = new List<ItemTexts>();
-        foreach (ItemTexts dialogs in dialogJson.people)
-        {
-            //dialog.puzzleText = dialog.puzzleText.Replace("\\n", "\n");
-            // Debug
-            Dialogues.Add(dialogs);
-
-            try
-            {
-                print(dialogs.veroTexts.girl[1]);
-            }
-            catch (Exception)
-            {
-                print("try again");
-            }
-
-        }
+        Dialogues = dialogJson.people;
     }
 
     public void StartDialog(Person person, int entryNumber,
         TypeMessage messageType = 0, QuestType questType = 0, VeroType veroType = 0)
     {
         // Find according person
+        // TODO rework
         currentDialog = FindObjectsOfType<Dialog>().First(name => name.SpeakingPerson.Equals(person));
+
+        currentDialog.CharacterName.text = person.ToString();
 
         if (person.Equals(Person.Vero))
             BuildVeroDialog(veroType, entryNumber);
@@ -85,7 +72,7 @@ public class DialogManager : Singleton<DialogManager>
                     outputText = itemTexts.quests[entryNumber].task;
                 else if (questType.ToString() == "hint")
                     outputText = itemTexts.quests[entryNumber].hint;
-                else
+                else if (questType.ToString() == "ready")
                     outputText = itemTexts.quests[entryNumber].ready;
                 break;
             case TypeMessage.randomAnswer:
@@ -152,7 +139,7 @@ public class DialogManager : Singleton<DialogManager>
 
     public void ContinueDialog()
     {
-        // When dialog scrolling, show all
+        // When dialog is scrolling, show all
         if (dialogIsRunning)
         {
             StopCoroutine(runningDialog);

@@ -1,17 +1,18 @@
 ﻿public enum Person
 {
     Vero,
-    Grandmother,
-    Father,
-    Girl,
-    Boy,
-    LoverGuy,
-    OldMan,
-    OldWife
+    SevenStar, // Grandmother
+    Bartor, // Father from bride and boy
+    MoonLight, // bride
+    LittleGreenCoat, // little boy
+    HailStone, // Lover guy
+    GreatTiger, // Old Husband, father from lover guy
+    GentleWind // Old Wife, mother from lover guy
 }
 
 public enum TypeMessage
 {
+    none,
     dialog,
     quest,
     randomAnswer,
