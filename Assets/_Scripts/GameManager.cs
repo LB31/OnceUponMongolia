@@ -9,19 +9,19 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class GameManager : Singleton<GameManager>
 {
+    public Transform Vero;
+
     public Transform SkyDome;
     public float SkySpeed = 0.1f;
 
-    public bool OculusInUse;
+    public VillagerController NearestVillager;
 
-
-    public InputDevice LeftCon;
-    public InputDevice RightCon;
-
+    [HideInInspector] public bool OculusInUse;
     [HideInInspector] public DeviceBasedSnapTurnProvider SnapTurnProvider;
     [HideInInspector] public XRInput XRInputLeft;
     [HideInInspector] public XRInput XRInputRight;
-
+    public InputDevice LeftCon;
+    public InputDevice RightCon;
     public InputFeatureUsage<Vector2> Axis2D;
 
     protected override void Awake()

@@ -29,10 +29,12 @@ public class XRControls : Singleton<XRControls>
     }
 
 
-    private void RegisterInteraction()
+    public void RegisterInteraction()
     {
         GameManager.Instance.XRInputRight.bindings.
-            Add(new XRBinding(XRButton.Trigger, PressType.Begin, () => ControllerEventTrigger()));
+            Add(new XRBinding(XRButton.Trigger, PressType.End, () => ControllerEventTrigger()));
+        GameManager.Instance.XRInputLeft.bindings.
+            Add(new XRBinding(XRButton.Trigger, PressType.End, () => ControllerEventTrigger()));
     }
 
     private void RegisterGrabbing()
@@ -45,12 +47,6 @@ public class XRControls : Singleton<XRControls>
     {
 
     }
-
-    public void TestLength()
-    {
-        print(ControllerEventButton.GetInvocationList().Length);
-    }
-
 
     public void RegisterButtonEvents()
     {
@@ -82,8 +78,18 @@ public class XRControls : Singleton<XRControls>
         {
             ControllerEventButton -= (RightControllerButton)deli;
         }
+
     }
 
+    public void RemoveTriggerEvents()
+    {
+        if (ControllerEventTrigger == null) return;
+        foreach (Delegate deli in ControllerEventTrigger.GetInvocationList())
+        {
+            ControllerEventTrigger -= (ControllerTrigger)deli;
+        }
+
+    }
 
 
 

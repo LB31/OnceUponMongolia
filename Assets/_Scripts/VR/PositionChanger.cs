@@ -42,10 +42,6 @@ public class PositionChanger : MonoBehaviour
     {
         XRControls.Instance.ControllerEventButton -= Teleport;
         XRControls.Instance.ControllerEventButton += Teleport;
-
-        XRControls.Instance.TestLength();
-
-        print("added teleport");
     }
 
     private void OnDisable()

@@ -139,6 +139,8 @@ public class DialogManager : Singleton<DialogManager>
 
     public void ContinueDialog()
     {
+        if (!currentDialog) return;
+
         // When dialog is scrolling, show all
         if (dialogIsRunning)
         {
@@ -160,6 +162,7 @@ public class DialogManager : Singleton<DialogManager>
             currentTextIndex = 0;
             currentDialog.DialogText.text = "";
             currentDialog.gameObject.SetActive(false);
+            currentDialog = null;
         }
     }
 

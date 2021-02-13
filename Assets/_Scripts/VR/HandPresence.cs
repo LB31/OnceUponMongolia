@@ -61,9 +61,10 @@ public class HandPresence : MonoBehaviour
             GameManager.Instance.RightCon = targetDevice;
             // TODO do it smarter
             XRControls.Instance.RegisterButtonEvents();
+            XRControls.Instance.RegisterInteraction();
         }
 
-
+        
     }
 
     private void UpdateHandAnimation()
