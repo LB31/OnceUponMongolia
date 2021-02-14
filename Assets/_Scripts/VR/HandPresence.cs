@@ -59,17 +59,18 @@ public class HandPresence : MonoBehaviour
         if (targetDevice.name.ToLower().Contains("right"))
         {
             GameManager.Instance.RightCon = targetDevice;
-            // TODO do it smarter
-            XRControls.Instance.RegisterButtonEvents();
-            XRControls.Instance.RegisterInteraction();
+
         }
 
-        
+        // TODO do it smarter
+        XRControls.Instance.RegisterButtonEvents();
+        XRControls.Instance.RegisterInteraction();
+
     }
 
     private void UpdateHandAnimation()
     {
-        if (targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerVal))     
+        if (targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerVal))
             handAnimator.SetFloat("Trigger", triggerVal);
         else
             handAnimator.SetFloat("Trigger", 0);

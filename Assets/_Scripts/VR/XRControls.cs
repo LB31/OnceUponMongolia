@@ -7,8 +7,7 @@ using UnityEngine;
 public class XRControls : Singleton<XRControls>
 {
     public delegate void RightControllerButton(bool side);
-
-    public delegate void ControllerTrigger();  
+    public delegate void ControllerTrigger();
     public delegate void ControllerGrip();
 
 
@@ -16,25 +15,23 @@ public class XRControls : Singleton<XRControls>
     public event ControllerTrigger ControllerEventTrigger;
     public event ControllerGrip ControllerEventGrip;
 
-    private XRBinding rightControllerA; // Right touch on WMR
-    private XRBinding rightControllerB; // Left touch on WMR
-
-    private XRBinding rightControllerStick;
-    private XRBinding leftControllerStick;
-
+    private XRBinding[] bindingsTrigger = new XRBinding[2];
+    private XRBinding[] bindingsButtons = new XRBinding[2];
 
     void Start()
     {
-        
+
     }
 
 
     public void RegisterInteraction()
     {
+        if (bindingsTrigger[0] != null) return;
+
         GameManager.Instance.XRInputRight.bindings.
-            Add(new XRBinding(XRButton.Trigger, PressType.End, () => ControllerEventTrigger()));
+            Add(bindingsTrigger[0] = new XRBinding(XRButton.Trigger, PressType.End, () => ControllerEventTrigger()));
         GameManager.Instance.XRInputLeft.bindings.
-            Add(new XRBinding(XRButton.Trigger, PressType.End, () => ControllerEventTrigger()));
+            Add(bindingsTrigger[1] = new XRBinding(XRButton.Trigger, PressType.End, () => ControllerEventTrigger()));
     }
 
     private void RegisterGrabbing()
@@ -50,6 +47,8 @@ public class XRControls : Singleton<XRControls>
 
     public void RegisterButtonEvents()
     {
+        if (bindingsButtons[0] != null) return;
+
         XRButton teleportLeft;
         XRButton teleportRight;
 
@@ -65,9 +64,9 @@ public class XRControls : Singleton<XRControls>
         }
 
         GameManager.Instance.XRInputRight.bindings.
-            Add(new XRBinding(teleportRight, PressType.End, () => ControllerEventButton(false)));
+            Add(bindingsButtons[0] = new XRBinding(teleportRight, PressType.End, () => ControllerEventButton(false)));
         GameManager.Instance.XRInputRight.bindings.
-            Add(new XRBinding(teleportLeft, PressType.End, () => ControllerEventButton(true)));
+            Add(bindingsButtons[1] = new XRBinding(teleportLeft, PressType.End, () => ControllerEventButton(true)));
 
     }
 
