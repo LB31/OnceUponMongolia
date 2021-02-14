@@ -18,10 +18,19 @@ public class Dialog : MonoBehaviour
     {
         CharacterName.text = SpeakingPerson.ToString();
 
-        YesButton.gameObject.SetActive(false);
-        NoButton.gameObject.SetActive(false);
+        YesButton.onClick.AddListener(() => SendDialogAnswer("answerYes"));
+        NoButton.onClick.AddListener(() => SendDialogAnswer("answerNo"));
+
+        //YesButton.transform.parent.gameObject.SetActive(false);
     }
 
-    
+    private void SendDialogAnswer(string answerEvent)
+    {
+        print("muhar");
+
+        //GameManager.Instance.NearestVillager.GetComponent<PlayMakerFSM>().SendEvent(answerEvent);
+    }
+
+
 
 }
