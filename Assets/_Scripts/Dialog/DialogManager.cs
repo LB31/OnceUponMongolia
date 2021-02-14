@@ -146,7 +146,6 @@ public class DialogManager : Singleton<DialogManager>
         else if(outputText.Count - 1 > currentTextIndex)
         {
             currentTextIndex++;
-            print(currentTextIndex);
             runningDialog = ScrollDialog();
             StartCoroutine(runningDialog);
         }
@@ -155,7 +154,6 @@ public class DialogManager : Singleton<DialogManager>
         {
             await Task.Delay(500);
             currentTextIndex = 0;
-            print(currentTextIndex + " cur index");
             currentDialog.DialogText.text = "";
             currentDialog.gameObject.SetActive(false);
             currentDialog = null;
