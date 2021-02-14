@@ -10,6 +10,7 @@ public class GirlController : EntityController
 
     private float turnSmoothVelocity;
     private PositionChanger positionChanger;
+    private bool speakingWithVillager;
 
     private void OnEnable()
     {
@@ -39,6 +40,8 @@ public class GirlController : EntityController
     public override void FixedUpdate()
     {
         base.FixedUpdate();
+
+        if (speakingWithVillager) return;
 
         // Controlling
         if (inputAxis.magnitude > 0.2f)
@@ -78,7 +81,15 @@ public class GirlController : EntityController
     public void Interact()
     {
         if (GameManager.Instance.NearestVillager != null)
-            Debug.LogError("ineraction yeah");
+        {
+            GameManager.Instance.NearestVillager.GetComponent<PlayMakerFSM>().SendEvent("StartDialog");
+            speakingWithVillager = true;
+        }
+    }
+
+    public void InteractionFinished()
+    {
+        speakingWithVillager = false;
     }
 
 

@@ -1,114 +1,187 @@
 {
-   "people":[
-      {
-         "id":0,
-         "characterName":"Vero",
-         "veroTexts":{
-            "hints":[
-               "Wo bin ich? Und dann kam die Feuernation und alles änderte sich!",
-               "geh mal zum Jungen, lak shu",
-               "Tadelü"
+    "people": [
+        {
+            "id": 0,
+            "characterName": "Vero",
+            "veroTexts": {
+                "hints": [
+                    "Wo bin ich? Und dann kam die Feuernation und alles änderte sich!",
+                    "geh mal zum Jungen, lak shu",
+                    "Tadelü"
+                ],
+                "grandma": [
+                    "Oma1",
+                    "Wie keiner vor ihr war"
+                ],
+                "father": [
+                    "Father1"
+                ],
+                "girl": [
+                    "girlo",
+                    "tastic",
+                    "damn",
+                    "muha"
+                ],
+                "boy": [
+                    "boyto",
+                    "ban",
+                    "tsu",
+                    "basa"
+                ],
+                "itemFound": [
+                    "cool thing",
+                    "always needed this",
+                    "best stuff ever"
+                ]
+            }
+        },
+        {
+            "id": 1,
+            "characterName": "SevenStar",
+            "veroTexts": null,
+            "dialogs": [
+                {
+                    "text": [
+                        "You litte human, how dare you to intrude in my sanctum. Did my stupid Yokais let you in?",
+                        "I'm Susanno, the mightiest hero who ever lived. Yamata no Orochi",
+                        "Probably you've already noticed that all worlds became darker then ever before. ",
+                        "However, there is a way to restore the balance. Behind you there is a shrine with a sacred treasure.",
+                        "Take care of the water"
+                    ]
+                },
+                {
+                    "text": [
+                        "muh"
+                    ]
+                }
             ],
-            "grandma":[
-               "Oma1",
-               "Wie keiner vor ihr war"
+            "quests": [
+                {
+                    "task": [
+                        "mach ma, du arsch",
+                        "mimimi"
+                    ],
+                    "hint": [
+                        "boobies",
+                        "death"
+                    ],
+                    "ready": [
+                        "toches"
+                    ]
+                },
+                {
+                    "task": [
+                        "mach ma, du arsch",
+                        "mimimi"
+                    ],
+                    "hint": [
+                        "boobies",
+                        "ops"
+                    ],
+                    "ready": [
+                        "toches"
+                    ]
+                },
+                {
+                    "task": [
+                        "mach ma, du arsch",
+                        "mimimi"
+                    ],
+                    "hint": [
+
+                    ],
+                    "ready": [
+                        "toches"
+                    ]
+                }
             ],
-            "father":[
-               "Father1"
-            ],
-            "girl":[
-               "girlo",
-               "tastic",
-               "damn",
-               "muha"
-            ],
-            "boy":[
-               "boyto",
-               "ban",
-               "tsu",
-               "basa"
-            ],
-            "itemFound":[
-               "cool thing",
-               "always needed this",
-               "best stuff ever"
+            "randomAnswers": [
+                {
+                    "answer": [
+                        "obama cares",
+                        "so much"
+                    ]
+                },
+                {
+                    "answer": [
+                        "adi cares",
+                        "not so much"
+                    ]
+                }
             ]
-         }
-      },
-      {
-         "id":1,
-         "characterName":"SevenStar",
-         "veroTexts": null,
-         "dialogs":[
-            {
-               "text":[
-                  "You litte human, how dare you to intrude in my sanctum. Did my stupid Yokais let you in?",
-                  "I'm Susanno, the mightiest hero who ever lived. Yamata no Orochi",
-                  "Probably you've already noticed that all worlds became darker then ever before. ",
-                  "However, there is a way to restore the balance. Behind you there is a shrine with a sacred treasure.",
-                  "Take care of the water"
-               ]
-            },
-            {
-               "text":[
-                  "muh"
-               ]
-            }
-         ],
-         "quests":[
-            {
-               "task":[
-                  "mach ma, du arsch",
-                  "mimimi"
-               ],
-               "hint":[
-                  "boobies",
-                  "death"
-               ],
-               "ready":[
-                  "toches"
-               ]
-            },
-            {
-               "task":[
-                  "mach ma, du arsch",
-                  "mimimi"
-               ],
-               "hint":[
-                  "boobies",
-                  "ops"
-               ],
-               "ready":[
-                  "toches"
-               ]
-            },
-            {
-               "task":[
-                  "mach ma, du arsch",
-                  "mimimi"
-               ],
-               "hint":[
-                  
-               ],
-               "ready":[
-                  "toches"
-               ]
-            }
-         ],
-         "randomAnswers":[
-            {
-               "answer":[
-                  "obama cares",
-                  "so much"
-               ]
-            },
-            {
-               "answer":[
-                  "adi cares",
-                  "not so much"
-               ]
-            }
-         ]
-      }
-   ]
+        },
+        {
+            "id": 2,
+            "characterName": "HailStone",
+            "veroTexts": null,
+            "dialogs": [
+                {
+                    "text": [
+                        "I am the eye of the storm",
+                        "Inside",
+                        "I am silent and strong"
+                    ]
+                },
+                {
+                    "text": [
+                        "just the second text"
+                    ]
+                }
+            ],
+            "quests": [
+                {
+                    "task": [
+                        "mach ma, du arsch",
+                        "mimimi"
+                    ],
+                    "hint": [
+                        "boobies",
+                        "death"
+                    ],
+                    "ready": [
+                        "toches"
+                    ]
+                },
+                {
+                    "task": [
+                        "mach ma, du arsch",
+                        "mimimi"
+                    ],
+                    "hint": [
+                        "boobies",
+                        "ops"
+                    ],
+                    "ready": [
+                        "toches"
+                    ]
+                },
+                {
+                    "task": [
+                        "mach ma, du arsch",
+                        "mimimi"
+                    ],
+                    "hint": [
+
+                    ],
+                    "ready": [
+                        "toches"
+                    ]
+                }
+            ],
+            "randomAnswers": [
+                {
+                    "answer": [
+                        "obama cares",
+                        "so much"
+                    ]
+                },
+                {
+                    "answer": [
+                        "adi cares",
+                        "not so much"
+                    ]
+                }
+            ]
+        }
+    ]
 }

@@ -12,7 +12,8 @@ public class DialogManager : Singleton<DialogManager>
     public float ScrollingSpeed = 0.01f;
 
     private Dialog currentDialog;
-    private List<string> outputText = new List<string>();
+    // Debug
+    public List<string> outputText = new List<string>();
     private int currentTextIndex;
 
     private IEnumerator runningDialog;
@@ -24,13 +25,6 @@ public class DialogManager : Singleton<DialogManager>
         base.Awake();
 
         ParseJson();     
-    }
-
-    private void Start()
-    {
-        //StartDialog(Person.Vero, 1, TypeMessage.veroText, QuestType.none, VeroType.grandma);
-        //await Task.Delay(3000);
-        StartDialog(Person.SevenStar, 0, TypeMessage.dialog);
     }
 
     private void ParseJson()
@@ -60,7 +54,7 @@ public class DialogManager : Singleton<DialogManager>
         ItemTexts itemTexts = Dialogues.
             Find(name => name.characterName == person.ToString());
 
-        outputText.Clear();
+        //outputText.Clear();
 
         switch (messageType)
         {
@@ -92,7 +86,7 @@ public class DialogManager : Singleton<DialogManager>
         ItemTexts itemTexts = Dialogues.
             Find(name => name.characterName == Person.Vero.ToString());
 
-        outputText.Clear();
+        //outputText.Clear();
         string output = "";
 
         switch (veroType)
@@ -137,7 +131,7 @@ public class DialogManager : Singleton<DialogManager>
         dialogIsRunning = false;
     }
 
-    public void ContinueDialog()
+    public async void ContinueDialog()
     {
         if (!currentDialog) return;
 
@@ -152,17 +146,21 @@ public class DialogManager : Singleton<DialogManager>
         else if(outputText.Count - 1 > currentTextIndex)
         {
             currentTextIndex++;
+            print(currentTextIndex);
             runningDialog = ScrollDialog();
             StartCoroutine(runningDialog);
         }
         // Send event, when dialog finished
         else
         {
-            PlayMakerFSM.BroadcastEvent("DialogFinished");
+            await Task.Delay(500);
             currentTextIndex = 0;
+            print(currentTextIndex + " cur index");
             currentDialog.DialogText.text = "";
             currentDialog.gameObject.SetActive(false);
             currentDialog = null;
+            PlayMakerFSM.BroadcastEvent("DialogFinished");
+
         }
     }
 
