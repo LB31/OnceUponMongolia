@@ -28,7 +28,7 @@ public class Dialog : MonoBehaviour
     {
         print("muhar");
 
-        //GameManager.Instance.NearestVillager.GetComponent<PlayMakerFSM>().SendEvent(answerEvent);
+        GameManager.Instance.NearestVillager.GetComponent<PlayMakerFSM>().SendEvent(answerEvent);
     }
 
 

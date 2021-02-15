@@ -7284,6 +7284,7 @@ MonoBehaviour:
   Speed: 4
   TurnSmoothTime: 0.1
   AnimationTime: 20
+  speakingWithVillager: 0
 --- !u!114 &5601499130302856066
 MonoBehaviour:
   m_ObjectHideFlags: 0

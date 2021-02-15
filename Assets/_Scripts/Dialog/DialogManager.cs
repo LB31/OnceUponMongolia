@@ -131,7 +131,7 @@ public class DialogManager : Singleton<DialogManager>
         dialogIsRunning = false;
     }
 
-    public async void ContinueDialog()
+    public async void ContinueDialog(bool jumpOver = false)
     {
         if (!currentDialog) return;
 
@@ -146,6 +146,7 @@ public class DialogManager : Singleton<DialogManager>
         else if(outputText.Count - 1 > currentTextIndex)
         {
             currentTextIndex++;
+            if (jumpOver) currentTextIndex++;
             runningDialog = ScrollDialog();
             StartCoroutine(runningDialog);
         }
