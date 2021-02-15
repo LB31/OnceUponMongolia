@@ -10,7 +10,7 @@ public class GirlController : EntityController
 
     private float turnSmoothVelocity;
     private PositionChanger positionChanger;
-    private bool speakingWithVillager;
+    public bool speakingWithVillager;
 
     private void OnEnable()
     {
@@ -85,12 +85,15 @@ public class GirlController : EntityController
         {
             GameManager.Instance.NearestVillager.GetComponent<PlayMakerFSM>().SendEvent("StartDialog");
             speakingWithVillager = true;
+            print("StartDialog");
         }
     }
 
+    // Currently called by FSM event: Deactivate Dialog Box
     public void InteractionFinished()
     {
         speakingWithVillager = false;
+        print("InteractionFinished");
     }
 
 
