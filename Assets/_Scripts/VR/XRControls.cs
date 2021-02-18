@@ -57,16 +57,24 @@ public class XRControls : Singleton<XRControls>
             teleportLeft = XRButton.SecondaryButton;
             teleportRight = XRButton.PrimaryButton;
         }
+        // WMR Headset
         else
         {
+            // actually not used here
             teleportLeft = XRButton.Primary2DAxisClick;
+            
             teleportRight = XRButton.Primary2DAxisClick;
         }
 
         GameManager.Instance.XRInputRight.bindings.
             Add(bindingsButtons[0] = new XRBinding(teleportRight, PressType.End, () => ControllerEventButton(false)));
-        GameManager.Instance.XRInputRight.bindings.
-            Add(bindingsButtons[1] = new XRBinding(teleportLeft, PressType.End, () => ControllerEventButton(true)));
+        
+        if (GameManager.Instance.OculusInUse)
+        {
+            GameManager.Instance.XRInputRight.bindings.
+                Add(bindingsButtons[1] = new XRBinding(teleportLeft, PressType.End, () => ControllerEventButton(true)));
+        }
+            
 
     }
 
