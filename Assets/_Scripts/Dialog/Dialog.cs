@@ -26,8 +26,6 @@ public class Dialog : MonoBehaviour
 
     private void SendDialogAnswer(string answerEvent)
     {
-        print("muhar");
-
         GameManager.Instance.NearestVillager.GetComponent<PlayMakerFSM>().SendEvent(answerEvent);
     }
 

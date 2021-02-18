@@ -129,11 +129,16 @@ public class DialogManager : Singleton<DialogManager>
             yield return new WaitForSeconds(ScrollingSpeed);
         }
         dialogIsRunning = false;
+        PlayMakerFSM.BroadcastEvent("SentenceCompleted");
     }
 
     public async void ContinueDialog(bool jumpOver = false)
     {
+        // When no dialog was selected
         if (!currentDialog) return;
+
+        if (jumpOver) currentTextIndex++;
+
 
         // When dialog is scrolling, show all
         if (dialogIsRunning)
@@ -141,12 +146,12 @@ public class DialogManager : Singleton<DialogManager>
             StopCoroutine(runningDialog);
             currentDialog.DialogText.text = outputText[currentTextIndex]; // TODO no zero
             dialogIsRunning = false;
+            PlayMakerFSM.BroadcastEvent("SentenceCompleted");
         }
         // When there is more to say, show next
         else if(outputText.Count - 1 > currentTextIndex)
         {
             currentTextIndex++;
-            if (jumpOver) currentTextIndex++;
             runningDialog = ScrollDialog();
             StartCoroutine(runningDialog);
         }
