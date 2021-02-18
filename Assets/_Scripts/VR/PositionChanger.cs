@@ -53,6 +53,7 @@ public class PositionChanger : MonoBehaviour
 
     public void Teleport(bool left)
     {
+        
         // WMR Headset
         if (!GameManager.Instance.OculusInUse)
         {
