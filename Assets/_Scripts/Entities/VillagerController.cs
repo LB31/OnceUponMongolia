@@ -17,6 +17,7 @@ public class VillagerController : EntityController
         base.Start();
 
         agent = GetComponent<NavMeshAgent>();
+        agent.speed = Speed;
     }
 
     protected override void FixedUpdate()
@@ -43,14 +44,14 @@ public class VillagerController : EntityController
     {
         if (!other.name.ToLower().Contains("vero")) return;
         GameManager.Instance.NearestVillager = this;
-        GameManager.Instance.NearestVillager.GetComponent<PlayMakerFSM>().SendEvent("LookAtVero");
+        GetComponent<PlayMakerFSM>().SendEvent("LookAtVero");
 
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (!other.name.ToLower().Contains("vero")) return;
-        GameManager.Instance.NearestVillager.GetComponent<PlayMakerFSM>().SendEvent("IgnoreVero");
+        GetComponent<PlayMakerFSM>().SendEvent("IgnoreVero");
         GameManager.Instance.NearestVillager = null;
     }
 }

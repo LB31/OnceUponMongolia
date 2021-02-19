@@ -5180,14 +5180,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 721685797684635318, guid: b0a92db85367f7542a0ec86badedbdb0,
         type: 3}
-      propertyPath: SkyDome
-      value: 
-      objectReference: {fileID: 73594759}
-    - target: {fileID: 721685797684635318, guid: b0a92db85367f7542a0ec86badedbdb0,
-        type: 3}
       propertyPath: Vero
       value: 
       objectReference: {fileID: 2028333277}
+    - target: {fileID: 721685797684635318, guid: b0a92db85367f7542a0ec86badedbdb0,
+        type: 3}
+      propertyPath: SkyDome
+      value: 
+      objectReference: {fileID: 73594759}
     - target: {fileID: 721685797684635319, guid: b0a92db85367f7542a0ec86badedbdb0,
         type: 3}
       propertyPath: m_Name
@@ -5213,141 +5213,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62cabb70967304945b7d400a2652d7ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &220725099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 220725097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fsm:
-    dataVersion: 2
-    usedInTemplate: {fileID: 0}
-    name: FirstQuest
-    startState: State 1
-    states:
-    - name: State 1
-      description: 
-      colorIndex: 0
-      position:
-        serializedVersion: 2
-        x: 50
-        y: 100
-        width: 100
-        height: 16
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions: []
-      actionData:
-        actionNames: []
-        customNames: []
-        actionEnabled: 
-        actionIsOpen: 
-        actionStartIndex: 
-        actionHashCodes: 
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams: []
-        fsmEnumParams: []
-        fsmFloatParams: []
-        fsmIntParams: []
-        fsmBoolParams: []
-        fsmVector2Params: []
-        fsmVector3Params: []
-        fsmColorParams: []
-        fsmRectParams: []
-        fsmQuaternionParams: []
-        stringParams: []
-        byteData: 
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 
-        paramName: []
-        paramDataPos: 
-        paramByteDataSize: 
-    events: []
-    globalTransitions: []
-    variables:
-      floatVariables: []
-      intVariables: []
-      boolVariables: []
-      stringVariables: []
-      vector2Variables: []
-      vector3Variables: []
-      colorVariables: []
-      rectVariables: []
-      quaternionVariables: []
-      gameObjectVariables: []
-      objectVariables: []
-      materialVariables: []
-      textureVariables: []
-      arrayVariables: []
-      enumVariables: []
-      categories:
-      - 
-      variableCategoryIDs: 
-    description: 
-    docUrl: 
-    showStateLabel: 0
-    maxLoopCount: 0
-    watermark: 
-    password: 
-    locked: 0
-    manualUpdate: 0
-    keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
-    ExposedEvents: []
-    RestartOnEnable: 1
-    EnableDebugFlow: 0
-    EnableBreakpoints: 1
-    editorFlags: 1
-    activeStateName: 
-    mouseEvents: 0
-    handleLevelLoaded: 0
-    handleTriggerEnter2D: 0
-    handleTriggerExit2D: 0
-    handleTriggerStay2D: 0
-    handleCollisionEnter2D: 0
-    handleCollisionExit2D: 0
-    handleCollisionStay2D: 0
-    handleTriggerEnter: 0
-    handleTriggerExit: 0
-    handleTriggerStay: 0
-    handleCollisionEnter: 0
-    handleCollisionExit: 0
-    handleCollisionStay: 0
-    handleParticleCollision: 0
-    handleControllerColliderHit: 0
-    handleJointBreak: 0
-    handleJointBreak2D: 0
-    handleOnGUI: 0
-    handleFixedUpdate: 0
-    handleLateUpdate: 0
-    handleApplicationEvents: 0
-    handleUiEvents: 0
-    handleLegacyNetworking: 0
-    handleAnimatorMove: 0
-    handleAnimatorIK: 0
-  fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
 --- !u!4 &225773254 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8598431328945133206, guid: 78369ee48745b3a438be89cbe3fc8be2,
@@ -9223,8 +9088,9 @@ GameObject:
   - component: {fileID: 423802806}
   - component: {fileID: 423802808}
   - component: {fileID: 423802807}
+  - component: {fileID: 423802809}
   m_Layer: 0
-  m_Name: polySurface155 (1)
+  m_Name: YurteColliderGrandma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9292,6 +9158,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 423802805}
   m_Mesh: {fileID: 5723350637774640078, guid: ef3be8e8817de1b41a73ef0a049fdb70, type: 3}
+--- !u!136 &423802809
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423802805}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.11249583
+  m_Height: 0.06349282
+  m_Direction: 1
+  m_Center: {x: 0.00000011920929, y: 0.000000014901161, z: 0.00000023841858}
 --- !u!1 &424336084
 GameObject:
   m_ObjectHideFlags: 0
@@ -23772,6 +23652,11 @@ PrefabInstance:
       propertyPath: fsm.states.Array.data[1].position.y
       value: 438.46875
       objectReference: {fileID: 0}
+    - target: {fileID: 4250418316097143495, guid: 708d6fe7da40c8c4e90e8bed85d41b0d,
+        type: 3}
+      propertyPath: Speed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4428794960094274859, guid: 708d6fe7da40c8c4e90e8bed85d41b0d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23810,7 +23695,7 @@ PrefabInstance:
     - target: {fileID: 4428794960094274859, guid: 708d6fe7da40c8c4e90e8bed85d41b0d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4428794960094274859, guid: 708d6fe7da40c8c4e90e8bed85d41b0d,
         type: 3}
@@ -40756,7 +40641,7 @@ PrefabInstance:
     - target: {fileID: 1161097781012716792, guid: 552089f10da08704d80d85ac1938fa6d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.2
+      value: -11.3
       objectReference: {fileID: 0}
     - target: {fileID: 1161097781012716792, guid: 552089f10da08704d80d85ac1938fa6d,
         type: 3}
@@ -40766,7 +40651,7 @@ PrefabInstance:
     - target: {fileID: 1161097781012716792, guid: 552089f10da08704d80d85ac1938fa6d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 124.4
+      value: 119.9
       objectReference: {fileID: 0}
     - target: {fileID: 1161097781012716792, guid: 552089f10da08704d80d85ac1938fa6d,
         type: 3}
