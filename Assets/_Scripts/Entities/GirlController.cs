@@ -37,9 +37,17 @@ public class GirlController : EntityController
         GameManager.Instance.LeftCon.TryGetFeatureValue(GameManager.Instance.Axis2D, out inputAxis);
     }
 
-    public override void FixedUpdate()
+    protected override void FixedUpdate()
     {
         base.FixedUpdate();
+
+        // Gravity 
+        if (characterController.isGrounded)
+            fallingSpeed = 0;
+        else
+            fallingSpeed += gravity * Time.fixedDeltaTime;
+
+        characterController.Move(Vector3.up * fallingSpeed * Time.fixedDeltaTime);
 
         if (speakingWithVillager) return;
 
@@ -85,7 +93,6 @@ public class GirlController : EntityController
         {
             GameManager.Instance.NearestVillager.GetComponent<PlayMakerFSM>().SendEvent("StartDialog");
             speakingWithVillager = true;
-            print("StartDialog");
         }
     }
 
@@ -93,7 +100,6 @@ public class GirlController : EntityController
     public void InteractionFinished()
     {
         speakingWithVillager = false;
-        print("InteractionFinished");
     }
 
 

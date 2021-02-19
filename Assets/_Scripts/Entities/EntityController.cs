@@ -32,7 +32,7 @@ public class EntityController : MonoBehaviour
         timeHash = Animator.StringToHash("Time");
     }
 
-    public virtual void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         if (increasingTime)
             animTime += Time.deltaTime;
@@ -48,13 +48,7 @@ public class EntityController : MonoBehaviour
             increasingTime = !increasingTime;
         }
 
-        // Hravity 
-        if (characterController.isGrounded)
-            fallingSpeed = 0;
-        else
-            fallingSpeed += gravity * Time.fixedDeltaTime;
 
-        characterController.Move(Vector3.up * fallingSpeed * Time.fixedDeltaTime);
 
         // Animations
         animator.SetFloat(velocityHash, velocity);

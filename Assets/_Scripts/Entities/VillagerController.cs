@@ -1,51 +1,47 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class VillagerController : EntityController
 {
-    public float LookAtDistance = 5;
-    //public float InteractionDistance = 2;
+    public bool FollowVero;
 
-    private bool lookingAtVero;
+    private NavMeshAgent agent;
+
 
     public override void Start()
     {
         Character = transform;
 
         base.Start();
+
+        agent = GetComponent<NavMeshAgent>();
     }
 
-    private void Update()
+    protected override void FixedUpdate()
     {
-        //float distToVero = Vector3.Distance(transform.position, GameManager.Instance.Vero.position);
+        base.FixedUpdate();
 
-        //// Interaction Distance
-        //if (distToVero < LookAtDistance)
+        if (!FollowVero) return;
+
+        agent.destination = GameManager.Instance.Vero.position;
+
+
+        //if (agent.remainingDistance <= agent.stoppingDistance)
         //{
-        //    GameManager.Instance.NearestVillager = this;
-        //    if (!lookingAtVero)
+        //    if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
         //    {
-        //        GameManager.Instance.NearestVillager.GetComponent<PlayMakerFSM>().SendEvent("LookAtVero");
-        //        lookingAtVero = true;
+        //        print("arrived");
         //    }
-
-        //}
-        //if (distToVero > LookAtDistance && GameManager.Instance.NearestVillager == this)
-        //{
-        //    if (lookingAtVero)
-        //    {
-        //        GameManager.Instance.NearestVillager.GetComponent<PlayMakerFSM>().SendEvent("IgnoreVero");
-        //        lookingAtVero = false;
-        //    }
-        //    GameManager.Instance.NearestVillager = null;
-
         //}
 
+        animator.SetFloat(velocityHash, agent.velocity.magnitude);
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!other.name.ToLower().Contains("vero")) return;
         GameManager.Instance.NearestVillager = this;
         GameManager.Instance.NearestVillager.GetComponent<PlayMakerFSM>().SendEvent("LookAtVero");
 
@@ -53,6 +49,7 @@ public class VillagerController : EntityController
 
     private void OnTriggerExit(Collider other)
     {
+        if (!other.name.ToLower().Contains("vero")) return;
         GameManager.Instance.NearestVillager.GetComponent<PlayMakerFSM>().SendEvent("IgnoreVero");
         GameManager.Instance.NearestVillager = null;
     }
