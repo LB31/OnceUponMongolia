@@ -23,10 +23,7 @@ public class TriggerEnterer : MonoBehaviour
         veroCams = transform.Find("VeroCams");
 
         foreach (Transform cam in veroCams)
-        {
             originCamPositions.Add(cam.localPosition);
-        }
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -46,14 +43,9 @@ public class TriggerEnterer : MonoBehaviour
         for (int i = 0; i < veroCams.childCount; i++)
         {
             if (inHouse)
-            {
                 veroCams.GetChild(i).localPosition = houseCamPositions[i];
-            }
             else
-            {
                 veroCams.GetChild(i).localPosition = originCamPositions[i];
-            }
         }
-
     }
 }
