@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &721685797684635319
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 721685797684635313}
+  - component: {fileID: 721685797684635318}
+  - component: {fileID: 721685797684635312}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &721685797684635313
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721685797684635319}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.21785688, y: 1.5480025, z: -1.3014574}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &721685797684635318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721685797684635319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ef978a447f1f44eaa930df4d7f2137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Vero: {fileID: 0}
+  SkyDome: {fileID: 0}
+  SkySpeed: 0.1
+  NearestVillager: {fileID: 0}
+  OculusInUse: 0
+  SnapTurnProvider: {fileID: 0}
+  XRInputLeft: {fileID: 0}
+  XRInputRight: {fileID: 0}
+--- !u!114 &721685797684635312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721685797684635319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62cabb70967304945b7d400a2652d7ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllDialogues: {fileID: 4900000, guid: 7c423a36469949744958c1d9274fc154, type: 3}
+  Dialogues: []
+  ScrollingSpeed: 0.03
+  outputText: []
