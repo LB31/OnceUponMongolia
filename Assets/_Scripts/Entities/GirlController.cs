@@ -100,6 +100,7 @@ public class GirlController : EntityController
     public void InteractionFinished()
     {
         speakingWithVillager = false;
+        GameManager.Instance.NearestVillager = null;
     }
 
 

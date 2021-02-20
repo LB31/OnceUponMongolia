@@ -163,6 +163,7 @@ public class DialogManager : Singleton<DialogManager>
             currentDialog.DialogText.text = "";
             currentDialog.gameObject.SetActive(false);
             currentDialog = null;
+            // For "Pending Dialog" state
             PlayMakerFSM.BroadcastEvent("DialogFinished");
 
         }
