@@ -64,7 +64,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ja
+  m_text: Yes
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 911f9219ea1b3d84086da007847bd6d9, type: 2}
   m_sharedMaterial: {fileID: 1511387613160251398, guid: 911f9219ea1b3d84086da007847bd6d9,
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 20.618158, w: 15.851866}
   m_textInfo:
     textComponent: {fileID: 1522244330391623190}
-    characterCount: 2
+    characterCount: 3
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -377,7 +377,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Nein
+  m_text: No
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 911f9219ea1b3d84086da007847bd6d9, type: 2}
   m_sharedMaterial: {fileID: 1511387613160251398, guid: 911f9219ea1b3d84086da007847bd6d9,
@@ -447,7 +447,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 20.618158, w: 15.851866}
   m_textInfo:
     textComponent: {fileID: 1544848950144514661}
-    characterCount: 4
+    characterCount: 2
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -499,7 +499,7 @@ RectTransform:
   m_GameObject: {fileID: 7727566410162845132}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 406}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalScale: {x: 0.015, y: 0.015, z: 0.015}
   m_Children:
   - {fileID: 7727566410645941663}
   m_Father: {fileID: 0}
