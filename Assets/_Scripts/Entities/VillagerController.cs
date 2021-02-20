@@ -17,7 +17,8 @@ public class VillagerController : EntityController
         base.Start();
 
         agent = GetComponent<NavMeshAgent>();
-        agent.speed = Speed;
+        if (agent)
+            agent.speed = Speed;
     }
 
     protected override void FixedUpdate()
@@ -28,6 +29,7 @@ public class VillagerController : EntityController
 
         agent.destination = GameManager.Instance.Vero.position;
 
+        animator.SetFloat(velocityHash, agent.velocity.magnitude);
 
         //if (agent.remainingDistance <= agent.stoppingDistance)
         //{
@@ -37,7 +39,6 @@ public class VillagerController : EntityController
         //    }
         //}
 
-        animator.SetFloat(velocityHash, agent.velocity.magnitude);
     }
 
     private void OnTriggerEnter(Collider other)
