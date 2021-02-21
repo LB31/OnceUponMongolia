@@ -14,7 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   variables:
     floatVariables: []
-    intVariables: []
+    intVariables:
+    - useVariable: 1
+      name: StoryPart
+      tooltip: 0=start; 1=goBoat; 2=sitStairs; 3=youReady;
+      showInInspector: 0
+      networkSync: 0
+      value: 0
     boolVariables: []
     stringVariables: []
     vector2Variables: []
@@ -22,7 +28,14 @@ MonoBehaviour:
     colorVariables: []
     rectVariables: []
     quaternionVariables: []
-    gameObjectVariables: []
+    gameObjectVariables:
+    - useVariable: 1
+      name: MarkerHailStone
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: {fileID: 8518195127505558319, guid: 6d855f128e8ee97478c638e6861fe488,
+        type: 3}
     objectVariables: []
     materialVariables: []
     textureVariables: []
@@ -43,10 +56,13 @@ MonoBehaviour:
     enumVariables: []
     categories:
     - 
-    variableCategoryIDs: 00000000
+    variableCategoryIDs: 000000000000000000000000
   events:
   - jurteLevelReady
   - Area A
   - 'Tutorial '
   - Quest
   - ContinueStory
+  - SitOnStairs
+  - AreYouReady
+  - QuestGetWood

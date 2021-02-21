@@ -23,6 +23,9 @@ public class VillagerController : EntityController
 
     protected override void FixedUpdate()
     {
+        if (name == "HailStone")
+            Debug.Log(transform.position);
+
         base.FixedUpdate();
 
         if (!FollowVero) return;
@@ -55,4 +58,10 @@ public class VillagerController : EntityController
         GetComponent<PlayMakerFSM>().SendEvent("IgnoreVero");
         GameManager.Instance.NearestVillager = null;
     }
+
+    public void TriggerFollowingVero(bool follow)
+    {
+        FollowVero = follow;
+    }
+
 }
