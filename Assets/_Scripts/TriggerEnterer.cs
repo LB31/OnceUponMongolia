@@ -28,7 +28,7 @@ public class TriggerEnterer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name.Contains("YurteCollider"))
+        if (other.name.Contains("YurteCollider") && other is CapsuleCollider)
             ChangeCams(true);
     }
 
