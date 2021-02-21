@@ -54,6 +54,7 @@ public class QuestMarkerController : MonoBehaviour
 
         while (true)
         {
+            yield return new WaitForSeconds(2);
             float distance = Vector3.Distance(transform.position, GameManager.Instance.Vero.position);
 
             if (distance > 100)
@@ -72,7 +73,7 @@ public class QuestMarkerController : MonoBehaviour
             startScale = originStartScale * scale;
             endScale = originEndScale * scale;
             transform.localPosition = new Vector3(transform.localPosition.x, OriginHeight, transform.localPosition.z) + new Vector3(0, scale * 10, 0);
-            yield return new WaitForSeconds(2);
+            
         }
     }
 

@@ -99,8 +99,9 @@ public class GirlController : EntityController
     // Currently called by FSM event: Deactivate Dialog Box
     public void InteractionFinished()
     {
-        speakingWithVillager = false;
+        print("interaction finished");
         GameManager.Instance.NearestVillager = null;
+        speakingWithVillager = false;
     }
 
 
