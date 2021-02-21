@@ -26,19 +26,19 @@ public class QuestMarkerController : MonoBehaviour
     public float scaleRate;
     private float scaleTimer;
 
-    private Vector3 originPosition;
+    private float OriginHeight;
     private Vector3 originStartScale;
     private Vector3 originEndScale;
 
     private void Awake()
     {
-        originPosition = transform.position;
         originStartScale = startScale;
         originEndScale = endScale;
     }
 
     private void OnEnable()
     {
+        OriginHeight = transform.localPosition.y;
         StartCoroutine(ReactToVeroDistance());
     }
 
@@ -49,10 +49,13 @@ public class QuestMarkerController : MonoBehaviour
 
     private IEnumerator ReactToVeroDistance()
     {
+        float scale;
+        float prevScale = 0;
+
         while (true)
         {
             float distance = Vector3.Distance(transform.position, GameManager.Instance.Vero.position);
-            float scale;
+
             if (distance > 100)
                 scale = 3;
             else if (distance > 50)
@@ -62,11 +65,14 @@ public class QuestMarkerController : MonoBehaviour
             else
                 scale = 1;
 
+            if (scale != prevScale)
+                prevScale = scale;
+            else continue;
+
             startScale = originStartScale * scale;
             endScale = originEndScale * scale;
-            transform.position = originPosition + new Vector3(0, scale * 10, 0);
-
-            yield return new WaitForSeconds(3);
+            transform.localPosition = new Vector3(transform.localPosition.x, OriginHeight, transform.localPosition.z) + new Vector3(0, scale * 10, 0);
+            yield return new WaitForSeconds(2);
         }
     }
 

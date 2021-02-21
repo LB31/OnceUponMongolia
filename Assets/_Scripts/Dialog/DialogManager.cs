@@ -160,11 +160,14 @@ public class DialogManager : Singleton<DialogManager>
         {
             await Task.Delay(500);
             currentTextIndex = 0;
+            // For "Pending Dialog" state
+            PlayMakerFSM.BroadcastEvent("DialogFinished");
+
+            if (currentDialog == null) return;
             currentDialog.DialogText.text = "";
             currentDialog.gameObject.SetActive(false);
             currentDialog = null;
-            // For "Pending Dialog" state
-            PlayMakerFSM.BroadcastEvent("DialogFinished");
+
 
         }
     }

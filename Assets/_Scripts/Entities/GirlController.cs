@@ -89,7 +89,7 @@ public class GirlController : EntityController
     public void Interact()
     {
         if (GameManager.Instance.NearestVillager != null && 
-            Vector3.Distance(GameManager.Instance.Vero.position, GameManager.Instance.NearestVillager.transform.position) < 2)
+            Vector3.Distance(GameManager.Instance.Vero.position, GameManager.Instance.NearestVillager.transform.position) < 4)
         {
             GameManager.Instance.NearestVillager.GetComponent<PlayMakerFSM>().SendEvent("StartDialog");
             speakingWithVillager = true;

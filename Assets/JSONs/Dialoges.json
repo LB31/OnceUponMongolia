@@ -132,15 +132,15 @@
             "quests": [
                 {
                     "task": [
-                        "Boot. jetzt",
-                        "muhahaha"
+                        "So granny said that we need to collect some wood?",
+                        "Then we need to take the boat and to meet my father Great Tiger on the other side",
+                        "I want to become a man, like no one ever was!"
                     ],
                     "hint": [
-                        "boobies",
-                        "death"
+                        "Gurl, let's take the boat"
                     ],
                     "ready": [
-                        "toches"
+                        "Good job. Finally we have some wood"
                     ]
                 },
                 {
