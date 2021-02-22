@@ -34,8 +34,8 @@ public class PositionChanger : MonoBehaviour
             ChangeTransform();
         //RegisterButtonEvents();
 
-        volume = FindObjectOfType<Volume>();
-        volume.profile.TryGet(out lensDistortion);
+        //volume = FindObjectOfType<Volume>();
+        //volume.profile.TryGet(out lensDistortion);
     }
 
     private void OnEnable()
@@ -114,7 +114,7 @@ public class PositionChanger : MonoBehaviour
             distance = Vector3.Distance(transform.position, goal.position);
             transform.position = Vector3.MoveTowards(transform.position, goal.position, Time.deltaTime * 5);
 
-            lensDistortion.intensity.value = 1 - (1 / distance);
+            //lensDistortion.intensity.value = 1 - (1 / distance);
 
             yield return null;
         }

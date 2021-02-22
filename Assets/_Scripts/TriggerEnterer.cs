@@ -33,6 +33,8 @@ public class TriggerEnterer : MonoBehaviour
         if (other.name.Contains("boat"))
         {
             // TODO boat action
+            // Fade screen
+            // move Vero, HailStone and hit boat to other side
         }
     }
 

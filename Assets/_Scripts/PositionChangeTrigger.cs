@@ -40,6 +40,7 @@ public class PositionChangeTrigger : MonoBehaviour
         }
 
         ChangePosition();
+        yield return new WaitForSeconds(1);
 
         for (float i = 1; i >= 0; i -= Time.deltaTime * FadeDuration)
         {

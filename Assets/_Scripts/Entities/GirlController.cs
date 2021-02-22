@@ -39,7 +39,7 @@ public class GirlController : EntityController
         player = FindObjectOfType<XRRig>().transform;
 
         // Simulator
-        if (SimulatorObj.activeSelf)
+        if (SimulatorObj && SimulatorObj.activeSelf)
             useSimulator = true;
     }
 
