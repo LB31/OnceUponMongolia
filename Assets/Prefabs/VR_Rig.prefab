@@ -7733,6 +7733,7 @@ MonoBehaviour:
   Speed: 4
   TurnSmoothTime: 0.1
   AnimationTime: 20
+  SimulatorObj: {fileID: 0}
   speakingWithVillager: 0
 --- !u!114 &5601499130302856066
 MonoBehaviour:
