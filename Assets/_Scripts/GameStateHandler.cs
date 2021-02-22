@@ -19,7 +19,7 @@ public class GameStateHandler : MonoBehaviour
         continuousMovement = GetComponent<ContinuousMovement>();
         snapTurnProvider = GetComponent<DeviceBasedSnapTurnProvider>();
         positionChanger = GetComponent<PositionChanger>();
-        girlController = GetComponent<GirlController>();
+        girlController = FindObjectOfType<GirlController>();
 
         //allComponents.Add(characterController);
         allComponents.Add(continuousMovement);

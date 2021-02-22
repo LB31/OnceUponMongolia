@@ -48,8 +48,6 @@ public class EntityController : MonoBehaviour
             increasingTime = !increasingTime;
         }
 
-
-
         // Animations
         animator.SetFloat(velocityHash, velocity);
         animator.SetFloat(timeHash, animTime);

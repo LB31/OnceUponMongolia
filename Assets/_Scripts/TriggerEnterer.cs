@@ -30,6 +30,10 @@ public class TriggerEnterer : MonoBehaviour
     {
         if (other.name.Contains("YurteCollider") && other is CapsuleCollider)
             ChangeCams(true);
+        if (other.name.Contains("boat"))
+        {
+            // TODO boat action
+        }
     }
 
     private void OnTriggerExit(Collider other)
