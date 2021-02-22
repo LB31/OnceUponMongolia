@@ -49,6 +49,8 @@ public class EntityController : MonoBehaviour
         }
 
         // Animations
+        if (!animator) return;
+
         animator.SetFloat(velocityHash, velocity);
         animator.SetFloat(timeHash, animTime);
 
