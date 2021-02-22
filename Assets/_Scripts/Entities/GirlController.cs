@@ -20,6 +20,7 @@ public class GirlController : EntityController
     {
         XRControls.Instance.ControllerEventTrigger -= Interact;
         XRControls.Instance.ControllerEventTrigger += Interact;
+        Simulator.ButtonEvent.RemoveAllListeners();
         Simulator.ButtonEvent.AddListener(Interact);
     }
 
@@ -109,6 +110,7 @@ public class GirlController : EntityController
         {
             GameManager.Instance.NearestVillager.GetComponent<PlayMakerFSM>().SendEvent("StartDialog");
             speakingWithVillager = true;
+            Debug.LogError("y u interact againo?!");
         }
     }
 
