@@ -29,6 +29,7 @@ public class QuestsTexts
 {
     public List<string> task;
     public List<string> hint;
+    public List<string> hintSecond;
     public List<string> ready;
 }
 

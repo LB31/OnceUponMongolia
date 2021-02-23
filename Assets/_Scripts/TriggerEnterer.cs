@@ -83,6 +83,7 @@ public class TriggerEnterer : MonoBehaviour
                 float offset = onTempleSide ? -5 : 5;
                 hailStone.transform.position = GetNextTransform(nextLocation).position + new Vector3(offset, 0, 0);
                 hailStone.GetComponent<NavMeshAgent>().enabled = true;
+                hailStone.GetComponent<PlayMakerFSM>().FsmVariables.GetFsmBool("giveSecondHint").Value = !onTempleSide;
             }
 
 

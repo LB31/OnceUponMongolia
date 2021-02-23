@@ -62,10 +62,12 @@ public class DialogManager : Singleton<DialogManager>
                 outputText = itemTexts.dialogs[entryNumber].text;
                 break;
             case TypeMessage.quest:
-                if (questType.ToString() == "task")
+                if (questType == QuestType.task)
                     outputText = itemTexts.quests[entryNumber].task;
                 else if (questType.ToString() == "hint")
                     outputText = itemTexts.quests[entryNumber].hint;
+                else if (questType == QuestType.hintSecond)
+                    outputText = itemTexts.quests[entryNumber].hintSecond;
                 else if (questType.ToString() == "ready")
                     outputText = itemTexts.quests[entryNumber].ready;
                 break;
