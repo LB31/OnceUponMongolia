@@ -2,12 +2,14 @@
 {
     Vero,
     SevenStar, // Grandmother
+    SevenStarFancy, // Grandmother ready to party
     Bartor, // Father from bride and boy
     MoonLight, // bride
     LittleGreenCoat, // little boy
     HailStone, // Lover guy
     GreatTiger, // Old Husband, father from lover guy
-    GentleWind // Old Wife, mother from lover guy
+    GentleWind, // Old Wife, mother from lover guy
+    Boat // Needed for Markers
 }
 
 public enum TypeMessage

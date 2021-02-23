@@ -25,7 +25,7 @@ public class VillagerController : EntityController
     {
         base.FixedUpdate();
 
-        if (!FollowVero) return;
+        if (!FollowVero || !agent) return;
 
         agent.destination = GameManager.Instance.Vero.position;
 
