@@ -186,6 +186,67 @@
                     ]
                 }
             ]
+        },
+                {
+            "id": 3,
+            "characterName": "GreatTiger",
+            "veroTexts": null,
+            "dialogs": [
+                {
+                    "text": [
+                        "So you kids need some wood to build a Yourt? Cute",
+                        "I'll give you some. But beware: in the Beta you'll need to chop it yourself!"
+                    ]
+                },
+                {
+                    "text": [
+                        ""
+                    ]
+                }
+            ],
+            "quests": [
+                {
+                    "task": [
+                        ""
+                    ],
+                    "hint": [
+                        "Gurl, let's take the boat"
+                    ],
+                    "hintSecond": [
+                        "My father is over there"
+                    ],
+                    "ready": [
+                        "Good job. Finally we have some wood"
+                    ]
+                },
+                {
+                    "task": [
+                        "mach ma, du arsch",
+                        "mimimi"
+                    ],
+                    "hint": [
+                        "boobies",
+                        "ops"
+                    ],
+                    "ready": [
+                        "toches"
+                    ]
+                }
+            ],
+            "randomAnswers": [
+                {
+                    "answer": [
+                        "obama cares",
+                        "so much"
+                    ]
+                },
+                {
+                    "answer": [
+                        "adi cares",
+                        "not so much"
+                    ]
+                }
+            ]
         }
     ]
 }

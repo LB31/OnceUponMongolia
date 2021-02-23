@@ -15,8 +15,9 @@ public class TriggerEnterer : MonoBehaviour
 {
     public float FadeSpeed = 0.5f;
 
-    public List<CustomTransform> VeroPositions;
     // Teleport Positions
+    public List<CustomTransform> VeroPositions;
+
     public List<Vector3> BoatPositions = new List<Vector3>()
     {
         new Vector3(70f, 2.8f, 97f), // boat right origin
@@ -28,14 +29,15 @@ public class TriggerEnterer : MonoBehaviour
     private bool onTempleSide;
     private bool inTrigger;
 
+
     private Transform veroCams;
     private List<Vector3> originCamPositions = new List<Vector3>();
     private List<Vector3> houseCamPositions = new List<Vector3>()
     {
-        new Vector3(0, 1, -2), // back
-        new Vector3(-2, 1, 0), // left
-        new Vector3(0, 1, 2), // front
-        new Vector3(2, 1, 0), // right
+        new Vector3(0, 1.5f, -2), // back
+        new Vector3(-2, 1.5f, 0), // left
+        new Vector3(0, 1.5f, 2), // front
+        new Vector3(2, 1.5f, 0), // right
     };
 
     private Image sceneChanger;
@@ -84,6 +86,9 @@ public class TriggerEnterer : MonoBehaviour
                 hailStone.transform.position = GetNextTransform(nextLocation).position + new Vector3(offset, 0, 0);
                 hailStone.GetComponent<NavMeshAgent>().enabled = true;
                 hailStone.GetComponent<PlayMakerFSM>().FsmVariables.GetFsmBool("giveSecondHint").Value = !onTempleSide;
+                // Trigger quest markers
+                GameManager.Instance.QuestMarkers.First(m => m.MarkerOwner == Person.GreatTiger).MarkerObject.SetActive(!onTempleSide);
+                GameManager.Instance.QuestMarkers.First(m => m.MarkerOwner == Person.Boat).MarkerObject.SetActive(onTempleSide);
             }
 
 

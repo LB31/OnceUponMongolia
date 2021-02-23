@@ -18,6 +18,8 @@ public class GameManager : Singleton<GameManager>
 
     public VillagerController NearestVillager;
 
+    public List<MarkerCollector> QuestMarkers;
+
     [HideInInspector] public bool OculusInUse;
     [HideInInspector] public DeviceBasedSnapTurnProvider SnapTurnProvider;
     [HideInInspector] public XRInput XRInputLeft;
@@ -57,4 +59,12 @@ public class GameManager : Singleton<GameManager>
         if (SkyDome)
             SkyDome.Rotate(new Vector3(0, SkySpeed, 0));
     }
+}
+
+[Serializable]
+public class MarkerCollector
+{
+    public string MarkerName;
+    public Person MarkerOwner;
+    public GameObject MarkerObject;
 }
