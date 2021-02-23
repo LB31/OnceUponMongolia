@@ -10,6 +10,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class GameManager : Singleton<GameManager>
 {
     public Transform Vero;
+    public Transform Player;
 
     public Transform SkyDome;
     public float SkySpeed = 0.1f;
@@ -27,6 +28,8 @@ public class GameManager : Singleton<GameManager>
     protected override void Awake()
     {
         base.Awake();
+
+        Player = FindObjectOfType<XRRig>().transform;
 
         GetXRInputs();
     }
