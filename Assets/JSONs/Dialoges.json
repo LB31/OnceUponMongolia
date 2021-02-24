@@ -193,7 +193,7 @@
             "dialogs": [
                 {
                     "text": [
-                        "The precious things of the shaman these, the white jaws of a MOUSE in the first year."
+                        "The precious things of the shaman these, the white jaws of a MOUSE in the first year ~🎶🎵"
                     ]
                 },
                 {
@@ -206,10 +206,11 @@
             "quests": [
                 {
                     "task": [
-                        ""
+                        "This is a great place for the Party Yurt!",
+                        "Go to the future bride Moon Light. She will give you some frabrics"
                     ],
                     "hint": [
-                        "Gurl, let's take the boat"
+                        "Go to Moon Light for some fabrics"
                     ],
                     "hintSecond": [
                         "My father is over there"
