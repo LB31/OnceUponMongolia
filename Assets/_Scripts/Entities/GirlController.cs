@@ -108,12 +108,11 @@ public class GirlController : EntityController
     public void Interact()
     {
         GameManager gm = GameManager.Instance;
-
         if (gm.NearestVillager != null && Vector3.Distance(gm.Vero.position, gm.NearestVillager.transform.position) < InteractionDistance)
         {
             gm.NearestVillager.GetComponent<PlayMakerFSM>().SendEvent("StartDialog");
             speakingWithVillager = true;
-            Debug.LogError("y u interact againo?!");
+            Debug.Log("y u interact againo?!");
         }
     }
 
