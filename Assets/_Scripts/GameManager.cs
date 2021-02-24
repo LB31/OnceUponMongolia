@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -58,6 +59,14 @@ public class GameManager : Singleton<GameManager>
     {
         if (SkyDome)
             SkyDome.Rotate(new Vector3(0, SkySpeed, 0));
+    }
+
+    // During the runtime sometimes new GameObjects are create for assigning positions
+    // This mehtod destroys them
+    public async void DestryEmptyObjects(GameObject objToDestroy)
+    {
+        await Task.Delay(1000);
+        Destroy(objToDestroy);
     }
 }
 

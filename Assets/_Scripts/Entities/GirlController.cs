@@ -7,6 +7,8 @@ public class GirlController : EntityController
     // Simulator
     public GameObject SimulatorObj;
 
+    public float InteractionDistance = 4;
+
     private Vector2 inputAxis;
     private float turnSmoothVelocity;
     private PositionChanger positionChanger;
@@ -52,6 +54,8 @@ public class GirlController : EntityController
     {
         base.FixedUpdate();
 
+        if (speakingWithVillager || !characterController.enabled) return;
+
         // Gravity 
         if (characterController.isGrounded)
             fallingSpeed = 0;
@@ -59,8 +63,6 @@ public class GirlController : EntityController
             fallingSpeed += gravity * Time.fixedDeltaTime;
 
         characterController.Move(Vector3.up * fallingSpeed * Time.fixedDeltaTime);
-
-        if (speakingWithVillager) return;
 
         // Controlling
         if (inputAxis.magnitude > 0.2f || Simulator.Movement.magnitude > 0.2f)
@@ -105,10 +107,11 @@ public class GirlController : EntityController
 
     public void Interact()
     {
-        if (GameManager.Instance.NearestVillager != null && 
-            Vector3.Distance(GameManager.Instance.Vero.position, GameManager.Instance.NearestVillager.transform.position) < 4)
+        GameManager gm = GameManager.Instance;
+
+        if (gm.NearestVillager != null && Vector3.Distance(gm.Vero.position, gm.NearestVillager.transform.position) < InteractionDistance)
         {
-            GameManager.Instance.NearestVillager.GetComponent<PlayMakerFSM>().SendEvent("StartDialog");
+            gm.NearestVillager.GetComponent<PlayMakerFSM>().SendEvent("StartDialog");
             speakingWithVillager = true;
             Debug.LogError("y u interact againo?!");
         }
