@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class RayControllerVR : MonoBehaviour
+public class XRRayController : MonoBehaviour
 {
     private XRController xrController;
     private XRRayInteractor rayInteractor;

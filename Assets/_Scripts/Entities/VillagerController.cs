@@ -44,6 +44,8 @@ public class VillagerController : EntityController
     private void OnTriggerEnter(Collider other)
     {
         if (!other.name.ToLower().Contains("vero")) return;
+        if (GameManager.Instance.NearestVillager != null)
+            return;
         GameManager.Instance.NearestVillager = this;
         GetComponent<PlayMakerFSM>().SendEvent("LookAtVero");
 

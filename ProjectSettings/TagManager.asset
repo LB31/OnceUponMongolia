@@ -9,6 +9,7 @@ TagManager:
   - Dice
   - Ground
   - Vero
+  - DialogBox
   layers:
   - Default
   - TransparentFX

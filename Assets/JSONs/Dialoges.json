@@ -56,8 +56,7 @@
             "quests": [
                 {
                     "task": [
-                        "blub",
-                        "mimimi"
+                        "Bubbale, go and search for Hail Stone. If I were a few years younger I would clearly snack his Toches >;->"
                     ],
                     "hint": [
                         "boobies",
@@ -194,13 +193,13 @@
             "dialogs": [
                 {
                     "text": [
-                        "So you kids need some wood to build a Yourt? Cute",
-                        "I'll give you some. But beware: in the Beta you'll need to chop it yourself!"
+                        "The precious things of the shaman these, the white jaws of a MOUSE in the first year."
                     ]
                 },
                 {
                     "text": [
-                        ""
+                        "So you kids need some wood to build a Yourt? Cute",
+                        "I'll give you some. But beware: in the Beta you'll need to chop it yourself!"
                     ]
                 }
             ],
