@@ -49610,7 +49610,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 780593679, guid: 552089f10da08704d80d85ac1938fa6d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 780593680, guid: 552089f10da08704d80d85ac1938fa6d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -49622,7 +49622,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2028333287, guid: 552089f10da08704d80d85ac1938fa6d, type: 3}
       propertyPath: Speed
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2028333287, guid: 552089f10da08704d80d85ac1938fa6d, type: 3}
       propertyPath: InteractionDistance
@@ -49631,7 +49631,7 @@ PrefabInstance:
     - target: {fileID: 1161097781012716792, guid: 552089f10da08704d80d85ac1938fa6d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 53.7
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1161097781012716792, guid: 552089f10da08704d80d85ac1938fa6d,
         type: 3}
@@ -49641,7 +49641,7 @@ PrefabInstance:
     - target: {fileID: 1161097781012716792, guid: 552089f10da08704d80d85ac1938fa6d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 103.2
+      value: 123.6
       objectReference: {fileID: 0}
     - target: {fileID: 1161097781012716792, guid: 552089f10da08704d80d85ac1938fa6d,
         type: 3}
@@ -56614,7 +56614,7 @@ MonoBehaviour:
     dataVersion: 2
     usedInTemplate: {fileID: 0}
     name: FirstQuest
-    startState: Prepare HailStone for Trip
+    startState: HailStone waits for Vero
     states:
     - name: HailStone waits for Vero
       description: 
