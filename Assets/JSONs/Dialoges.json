@@ -178,7 +178,7 @@
                 }
             ]
         },
-                {
+        {
             "id": 3,
             "characterName": "GreatTiger",
             "veroTexts": null,
@@ -210,19 +210,6 @@
                     "ready": [
                         "Good job. Finally we have some wood"
                     ]
-                },
-                {
-                    "task": [
-                        "mach ma, du arsch",
-                        "mimimi"
-                    ],
-                    "hint": [
-                        "boobies",
-                        "ops"
-                    ],
-                    "ready": [
-                        "toches"
-                    ]
                 }
             ],
             "randomAnswers": [
@@ -231,11 +218,51 @@
                         "obama cares",
                         "so much"
                     ]
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "characterName": "MoonLight",
+            "veroTexts": null,
+            "dialogs": [
+                {
+                    "text": [
+                        "My lover wants to build a Party Yurt for me?",
+                        "Noice, totally my jam!",
+                        "Then he will surely need some hot colors. Go to the barn to get some"
+                    ]
                 },
                 {
+                    "text": [
+                        "So you kids need some wood to build a Yourt? Cute",
+                        "I'll give you some. But beware: in the Beta you'll need to chop it yourself!"
+                    ]
+                }
+            ],
+            "quests": [
+                {
+                    "task": [
+                        "You need some fabrics for my Party Yurt? Then you shall get them!",
+                        "YOU GOT FABRICS",
+                        "For the fancy colors go to the barn"
+                    ],
+                    "hint": [
+                        "Hey, I need some me-time now! Get some colors at the barn"
+                    ],
+                    "hintSecond": [
+                        "I'm so wet now"
+                    ],
+                    "ready": [
+                        "Noice"
+                    ]
+                }
+            ],
+            "randomAnswers": [
+                {
                     "answer": [
-                        "adi cares",
-                        "not so much"
+                        "obama cares",
+                        "so much"
                     ]
                 }
             ]
