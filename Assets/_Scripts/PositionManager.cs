@@ -26,8 +26,8 @@ public class PositionManager : Singleton<PositionManager>
     {
         base.Awake();
 
-        sceneChanger = GameObject.Find("WorldSwitchCanvas")
-            .transform.GetChild(0).GetComponent<Image>();
+        GameObject switchCanvas = GameObject.Find("WorldSwitchCanvas");
+        sceneChanger = switchCanvas != null ? switchCanvas.transform.GetChild(0).GetComponent<Image>() : null;
     }
 
     public void TeleportCharacter(Transform chartToMove, Transform nextLocation)
@@ -51,9 +51,9 @@ public class PositionManager : Singleton<PositionManager>
         chartToMove.GetComponent<NavMeshAgent>().enabled = true;
     }
 
-    public void TeleportObject(Transform objToMove, Vector3 nextPos)
+    public void TeleportObject(GameObject objToMove, Vector3 nextPos)
     {
-        objToMove.position = nextPos;
+        objToMove.transform.position = nextPos;
     }
 
     public Transform GetNextTransform(Location location)
@@ -85,6 +85,12 @@ public class PositionManager : Singleton<PositionManager>
     public void ChangeVeroPositionFSM(Vector3 nextPos)
     {
         ChangeVeroPosition(TeleportCharacter, GameManager.Instance.Vero, nextPos);
+    }
+
+    public void ChangeVeroPositionFSM(Location nextLocation)
+    {
+        CustomTransform nextPos = VeroPositions.Find(l => l.Location == nextLocation);
+        ChangeVeroPosition(TeleportCharacter, GameManager.Instance.Vero, nextPos.Position);
     }
 
     public async Task VisualizeSceneChange(bool forth)
