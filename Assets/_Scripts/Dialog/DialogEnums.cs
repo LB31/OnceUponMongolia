@@ -40,6 +40,7 @@ public enum VeroType
     father,
     girl,
     boy,
-    itemfound
+    itemfound,
+    question
 }
 

@@ -109,7 +109,10 @@ public class DialogManager : Singleton<DialogManager>
                 output = itemTexts.veroTexts.boy[entryNumber];
                 break;
             case VeroType.itemfound:
-                output = itemTexts.veroTexts.itemfound[entryNumber];
+                output = itemTexts.veroTexts.itemFound[entryNumber];
+                break;
+            case VeroType.question:
+                output = itemTexts.veroTexts.question[entryNumber];
                 break;
             default:
                 break;

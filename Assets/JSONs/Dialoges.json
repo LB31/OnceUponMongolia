@@ -5,7 +5,7 @@
             "characterName": "Vero",
             "veroTexts": {
                 "hints": [
-                    "Wo bin ich? Und dann kam die Feuernation und alles änderte sich!",
+                    "Mau",
                     "geh mal zum Jungen, lak shu",
                     "Tadelü"
                 ],
@@ -29,9 +29,14 @@
                     "basa"
                 ],
                 "itemFound": [
-                    "cool thing",
+                    "I've got the Color. Hey yeah heh. I've got the Color",
                     "always needed this",
                     "best stuff ever"
+                ],
+                "question": [
+                    "Are you ready?",
+                    "Then let's continue!",
+                    "Alright. Take your time, honey"
                 ]
             }
         },

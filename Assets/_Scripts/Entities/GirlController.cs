@@ -97,7 +97,7 @@ public class GirlController : EntityController
             animTime = 0;
             increasingTime = true;
             velocity = 0;
-        }       
+        }
     }
 
     private void LateUpdate()
@@ -113,7 +113,24 @@ public class GirlController : EntityController
         {
             gm.NearestVillager.GetComponent<PlayMakerFSM>().SendEvent("StartDialog");
             speakingWithVillager = true;
-            Debug.Log("y u interact againo?!");
+        }
+        // Collect item
+        if (TriggerEnterer.CurrentItemInRange && !speakingWithVillager)
+        {
+            string foundItem = TriggerEnterer.CurrentItemInRange.name;
+            int itemNumber = -1;
+            if (foundItem.Contains("Buckets")) itemNumber = 0;
+
+            // TODO Vero says..
+            GetComponent<PlayMakerFSM>().FsmVariables.GetFsmInt("FoundItemNumber").Value = itemNumber;
+            PlayMakerFSM.BroadcastEvent("ItemCollected");
+            // Stop movement
+            speakingWithVillager = true;
+        }
+        else if (TriggerEnterer.CurrentItemInRange && speakingWithVillager)
+        {
+            GetComponent<PlayMakerFSM>().SendEvent("StartDialog");
+            Destroy(TriggerEnterer.CurrentItemInRange);
         }
     }
 

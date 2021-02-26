@@ -48,5 +48,6 @@ public class VeroTexts
     public List<string> girl;
     public List<string> boy;
     // 0 = itemX, 1 = itemY ..
-    public List<string> itemfound;
+    public List<string> itemFound;
+    public List<string> question;
 }
