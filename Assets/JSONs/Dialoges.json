@@ -244,7 +244,7 @@
                 {
                     "task": [
                         "You need some fabrics for my Party Yurt? Then you shall get them!",
-                        "YOU GOT FABRICS",
+                        "*YOU GOT FABRICS*",
                         "For the fancy colors go to the barn"
                     ],
                     "hint": [

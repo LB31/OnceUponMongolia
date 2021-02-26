@@ -22,6 +22,7 @@ public class GirlController : EntityController
     {
         XRControls.Instance.ControllerEventTrigger -= Interact;
         XRControls.Instance.ControllerEventTrigger += Interact;
+        // Simulator
         Simulator.ButtonEvent.RemoveAllListeners();
         Simulator.ButtonEvent.AddListener(Interact);
     }

@@ -9,7 +9,9 @@
     HailStone, // Lover guy
     GreatTiger, // Old Husband, father from lover guy
     GentleWind, // Old Wife, mother from lover guy
-    Boat // Needed for Markers
+    // Needed for Markers
+    Boat, 
+    WheelBarrow
 }
 
 public enum TypeMessage
