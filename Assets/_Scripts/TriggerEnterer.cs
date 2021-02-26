@@ -15,6 +15,8 @@ public class TriggerEnterer : MonoBehaviour
 {
     public float FadeSpeed = 0.5f;
 
+    public static GameObject CurrentItemInRange;
+
     private bool onTempleSide;
     private bool inTrigger;
 
@@ -45,6 +47,9 @@ public class TriggerEnterer : MonoBehaviour
         if (inTrigger) return;
         inTrigger = true;
 
+        if (other.tag == "Item"){
+            CurrentItemInRange = other.gameObject;
+        }
         if (other.name.Contains("YurteCollider") && other is CapsuleCollider)
             ChangeVRCamDistance(true);
         if (other.name.Contains("boat"))
@@ -93,6 +98,8 @@ public class TriggerEnterer : MonoBehaviour
     {
         if (other.name.Contains("YurteCollider"))
             ChangeVRCamDistance(false);
+        if (other.tag == "Item")
+            CurrentItemInRange = null;
     }
 
     // For entering yurts
