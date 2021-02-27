@@ -85,6 +85,7 @@ public class SnapController : MonoBehaviour
         if (AllBlanketParts.AllParts.Count == 0 &&AllWoodenParts.AllParts.Count == 0)
         {
             Debug.Log("READY WITH BUILDING YURT");
+            PlayMakerFSM.BroadcastEvent("ContinueStory");
         }
 
         

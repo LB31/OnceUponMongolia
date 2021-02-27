@@ -42,6 +42,9 @@ public class DialogManager : Singleton<DialogManager>
 
         currentDialog.CharacterName.text = person.ToString();
 
+        // Reset output
+        outputText = new List<string>();
+
         if (person.Equals(Person.Vero))
             BuildVeroDialog(veroType, entryNumber);
         else

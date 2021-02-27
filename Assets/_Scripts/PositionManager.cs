@@ -82,6 +82,11 @@ public class PositionManager : Singleton<PositionManager>
         await VisualizeSceneChange(false);
     }
 
+    public void ChangePositionFSM(GameObject objToMove, Vector3 nextPos)
+    {
+        ChangeVeroPosition(TeleportCharacter, objToMove.transform, nextPos);
+    }
+
     public void ChangeVeroPositionFSM(Vector3 nextPos)
     {
         ChangeVeroPosition(TeleportCharacter, GameManager.Instance.Vero, nextPos);
