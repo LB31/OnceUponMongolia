@@ -31,7 +31,10 @@ public class GirlController : EntityController
 
     private void OnDisable()
     {
-        XRControls.Instance.RemoveTriggerEvents();
+        ResetMovement();
+        // TODO test if this works
+        XRControls.Instance.ControllerEventTrigger -= Interact;
+        //XRControls.Instance.RemoveTriggerEvents(); 
     }
 
     public override void Start()
@@ -95,11 +98,16 @@ public class GirlController : EntityController
         }
         else if (moving)
         {
-            moving = false;
-            animTime = 0;
-            increasingTime = true;
-            velocity = 0;
+            ResetMovement();
         }
+    }
+
+    private void ResetMovement()
+    {
+        moving = false;
+        animTime = 0;
+        increasingTime = true;
+        velocity = 0;
     }
 
     private void LateUpdate()
@@ -124,7 +132,7 @@ public class GirlController : EntityController
             int itemNumber = -1;
             if (foundItem.Contains("Buckets")) itemNumber = 0;
 
-            // TODO Vero says..
+            // Vero says
             GetComponent<PlayMakerFSM>().FsmVariables.GetFsmInt("FoundItemNumber").Value = itemNumber;
             PlayMakerFSM.BroadcastEvent("ItemCollected");
             // Stop movement
