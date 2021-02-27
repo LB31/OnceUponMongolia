@@ -78,7 +78,16 @@ public class SnapController : MonoBehaviour
             GrabbedObject.GetComponent<Collider>().isTrigger = false;
             GrabbedObject.GetComponent<ItemRespawner>().ReturnToOriginalPos();
         }
+
         GrabbedObject = null;
+
+        // TODO check if yurt is ready
+        if (AllBlanketParts.AllParts.Count == 0 &&AllWoodenParts.AllParts.Count == 0)
+        {
+            Debug.Log("READY WITH BUILDING YURT");
+        }
+
+        
     }
 
     // Called in XRGrabInteractable by On Select Entered Interactable Event by grabbed object
