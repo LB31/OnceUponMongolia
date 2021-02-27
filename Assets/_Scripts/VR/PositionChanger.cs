@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Rendering;
@@ -101,25 +102,34 @@ public class PositionChanger : MonoBehaviour
 
     }
 
-    public void TestMove()
+    public async void MoveVRPlayer(GameObject goal, float duration)
     {
-        StartCoroutine(MoveIntoCharacter(GameObject.Find("GurlToMove").transform));
+        _ = PositionManager.Instance.VisualizeSceneChange(true);
+        await MoveIntoCharacter(goal.transform, duration);
+        _ = PositionManager.Instance.VisualizeSceneChange(false);
     }
 
-    public IEnumerator MoveIntoCharacter(Transform goal)
+    public async Task MoveIntoCharacter(Transform goal, float timeToMove)
     {
-        float distance = Mathf.Infinity;
-        while (distance > 0.1f)
+        float distance = Vector3.Distance(transform.position, goal.position);
+        float deltaToMove = distance / timeToMove;
+
+        while (distance > 0.5f)
         {
             distance = Vector3.Distance(transform.position, goal.position);
-            transform.position = Vector3.MoveTowards(transform.position, goal.position, Time.deltaTime * 5);
-
-            //lensDistortion.intensity.value = 1 - (1 / distance);
-
-            yield return null;
+            transform.position = Vector3.MoveTowards(transform.position, goal.position, Time.deltaTime * deltaToMove);
+            await Task.Yield();
         }
-
         goal.gameObject.SetActive(false);
+        transform.position = goal.position;
+        ToggleControllerOrHands(true);
+    }
+
+    public void ToggleControllerOrHands(bool activateHands)
+    {
+        HandPresence[] hands = FindObjectsOfType<HandPresence>();
+        hands[0].ToggleHands(activateHands);
+        hands[1].ToggleHands(activateHands);
     }
 
 }

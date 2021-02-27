@@ -29,8 +29,7 @@ public class ItemRespawner : MonoBehaviour
         // When the hit object doesn't have an allowed colision tag
         if(!AllowedCollisionTags.Contains(collision.transform.tag))
         {
-            transform.position = originPos;
-            transform.localScale = originScale;
+            ReturnToOriginalPos();
 
             if (JurteLevel)
             {

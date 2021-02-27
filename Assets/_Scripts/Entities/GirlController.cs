@@ -9,6 +9,8 @@ public class GirlController : EntityController
 
     public float InteractionDistance = 4;
 
+    [HideInInspector] public bool ForcePlayerToFollow { get; set; } = true;
+
     private Vector2 inputAxis;
     private float turnSmoothVelocity;
     private PositionChanger positionChanger;
@@ -103,7 +105,8 @@ public class GirlController : EntityController
     private void LateUpdate()
     {
         // Move player behind girl
-        player.position = Character.position + positionChanger.CurrentVeroPosition.localPosition;
+        if (ForcePlayerToFollow)
+            player.position = Character.position + positionChanger.CurrentVeroPosition.localPosition;
     }
 
     public void Interact()
@@ -129,7 +132,10 @@ public class GirlController : EntityController
         }
         else if (TriggerEnterer.CurrentItemInRange && speakingWithVillager)
         {
-            GetComponent<PlayMakerFSM>().SendEvent("StartDialog");
+            var fsm = GetComponent<PlayMakerFSM>();
+            if (fsm.ActiveStateName != "Close Dialog") return;
+
+            fsm.SendEvent("StartDialog");
             Destroy(TriggerEnterer.CurrentItemInRange);
         }
     }

@@ -43,30 +43,33 @@ public class SnapController : MonoBehaviour
             // Prepare next object
             List<BuildPart.ConstructionParts> AllConstructionParts = new List<BuildPart.ConstructionParts>();
 
+            // Get rid of reference of snapped Yurt Part from 'Blanket' and activate the next if there is one
             if (AllBlanketParts.AllParts.Contains(GrabbedObject))
             {
                 AllBlanketParts.AllParts.RemoveAt(0);
                 if (AllBlanketParts.AllParts.Count > 0) AllBlanketParts.AllParts[0].SetActive(true);
                 AllConstructionParts = AllBlanketParts.AllPartsToRemove;
                 
-            }              
+            }
+            // Get rid of reference of snapped Yurt Part from 'Log' and activate the next if there is one
             else
             {
                 AllWoodenParts.AllParts.RemoveAt(0);
                 if(AllWoodenParts.AllParts.Count > 0) AllWoodenParts.AllParts[0].SetActive(true);
                 AllConstructionParts = AllWoodenParts.AllPartsToRemove;
             }
-
+            // Remove Log or Blanket Row in Scene
             foreach (GameObject item in AllConstructionParts[0].PartsToRemove)
             {
                 Destroy(item);
             }
             AllConstructionParts.RemoveAt(0);
-
+            // Get rid of snapped object
             Destroy(GrabbedObject);
         }
         else
         {
+            if (!GrabbedObject) return;
             await Task.Delay(500);
             //Rigidbody rg = GrabbedObject.GetComponent<Rigidbody>();
             //rg.isKinematic = false;
@@ -105,6 +108,7 @@ public class CollisionDetector : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // When snapping part with the same name as snap zone has triggered
         if (other.name.Equals(name))
         {
             MeshRenderer.enabled = true;
@@ -130,6 +134,7 @@ public class CollisionDetector : MonoBehaviour
 public class BuildPart
 {
     public List<GameObject> AllParts;
+    // Blankets and Logs
     public List<ConstructionParts> AllPartsToRemove;
 
     [Serializable]
