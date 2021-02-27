@@ -28,12 +28,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 132230946}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 5601499129227946812}
-  m_RootOrder: 7
+  m_Father: {fileID: 7553727036603109691}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &132230951
 MonoBehaviour:
@@ -138,7 +138,18 @@ MonoBehaviour:
       m_Calls: []
   m_OnSelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: CheckIfSnap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectActionTrigger: 0
   m_HideControllerOnSelect: 0
   m_PlayAudioClipOnSelectEntered: 0
@@ -432,12 +443,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1695332630}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 5601499129227946812}
-  m_RootOrder: 8
+  m_Father: {fileID: 7553727036603109691}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1695332636
 MonoBehaviour:
@@ -542,7 +553,18 @@ MonoBehaviour:
       m_Calls: []
   m_OnSelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: CheckIfSnap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectActionTrigger: 0
   m_HideControllerOnSelect: 0
   m_PlayAudioClipOnSelectEntered: 0
@@ -851,6 +873,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83e4e6cca11330d4088d729ab4fc9d9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &798680928396848532
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7553727036603109691}
+  m_Layer: 0
+  m_Name: VRInteractionRays
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &7553727036603109691
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798680928396848532}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 132230947}
+  - {fileID: 1695332631}
+  m_Father: {fileID: 5601499129227946812}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2293207832193222028
 GameObject:
   m_ObjectHideFlags: 0
@@ -6769,7 +6823,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5601499129227946813}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.36144, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5601499129640629982}
@@ -6779,8 +6833,7 @@ Transform:
   - {fileID: 5601499128581681665}
   - {fileID: 5601499129632598974}
   - {fileID: 5601499128844610081}
-  - {fileID: 132230947}
-  - {fileID: 1695332631}
+  - {fileID: 7553727036603109691}
   m_Father: {fileID: 5601499130302856064}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6877,7 +6930,18 @@ MonoBehaviour:
       m_Calls: []
   m_OnSelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: CheckIfSnap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectActionTrigger: 1
   m_HideControllerOnSelect: 1
   m_PlayAudioClipOnSelectEntered: 0
@@ -7298,14 +7362,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5601499129640629979}
-  m_LocalRotation: {x: -0, y: 0.61270523, z: -0, w: 0.7903116}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5601499130200243380}
   m_Father: {fileID: 5601499129227946812}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 75.57101, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &5601499129640629983
 Camera:
   m_ObjectHideFlags: 0
@@ -7613,7 +7677,7 @@ MonoBehaviour:
   m_CameraGameObject: {fileID: 5601499129640629979}
   m_TrackingOriginMode: 1
   m_TrackingSpace: 3
-  m_CameraYOffset: 1.36144
+  m_CameraYOffset: 2
 --- !u!143 &5601499130302856070
 CharacterController:
   m_ObjectHideFlags: 0
@@ -7625,7 +7689,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1.8
+  m_Height: 3
   m_Radius: 0.15
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -7693,7 +7757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc024598aa99aa42a086f285b826e1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 5
+  Speed: 10
   InputSource: 4
   AdditionalHeight: 0.2
 --- !u!114 &5601499130302856073
@@ -8207,15 +8271,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: faeec2bf0cfddb443aea495f03226fdd, type: 3}
---- !u!1 &4468272784531944813 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5940135311663012100, guid: faeec2bf0cfddb443aea495f03226fdd,
-    type: 3}
-  m_PrefabInstance: {fileID: 7813155965611535465}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4468272784531944818 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5940135311663012123, guid: faeec2bf0cfddb443aea495f03226fdd,
+    type: 3}
+  m_PrefabInstance: {fileID: 7813155965611535465}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4468272784531944813 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5940135311663012100, guid: faeec2bf0cfddb443aea495f03226fdd,
     type: 3}
   m_PrefabInstance: {fileID: 7813155965611535465}
   m_PrefabAsset: {fileID: 0}
