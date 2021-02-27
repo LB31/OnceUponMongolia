@@ -5,6 +5,7 @@ using UnityEngine.XR;
 public class HandPresence : MonoBehaviour
 {
     public bool HideController;
+
     public InputDeviceCharacteristics ControllerCharacteristics;
     public List<GameObject> ControllerPrefabs;
     public GameObject HandModelPrefab;
@@ -66,6 +67,44 @@ public class HandPresence : MonoBehaviour
         XRControls.Instance.RegisterButtonEvents();
         XRControls.Instance.RegisterInteraction();
 
+    }
+
+    [ContextMenu("ON")]
+    public void On()
+    {
+        ToggleHands(true);
+    }
+    [ContextMenu("OFF")]
+    public void Off()
+    {
+        ToggleHands(false);
+    }
+
+    public void ToggleHands(bool toHands)
+    {
+        if (toHands)
+        {
+            // When there is already a hand
+            if (spawnedHand)
+            {
+                spawnedHand.SetActive(true);
+                spawnedController.SetActive(false);
+                return;
+            }
+            spawnedHand = Instantiate(HandModelPrefab, transform);
+            handAnimator = spawnedHand.GetComponent<Animator>();
+            HideController = true;
+            spawnedController.SetActive(false);
+        }
+        else
+        {
+            if (spawnedHand)
+            {
+                spawnedController.SetActive(true);
+                spawnedHand.SetActive(false);
+                HideController = false;
+            }
+        }
     }
 
     private void UpdateHandAnimation()
