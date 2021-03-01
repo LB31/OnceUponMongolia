@@ -2119,6 +2119,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 798680928396848532, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5601499130302856064, guid: 4e45289a562290f449761dc6dfe851b2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2203,6 +2208,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VR_Rig
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601499130302856126, guid: 4e45289a562290f449761dc6dfe851b2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e45289a562290f449761dc6dfe851b2, type: 3}
@@ -2627,6 +2637,36 @@ PrefabInstance:
       propertyPath: fsm.states.Array.data[18].actionData.fsmObjectParams.Array.data[0].value
       value: 
       objectReference: {fileID: 2082510437}
+    - target: {fileID: 4250418316097143490, guid: 708d6fe7da40c8c4e90e8bed85d41b0d,
+        type: 3}
+      propertyPath: fsm.states.Array.data[1].actionData.fsmVarParams.Array.data[0].intValue
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250418316097143490, guid: 708d6fe7da40c8c4e90e8bed85d41b0d,
+        type: 3}
+      propertyPath: fsm.events.Array.data[1].isGlobal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250418316097143490, guid: 708d6fe7da40c8c4e90e8bed85d41b0d,
+        type: 3}
+      propertyPath: fsm.events.Array.data[7].isGlobal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250418316097143490, guid: 708d6fe7da40c8c4e90e8bed85d41b0d,
+        type: 3}
+      propertyPath: fsm.globalTransitions.Array.data[0].fsmEvent.isGlobal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250418316097143490, guid: 708d6fe7da40c8c4e90e8bed85d41b0d,
+        type: 3}
+      propertyPath: fsm.globalTransitions.Array.data[2].fsmEvent.isGlobal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250418316097143490, guid: 708d6fe7da40c8c4e90e8bed85d41b0d,
+        type: 3}
+      propertyPath: fsm.states.Array.data[13].actionData.fsmVarParams.Array.data[0].intValue
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4250418316132154057, guid: 708d6fe7da40c8c4e90e8bed85d41b0d,
         type: 3}
       propertyPath: m_InteractionManager
@@ -2686,6 +2726,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5891078045274568488, guid: 708d6fe7da40c8c4e90e8bed85d41b0d,
+        type: 3}
+      propertyPath: SpeakingPerson
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5891078045274568490, guid: 708d6fe7da40c8c4e90e8bed85d41b0d,
         type: 3}

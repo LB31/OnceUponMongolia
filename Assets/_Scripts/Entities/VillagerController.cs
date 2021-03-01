@@ -12,6 +12,7 @@ public class VillagerController : EntityController
 
     public override void Start()
     {
+        print("start villager");
         Character = transform;
 
         base.Start();
@@ -25,8 +26,26 @@ public class VillagerController : EntityController
             if (!Goal)
                 Goal = GameManager.Instance.Vero;
         }
+    }
 
-        animator.SetBool("useWheelBarrow", true);
+    public void UseWheelBarrow(bool use)
+    {
+        animator.SetBool("useWheelBarrow", use);
+        FollowVero = use;
+    }
+
+    public void CostumeVeroAsVillager()
+    {
+        Goal = GameManager.Instance.Player;
+        UseWheelBarrow(true);
+        agent.enabled = true;
+        agent.speed = 2;
+        GetComponent<CharacterController>().stepOffset = 1;
+    }
+
+    public void ReturnMainVero()
+    {
+        // TODO
     }
 
     protected override void FixedUpdate()
@@ -57,6 +76,7 @@ public class VillagerController : EntityController
         if (!other.GetComponent<GirlController>()) return;
         if (GameManager.Instance.NearestVillager != null)
             return;
+
         GameManager.Instance.NearestVillager = this;
         GetComponent<PlayMakerFSM>().SendEvent("LookAtVero");
 
