@@ -24,7 +24,7 @@ public class DialogManager : Singleton<DialogManager>
     {
         base.Awake();
 
-        ParseJson();     
+        ParseJson();
     }
 
     private void ParseJson()
@@ -115,13 +115,14 @@ public class DialogManager : Singleton<DialogManager>
                 output = itemTexts.veroTexts.itemFound[entryNumber];
                 break;
             case VeroType.question:
-                output = itemTexts.veroTexts.question[entryNumber];
+                outputText = itemTexts.veroTexts.question;
                 break;
             default:
                 break;
         }
 
-        outputText.Add(output);
+        if (veroType != VeroType.question)
+            outputText.Add(output);
 
         runningDialog = ScrollDialog();
         StartCoroutine(runningDialog);
@@ -131,7 +132,7 @@ public class DialogManager : Singleton<DialogManager>
     {
         dialogIsRunning = true;
         currentDialog.DialogText.text = "";
-        foreach (char letter in outputText[currentTextIndex]) 
+        foreach (char letter in outputText[currentTextIndex])
         {
             currentDialog.DialogText.text += letter;
             yield return new WaitForSeconds(ScrollingSpeed);
@@ -157,7 +158,7 @@ public class DialogManager : Singleton<DialogManager>
             PlayMakerFSM.BroadcastEvent("SentenceCompleted");
         }
         // When there is more to say, show next
-        else if(outputText.Count - 1 > currentTextIndex)
+        else if (outputText.Count - 1 > currentTextIndex)
         {
             currentTextIndex++;
             runningDialog = ScrollDialog();

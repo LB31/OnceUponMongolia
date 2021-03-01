@@ -543,6 +543,7 @@ GameObject:
   - component: {fileID: 7727566410162845134}
   - component: {fileID: 7727566410162845135}
   - component: {fileID: 7727566410162845107}
+  - component: {fileID: 8584239413278573504}
   m_Layer: 5
   m_Name: DialogBox
   m_TagString: DialogBox
@@ -647,6 +648,24 @@ MonoBehaviour:
   DialogText: {fileID: 7727566411035306236}
   YesButton: {fileID: 1080082236496888586}
   NoButton: {fileID: 5740104742607483946}
+--- !u!114 &8584239413278573504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7727566410162845132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7951c64acb0fa62458bf30a60089fe2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 0
+  m_CheckFor2DOcclusion: 0
+  m_CheckFor3DOcclusion: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 2147483647
 --- !u!1 &7727566410585755517
 GameObject:
   m_ObjectHideFlags: 0

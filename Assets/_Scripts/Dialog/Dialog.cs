@@ -16,15 +16,18 @@ public class Dialog : MonoBehaviour
     {
         CharacterName.text = SpeakingPerson.ToString();
 
+        //YesButton.transform.parent.gameObject.SetActive(true);
         YesButton.onClick.AddListener(() => SendDialogAnswer("answerYes"));
         NoButton.onClick.AddListener(() => SendDialogAnswer("answerNo"));
-
         //YesButton.transform.parent.gameObject.SetActive(false);
+
     }
 
     private void SendDialogAnswer(string answerEvent)
     {
-        GameManager.Instance.NearestVillager.GetComponent<PlayMakerFSM>().SendEvent(answerEvent);
+        //GameManager.Instance.NearestVillager.GetComponent<PlayMakerFSM>().SendEvent(answerEvent);
+        PlayMakerFSM.BroadcastEvent(answerEvent);
+        print("send ANSWER");
     }
 
 
