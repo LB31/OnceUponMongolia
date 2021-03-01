@@ -29,6 +29,7 @@ public class QuestsTexts
 {
     public List<string> task;
     public List<string> hint;
+    public List<string> hintSecond;
     public List<string> ready;
 }
 
@@ -47,5 +48,6 @@ public class VeroTexts
     public List<string> girl;
     public List<string> boy;
     // 0 = itemX, 1 = itemY ..
-    public List<string> itemfound;
+    public List<string> itemFound;
+    public List<string> question;
 }

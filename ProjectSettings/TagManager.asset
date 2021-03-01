@@ -8,6 +8,9 @@ TagManager:
   - Plate
   - Dice
   - Ground
+  - Vero
+  - DialogBox
+  - Item
   layers:
   - Default
   - TransparentFX
