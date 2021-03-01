@@ -6,9 +6,9 @@ using UnityEngine.AI;
 public class VillagerController : EntityController
 {
     public bool FollowVero;
+    public Transform Goal;
 
     private NavMeshAgent agent;
-
 
     public override void Start()
     {
@@ -17,8 +17,16 @@ public class VillagerController : EntityController
         base.Start();
 
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
+
         if (agent)
+        {
             agent.speed = Speed;
+            if (!Goal)
+                Goal = GameManager.Instance.Vero;
+        }
+
+        animator.SetBool("useWheelBarrow", true);
     }
 
     protected override void FixedUpdate()
@@ -27,23 +35,26 @@ public class VillagerController : EntityController
 
         if (!FollowVero || !agent) return;
 
-        agent.destination = GameManager.Instance.Vero.position;
+        agent.destination = Goal.position;
 
         animator.SetFloat(velocityHash, agent.velocity.magnitude);
 
-        //if (agent.remainingDistance <= agent.stoppingDistance)
-        //{
-        //    if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
-        //    {
-        //        print("arrived");
-        //    }
-        //}
+        if (agent.remainingDistance <= agent.stoppingDistance && Time.time > 3)
+        {
+            if (agent.velocity.sqrMagnitude == 0f && animator.enabled)
+            {
+                print("arrived");
+                animator.enabled = false;
+            }
+        }
+        if (!animator.enabled && agent.velocity.sqrMagnitude > 0)
+            animator.enabled = true;
 
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.name.ToLower().Contains("vero")) return;
+        if (!other.GetComponent<GirlController>()) return;
         if (GameManager.Instance.NearestVillager != null)
             return;
         GameManager.Instance.NearestVillager = this;
@@ -53,7 +64,7 @@ public class VillagerController : EntityController
 
     private void OnTriggerExit(Collider other)
     {
-        if (!other.name.ToLower().Contains("vero")) return;
+        if (!other.GetComponent<GirlController>()) return;
         GetComponent<PlayMakerFSM>().SendEvent("IgnoreVero");
         GameManager.Instance.NearestVillager = null;
     }
