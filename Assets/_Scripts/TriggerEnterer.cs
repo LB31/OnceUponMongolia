@@ -24,10 +24,10 @@ public class TriggerEnterer : MonoBehaviour
     private List<Vector3> originCamPositions = new List<Vector3>();
     private List<Vector3> houseCamPositions = new List<Vector3>()
     {
-        new Vector3(0, 1.5f, -2), // back
-        new Vector3(-2, 1.5f, 0), // left
-        new Vector3(0, 1.5f, 2), // front
-        new Vector3(2, 1.5f, 0), // right
+        new Vector3(0, 1f, -1.5f), // back
+        new Vector3(-1.5f, 1f, 0), // left
+        new Vector3(0, 1f, 1.5f), // front
+        new Vector3(1.5f, 1f, 0), // right
     };
 
     private PositionManager posMan;
@@ -85,6 +85,7 @@ public class TriggerEnterer : MonoBehaviour
         }
         if (other.name.Contains("water"))
         {
+            print("respawn");
             // Respawn
             Location nextLocation = onTempleSide ? Location.Temple : Location.Harbor;
             //StartCoroutine(VisualizeSceneChange(posMan.GetNextTransform(nextLocation)));
