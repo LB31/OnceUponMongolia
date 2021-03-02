@@ -12,7 +12,6 @@ public class VillagerController : EntityController
 
     public override void Start()
     {
-        print("start villager");
         Character = transform;
 
         base.Start();
