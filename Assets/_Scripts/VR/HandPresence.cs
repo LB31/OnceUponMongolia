@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class HandPresence : MonoBehaviour
 {
@@ -70,15 +71,10 @@ public class HandPresence : MonoBehaviour
     }
 
     [ContextMenu("ON")]
-    public void On()
-    {
-        ToggleHands(true);
-    }
+    public void On() => ToggleHands(true);
+    
     [ContextMenu("OFF")]
-    public void Off()
-    {
-        ToggleHands(false);
-    }
+    public void Off() => ToggleHands(false);
 
     public void ToggleHands(bool toHands)
     {
@@ -139,4 +135,5 @@ public class HandPresence : MonoBehaviour
         //if (trigger2DVal != Vector2.zero)
         //    print("2d axis" + trigger2DVal);
     }
+
 }
