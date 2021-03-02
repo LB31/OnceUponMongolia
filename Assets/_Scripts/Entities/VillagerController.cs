@@ -57,7 +57,7 @@ public class VillagerController : EntityController
 
         animator.SetFloat(velocityHash, agent.velocity.magnitude);
 
-        if (agent.remainingDistance <= agent.stoppingDistance && Time.time > 3)
+        if (agent.remainingDistance <= agent.stoppingDistance && Time.time > 3 && name.Contains("Vero"))
         {
             if (agent.velocity.sqrMagnitude == 0f && animator.enabled)
             {
