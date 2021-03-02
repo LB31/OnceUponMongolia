@@ -22,7 +22,7 @@ public class BrushDrawer : MonoBehaviour
     private static Color[,] usedPositions;
     //private static bool[,] usedPositions;
 
-    private int layerMask = 1 << 9; // Draw Layer
+    private int layerMask = 1 << 9; // Draw Layer for the wall
     private bool selectingColor;
     private Color returnColor;
     private bool fillHit;

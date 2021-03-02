@@ -14,6 +14,8 @@ public class SnapController : MonoBehaviour
     [HideInInspector] public bool InCollider;
     [HideInInspector] public Transform SelectedSnapZone;
     private GameObject GrabbedObject;
+
+    private bool finishedBuilding;
     
 
     private void Start()
@@ -32,6 +34,8 @@ public class SnapController : MonoBehaviour
     [ContextMenu("CheckIfSnap")]
     public async void CheckIfSnap()
     {
+        if (finishedBuilding) return;
+
         if (InCollider)
         {          
             SelectedSnapZone.GetComponent<MeshRenderer>().enabled = false;
@@ -84,8 +88,8 @@ public class SnapController : MonoBehaviour
         // TODO check if yurt is ready
         if (AllBlanketParts.AllParts.Count == 0 &&AllWoodenParts.AllParts.Count == 0)
         {
-            Debug.Log("READY WITH BUILDING YURT");
             PlayMakerFSM.BroadcastEvent("ContinueStory");
+            finishedBuilding = true;
         }
 
         
