@@ -77,6 +77,7 @@ public class BrushDrawer : MonoBehaviour
         TextureToDrawOn.Apply();
     }
 
+    // For drawing
     private void SetPixel(Vector2 pixel, Color col)
     {
         // Also color the pixels arond the selected
@@ -139,7 +140,7 @@ public class BrushDrawer : MonoBehaviour
         yield return null;
     }
 
-
+    // Select color
     private void OnTriggerEnter(Collider other)
     {
         if (other.name.Contains("color"))
