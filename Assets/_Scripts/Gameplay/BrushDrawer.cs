@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class BrushDrawer : MonoBehaviour
 {
@@ -68,8 +69,6 @@ public class BrushDrawer : MonoBehaviour
             }
             return;
         }
-
-
 
         SetPixel(pixelUV, ColorToDraw);
         //TextureToDrawOn.SetPixel((int)pixelUV.x, (int)pixelUV.y, ColorToDraw);

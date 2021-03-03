@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class ItemRespawner : MonoBehaviour
@@ -13,14 +14,15 @@ public class ItemRespawner : MonoBehaviour
 
     private void Start()
     {
-        originPos = transform.position;
+        originPos = transform.localPosition;
         originScale = transform.localScale;
         rg = GetComponent<Rigidbody>();
     }
 
-    public void ReturnToOriginalPos()
+    public async void ReturnToOriginalPos()
     {
-        transform.position = originPos;
+        await Task.Delay(1000);
+        transform.localPosition = originPos;
         transform.localScale = originScale;
     }
 
