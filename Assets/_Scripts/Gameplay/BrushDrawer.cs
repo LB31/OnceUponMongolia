@@ -9,6 +9,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class BrushDrawer : MonoBehaviour
 {
     public Texture2D TextureToDrawOn;
+    public Texture2D BackupTexture;
+
     public Color ColorToFill = Color.blue;
     public Color ColorToDraw = Color.red;
     public Material BrushTipMat;
@@ -16,7 +18,7 @@ public class BrushDrawer : MonoBehaviour
     public float DistancteToDraw = 0.2f;
     public bool FillingWall;
 
-    private Texture2D backupTex;
+    
 
     private int width;
     private int height;
@@ -28,18 +30,21 @@ public class BrushDrawer : MonoBehaviour
     private Color returnColor;
     private bool fillHit;
 
-    void Start()
+    private void Awake()
     {
         width = TextureToDrawOn.width;
         height = TextureToDrawOn.height;
         //usedPositions = new bool[width, height];
         usedPositions = new Color[width, height];
 
-        backupTex = new Texture2D(width, height);
-        Graphics.CopyTexture(TextureToDrawOn, backupTex);
-
         ColorToDraw = BrushTipMat.color;
         returnColor = BrushTipMat.color;
+
+        RestoreTexture();
+        //BackupTexture = new Texture2D(width, height);
+        //Graphics.CopyTexture(TextureToDrawOn, BackupTexture);
+
+        
     }
 
     private void Update()
@@ -139,6 +144,12 @@ public class BrushDrawer : MonoBehaviour
         yield return null;
     }
 
+    private void RestoreTexture()
+    {
+        Graphics.CopyTexture(BackupTexture, TextureToDrawOn);
+        BrushTipMat.color = returnColor;
+    }
+
     // Select color
     private void OnTriggerEnter(Collider other)
     {
@@ -167,8 +178,7 @@ public class BrushDrawer : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        Graphics.CopyTexture(backupTex, TextureToDrawOn);
-        BrushTipMat.color = returnColor;
+        RestoreTexture();
     }
 
 }

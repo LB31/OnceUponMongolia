@@ -44,7 +44,13 @@ public class VillagerController : EntityController
 
     public void ReturnMainVero()
     {
-        // TODO
+        Goal = null;
+        animator.enabled = true;
+        UseWheelBarrow(false);
+        agent.enabled = false;     
+        animator.Play("Idle");
+        GetComponent<CharacterController>().stepOffset = 0.4f;
+        Destroy(this);
     }
 
     protected override void FixedUpdate()
