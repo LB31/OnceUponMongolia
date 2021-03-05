@@ -71,17 +71,17 @@ public class SnapController : MonoBehaviour
             // Get rid of snapped object
             Destroy(GrabbedObject);
         }
-        else
-        {
-            if (!GrabbedObject) return;
-            await Task.Delay(500);
-            //Rigidbody rg = GrabbedObject.GetComponent<Rigidbody>();
-            //rg.isKinematic = false;
-            //rg.useGravity = true;
-            GrabbedObject.GetComponent<MeshRenderer>().enabled = false;
-            GrabbedObject.GetComponent<Collider>().isTrigger = false;
-            GrabbedObject.GetComponent<ItemRespawner>().ReturnToOriginalPos();
-        }
+        //else
+        //{
+        //    if (!GrabbedObject) return;
+        //    await Task.Delay(500);
+        //    //Rigidbody rg = GrabbedObject.GetComponent<Rigidbody>();
+        //    //rg.isKinematic = false;
+        //    //rg.useGravity = true;
+        //    GrabbedObject.GetComponent<MeshRenderer>().enabled = false;
+        //    GrabbedObject.GetComponent<Collider>().isTrigger = false;
+        //    GrabbedObject.GetComponent<ItemRespawner>().ReturnToOriginalPos();
+        //}
 
         GrabbedObject = null;
 

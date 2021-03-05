@@ -12,13 +12,13 @@ public class KnifeCutter : MonoBehaviour
 {
 
     public List<CutMaterial> CutMaterials;
-    public bool recursiveSlice;
+    [HideInInspector] public bool RecursiveSlice; // TODO remove
 
 
     private GameObject objToCut;
     private Material crossMat;
 
-    private bool cutting;
+    [SerializeField] private bool cutting;
     private AudioSource audioSource;
 
     private void Awake()
@@ -48,10 +48,12 @@ public class KnifeCutter : MonoBehaviour
     [ContextMenu("Do Something")]
     public async void CutObject()
     {
-        crossMat = CutMaterials.FirstOrDefault(e => objToCut.name.ToLower().Contains(e.FoodName)).MaterialAfterCut;
+        try { crossMat = CutMaterials.FirstOrDefault(e => objToCut.name.ToLower().Contains(e.FoodName)).MaterialAfterCut; }            
+        catch (Exception) { throw; }
+        
         if (!crossMat) return;
 
-        if (!recursiveSlice)
+        if (!RecursiveSlice)
         {
             PlaySound();  
 
@@ -59,6 +61,8 @@ public class KnifeCutter : MonoBehaviour
 
             if (hull != null)
             {
+                cutting = true;
+
                 GameObject lowerHull = hull.CreateLowerHull(objToCut, crossMat);
                 GameObject upperHull = hull.CreateUpperHull(objToCut, crossMat);
 
@@ -85,21 +89,15 @@ public class KnifeCutter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (cutting) return;
         print("entered " + other.name);
 
         string name = other.name.ToLower();
         if (name.Contains("hand")) return;
 
-
         objToCut = other.gameObject;
 
-        if (!cutting)
-        {
-            cutting = true;
-            CutObject();
-        }
-            
-
+        CutObject();
     }
 
     //private void OnTriggerExit(Collider other)

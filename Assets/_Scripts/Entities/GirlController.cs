@@ -9,7 +9,12 @@ public class GirlController : EntityController
 
     public float InteractionDistance = 4;
 
-    [HideInInspector] public bool ForcePlayerToFollow { get; set; } = true;
+    public bool FollowPlayer = true;
+    public bool ForcePlayerToFollow { 
+        get { return FollowPlayer; } 
+        set{ FollowPlayer = value; } 
+    }
+    
 
     private Vector2 inputAxis;
     private float turnSmoothVelocity;
