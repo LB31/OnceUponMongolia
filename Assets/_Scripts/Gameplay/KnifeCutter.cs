@@ -51,14 +51,14 @@ public class KnifeCutter : MonoBehaviour
     [ContextMenu("Do Something")]
     public async void CutObject()
     {
-        try { crossMat = CutMaterials.FirstOrDefault(e => objToCut.name.ToLower().Contains(e.FoodName)).MaterialAfterCut; }            
+        try { crossMat = CutMaterials.FirstOrDefault(e => objToCut.name.ToLower().Contains(e.FoodName)).MaterialAfterCut; }
         catch (Exception) { throw; }
-        
+
         if (!crossMat) return;
 
         if (!RecursiveSlice)
         {
-            PlaySound();  
+            PlaySound();
 
             SlicedHull hull = objToCut.Slice(transform.position, transform.up, crossMat);
 
@@ -77,7 +77,7 @@ public class KnifeCutter : MonoBehaviour
 
                 objToCut.SetActive(false);
 
-                await Task.Delay(1000);
+                await Task.Delay(500);
                 cutting = false;
             }
         }
@@ -94,28 +94,20 @@ public class KnifeCutter : MonoBehaviour
     {
         if (cutting) return;
 
-        print("entered " + other.name);
+        //print("entered " + other.name);
 
-        Vector3 direction = other.transform.position - transform.position;
+        //Vector3 direction = other.transform.position - transform.position;
         // Back side of blade
-        if (Vector3.Dot(transform.forward, direction) > 0)
-        {
-            string name = other.name.ToLower();
-            if (name.Contains("hand")) return;
+        //if (Vector3.Dot(transform.forward, direction) > 0)
+        //{
+        string name = other.name.ToLower();
+        if (name.Contains("hand")) return;
 
-            objToCut = other.gameObject;
+        objToCut = other.gameObject;
 
-            CutObject();
-        }
-
+        CutObject();
+        //}
     }
-
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    cutting = false;
-    //    print("trigger exit " + other);
-    //}
-
 
     public GameObject[] SliceObjectRecursive(GameObject obj, Material crossSectionMaterial)
     {

@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -379,7 +379,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &179345262
 Rigidbody:
@@ -1773,7 +1773,7 @@ PrefabInstance:
     - target: {fileID: 8851967389639164812, guid: 967fd6b05558cc54c92b10de402fa785,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8874917499334458621, guid: 967fd6b05558cc54c92b10de402fa785,
         type: 3}
@@ -1934,7 +1934,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &508451943
 GameObject:
@@ -1997,6 +1997,16 @@ MonoBehaviour:
   - FoodName: apple
     MaterialAfterCut: {fileID: 7211448773848044386, guid: 228176cacc05c644ba3d6df1b6379318,
       type: 3}
+  - FoodName: garlic
+    MaterialAfterCut: {fileID: 5215751427388880117, guid: c15b22e3947435747bb3d760952ceded,
+      type: 3}
+  - FoodName: carrot
+    MaterialAfterCut: {fileID: 2100000, guid: b357c40dbd9f44740bc83d860afa6d8d, type: 2}
+  - FoodName: potato
+    MaterialAfterCut: {fileID: -5074707472358733150, guid: c15b22e3947435747bb3d760952ceded,
+      type: 3}
+  - FoodName: chili
+    MaterialAfterCut: {fileID: 2100000, guid: b97332fe43145d34d88c39f607d7596e, type: 2}
   RecursiveSlice: 0
   cutting: 0
 --- !u!65 &508451946
@@ -2155,6 +2165,127 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1001 &508908626
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 4d0a565557ee9de40a899c74331e946c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.5629
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4d0a565557ee9de40a899c74331e946c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.647
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4d0a565557ee9de40a899c74331e946c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.4278
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4d0a565557ee9de40a899c74331e946c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4d0a565557ee9de40a899c74331e946c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4d0a565557ee9de40a899c74331e946c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4d0a565557ee9de40a899c74331e946c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4d0a565557ee9de40a899c74331e946c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4d0a565557ee9de40a899c74331e946c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4d0a565557ee9de40a899c74331e946c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4d0a565557ee9de40a899c74331e946c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4d0a565557ee9de40a899c74331e946c,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 22.159716
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4d0a565557ee9de40a899c74331e946c,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 22.159716
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4d0a565557ee9de40a899c74331e946c,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 22.159716
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4d0a565557ee9de40a899c74331e946c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pot FBX
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4d0a565557ee9de40a899c74331e946c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pot
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4d0a565557ee9de40a899c74331e946c, type: 3}
+--- !u!1 &508908627 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4d0a565557ee9de40a899c74331e946c,
+    type: 3}
+  m_PrefabInstance: {fileID: 508908626}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &508908628
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508908627}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04, y: 0.02, z: 0.04}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &508908629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508908627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bbe53f7288325d4a92dd044cecc6b80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NeededAmountToFinish: 3
 --- !u!1 &520582626
 GameObject:
   m_ObjectHideFlags: 0
@@ -2346,7 +2477,7 @@ RectTransform:
   - {fileID: 1989625911}
   - {fileID: 1365253229}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2462,7 +2593,7 @@ Transform:
   m_LocalScale: {x: 4.198847, y: 4.198847, z: 4.198847}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &745152126
 GameObject:
@@ -3454,7 +3585,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1160382450
 GameObject:
@@ -3578,6 +3709,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scenePrefabInstances:
+  - _gameObject: {fileID: 508908627}
+    _prefab: Assets/Models/VillageModels/indoor/Pot FBX.fbx
   - _gameObject: {fileID: 320104049}
     _prefab: Assets/Prefabs/party_yurt_Objects.prefab
   - _gameObject: {fileID: 1955547322}
@@ -3598,7 +3731,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1237540133
 GameObject:
@@ -4324,7 +4457,7 @@ PrefabInstance:
     - target: {fileID: 1161097781012716792, guid: 552089f10da08704d80d85ac1938fa6d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1161097781012716792, guid: 552089f10da08704d80d85ac1938fa6d,
         type: 3}
@@ -4839,7 +4972,7 @@ PrefabInstance:
     - target: {fileID: 5601499130302856064, guid: 4e45289a562290f449761dc6dfe851b2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5601499130302856064, guid: 4e45289a562290f449761dc6dfe851b2,
         type: 3}
@@ -5895,7 +6028,7 @@ Transform:
   - {fileID: 7174631377263620982}
   - {fileID: 1350516649837580718}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &584855925142444201
 MeshRenderer:
@@ -6193,7 +6326,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6959630558115336904}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.37586808, y: 0.23787701, z: -0.32879937}
+  m_LocalPosition: {x: -2.854, y: 0.23787701, z: -8.318}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8725977894533504835}
@@ -6617,6 +6750,7 @@ GameObject:
   - component: {fileID: 1507767882745067151}
   - component: {fileID: 1507767882745067150}
   - component: {fileID: 1507767882745067149}
+  - component: {fileID: 1507767882745067152}
   m_Layer: 12
   m_Name: chili
   m_TagString: Untagged
@@ -6713,7 +6847,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -6731,6 +6865,24 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6099800089077584851, guid: 60392552e88a5214ca611f1f7a6023ef, type: 3}
+--- !u!114 &1507767882745067152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507767882745067148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 475205bd9126b7b4082f997db3f014ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllowedCollisionTags:
+  - Table
+  - Pot
+  - Plate
+  YurtLevel: 0
+  CookingLevel: 1
 --- !u!4 &1619089852992652250
 Transform:
   m_ObjectHideFlags: 0
@@ -9237,6 +9389,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AllowedCollisionTags:
   - Table
+  - Pot
+  - Plate
   YurtLevel: 0
   CookingLevel: 1
 --- !u!33 &3336601792359087147
@@ -10270,7 +10424,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7503526306293034769}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.46569264, y: 0.12714088, z: 0.4168657}
+  m_LocalPosition: {x: -3.28, y: 0.12714088, z: -7.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8725977894533504835}
@@ -10946,8 +11100,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1507767882745067148}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.01956582, y: 0.18805873, z: -0.034924388}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -6.04, y: 0.18805873, z: -8.76}
+  m_LocalScale: {x: 2.2726, y: 2.2726, z: 2.2726}
   m_Children: []
   m_Father: {fileID: 8999428616978537787}
   m_RootOrder: 0
@@ -11029,6 +11183,7 @@ GameObject:
   - component: {fileID: 5387339474444912630}
   - component: {fileID: 5387339474444912629}
   - component: {fileID: 5387339474444912628}
+  - component: {fileID: 5387339474444912631}
   m_Layer: 12
   m_Name: potato8
   m_TagString: Untagged
@@ -11125,7 +11280,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -11143,6 +11298,24 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8850091470190975658, guid: 60392552e88a5214ca611f1f7a6023ef, type: 3}
+--- !u!114 &5387339474444912631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5387339474444912627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 475205bd9126b7b4082f997db3f014ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllowedCollisionTags:
+  - Table
+  - Pot
+  - Plate
+  YurtLevel: 0
+  CookingLevel: 1
 --- !u!33 &5415877208885803367
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11807,7 +11980,7 @@ Transform:
   - {fileID: 296454539}
   - {fileID: 508451944}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 17.924002, y: 0, z: 94.270004}
 --- !u!1 &5954045470983497799
 GameObject:
@@ -11945,7 +12118,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5387339474444912627}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.48884937, y: 0.40465808, z: -0.1697526}
+  m_LocalPosition: {x: -4.178, y: 0.40465808, z: -5.349}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3298019826531296014}
@@ -13213,6 +13386,7 @@ GameObject:
   - component: {fileID: 6959630558115336907}
   - component: {fileID: 6959630558115336906}
   - component: {fileID: 6959630558115336905}
+  - component: {fileID: 6959630558115336908}
   m_Layer: 12
   m_Name: garlic
   m_TagString: Untagged
@@ -13323,10 +13497,28 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6959630558115336908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6959630558115336904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 475205bd9126b7b4082f997db3f014ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllowedCollisionTags:
+  - Table
+  - Pot
+  - Plate
+  YurtLevel: 0
+  CookingLevel: 1
 --- !u!23 &6961259966886834959
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13992,6 +14184,7 @@ GameObject:
   - component: {fileID: 7503526306293034772}
   - component: {fileID: 7503526306293034771}
   - component: {fileID: 7503526306293034770}
+  - component: {fileID: 7503526306293034773}
   m_Layer: 12
   m_Name: carrot
   m_TagString: Untagged
@@ -14102,10 +14295,28 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7503526306293034773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7503526306293034769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 475205bd9126b7b4082f997db3f014ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllowedCollisionTags:
+  - Table
+  - Pot
+  - Plate
+  YurtLevel: 0
+  CookingLevel: 1
 --- !u!4 &7580868310887096300
 Transform:
   m_ObjectHideFlags: 0
