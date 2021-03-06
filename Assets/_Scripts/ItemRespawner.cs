@@ -39,8 +39,8 @@ public class ItemRespawner : MonoBehaviour
     private void ObjectGrabbed(XRBaseInteractor arg0)
     {
         Debug.LogError("grabbed");
-        //rg.useGravity = true;
-        //rg.isKinematic = false;
+        //rg.useGravity = false;
+        //rg.isKinematic = true;
         //GetComponent<Collider>().isTrigger = false;
     }
 
@@ -50,7 +50,8 @@ public class ItemRespawner : MonoBehaviour
         // Allow object to fall and to to collide
         rg.useGravity = true;
         rg.isKinematic = false;
-        GetComponent<Collider>().isTrigger = false;
+        var colli = GetComponent<Collider>();
+        if (colli) colli.isTrigger = false;
 
         //ReturnToOriginalPos();
     }
@@ -61,14 +62,27 @@ public class ItemRespawner : MonoBehaviour
     {
         if (!gameObject) return; // TODO test if this helps
         await Task.Delay(1000);
+
+        if (YurtLevel)
+        {
+            rg.useGravity = false;
+            rg.isKinematic = true;
+
+            var collider = GetComponent<Collider>();
+            if (collider) collider.isTrigger = false;
+
+            var renderer = GetComponent<Renderer>();
+            if (renderer) renderer.enabled = false;
+        }
+
         transform.localPosition = originPos;
         transform.localScale = originScale;
 
         rg.velocity = Vector3.zero;
         rg.angularVelocity = Vector3.zero;
 
-
-
+        
+        
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -80,9 +94,9 @@ public class ItemRespawner : MonoBehaviour
         }
         else if (collision.transform.CompareTag("Pot"))
         {
-            FindObjectOfType<CookingController>().PutFoodInPot(gameObject.name);
-            Destroy(gameObject);
+            FindObjectOfType<CookingController>().PutFoodInPot(gameObject);
         }
+        // When object with allowed tag was hit
         else
         {
             rg.useGravity = false;
@@ -92,13 +106,6 @@ public class ItemRespawner : MonoBehaviour
             if (CookingLevel)
             {
                 if (collider) collider.isTrigger = true;
-            }
-            if (YurtLevel)
-            {
-                if (collider) collider.isTrigger = false;
-
-                var renderer = GetComponent<Renderer>();
-                if (renderer) renderer.enabled = false;
             }
         }
     }
