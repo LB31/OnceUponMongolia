@@ -51,7 +51,7 @@ public class ItemRespawner : MonoBehaviour
         rg.useGravity = true;
         rg.isKinematic = false;
         GetComponent<Collider>().isTrigger = false;
-   
+
         //ReturnToOriginalPos();
     }
 
@@ -66,9 +66,9 @@ public class ItemRespawner : MonoBehaviour
 
         rg.velocity = Vector3.zero;
         rg.angularVelocity = Vector3.zero;
-        
 
-        
+
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -77,6 +77,11 @@ public class ItemRespawner : MonoBehaviour
         if (!AllowedCollisionTags.Contains(collision.transform.tag))
         {
             ReturnToOriginalPos();
+        }
+        else if (collision.transform.CompareTag("Pot"))
+        {
+            FindObjectOfType<CookingController>().PutFoodInPot(gameObject.name);
+            Destroy(gameObject);
         }
         else
         {
