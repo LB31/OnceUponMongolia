@@ -5,6 +5,7 @@ using UnityEngine;
 public class CookingController : MonoBehaviour
 {
     public int NeededAmountToFinish;
+    public ParticleSystem CookingParticleEffect;
 
     private HashSet<string> foodInPot = new HashSet<string>();
 
@@ -13,6 +14,7 @@ public class CookingController : MonoBehaviour
         if (!foodName.Contains("Cut")) return;
 
         foodInPot.Add(foodName.Substring(0, 3));
+        CookingParticleEffect.Play();
         print("pot amount " + foodInPot.Count);
 
         if(foodInPot.Count >= NeededAmountToFinish)
