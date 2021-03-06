@@ -11,6 +11,7 @@ TagManager:
   - Vero
   - DialogBox
   - Item
+  - Pot
   layers:
   - Default
   - TransparentFX

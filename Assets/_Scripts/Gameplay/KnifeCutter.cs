@@ -43,6 +43,9 @@ public class KnifeCutter : MonoBehaviour
         col.isTrigger = true;
         hull.AddComponent<XRGrabInteractable>();
         hull.GetComponent<Rigidbody>().useGravity = false;
+        //hull.GetComponent<Rigidbody>().isKinematic = true;
+        var respawner = hull.AddComponent<ItemRespawner>();
+        respawner.CookingLevel = true;
     }
 
     [ContextMenu("Do Something")]
@@ -90,14 +93,21 @@ public class KnifeCutter : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (cutting) return;
+
         print("entered " + other.name);
 
-        string name = other.name.ToLower();
-        if (name.Contains("hand")) return;
+        Vector3 direction = other.transform.position - transform.position;
+        // Back side of blade
+        if (Vector3.Dot(transform.forward, direction) > 0)
+        {
+            string name = other.name.ToLower();
+            if (name.Contains("hand")) return;
 
-        objToCut = other.gameObject;
+            objToCut = other.gameObject;
 
-        CutObject();
+            CutObject();
+        }
+
     }
 
     //private void OnTriggerExit(Collider other)
