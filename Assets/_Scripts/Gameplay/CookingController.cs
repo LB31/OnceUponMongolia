@@ -9,10 +9,17 @@ public class CookingController : MonoBehaviour
 
     private HashSet<string> foodInPot = new HashSet<string>();
 
-    public void PutFoodInPot(string foodName)
+    public void PutFoodInPot(GameObject food)
     {
-        if (!foodName.Contains("Cut")) return;
+        string foodName = food.name;
 
+        if (!foodName.Contains("Cut"))
+        {
+            food.GetComponent<ItemRespawner>().ReturnToOriginalPos();
+            return;
+        }
+
+        Destroy(food);
         foodInPot.Add(foodName.Substring(0, 3));
         CookingParticleEffect.Play();
         print("pot amount " + foodInPot.Count);
