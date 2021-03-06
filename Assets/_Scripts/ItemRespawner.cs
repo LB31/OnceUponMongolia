@@ -7,7 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class ItemRespawner : MonoBehaviour
 {
-    public List<string> AllowedCollisionTags;
+    public List<string> AllowedCollisionTags = new List<string> { "Table", "Pot", "Plate" };
     public bool YurtLevel;
     public bool CookingLevel;
 
@@ -47,21 +47,12 @@ public class ItemRespawner : MonoBehaviour
     private void ObjectReleased(XRBaseInteractor arg0)
     {
         Debug.LogError("released");
-        rg.useGravity = false;
-        rg.isKinematic = true;
-        var collider = GetComponent<Collider>();
-        if (CookingLevel)
-        {
-            if (collider) collider.isTrigger = true;
-        }
-        if (YurtLevel)
-        {
-            if (collider) collider.isTrigger = false;
-            var renderer = GetComponent<Renderer>();
-            if(renderer) renderer.enabled = false;
-        }
-        
-        ReturnToOriginalPos();
+        // Allow object to fall and to to collide
+        rg.useGravity = true;
+        rg.isKinematic = false;
+        GetComponent<Collider>().isTrigger = false;
+   
+        //ReturnToOriginalPos();
     }
 
 
@@ -72,29 +63,38 @@ public class ItemRespawner : MonoBehaviour
         await Task.Delay(1000);
         transform.localPosition = originPos;
         transform.localScale = originScale;
+
+        rg.velocity = Vector3.zero;
+        rg.angularVelocity = Vector3.zero;
+        
+
+        
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        return;
         // When the hit object doesn't have an allowed colision tag
         if (!AllowedCollisionTags.Contains(collision.transform.tag))
         {
             ReturnToOriginalPos();
-
-            //if (JurteLevel)
-            //{
+        }
+        else
+        {
             rg.useGravity = false;
             rg.isKinematic = true;
-            rg.velocity = Vector3.zero;
-            rg.angularVelocity = Vector3.zero;
-            //transform.rotation = Quaternion.identity;
-            //}
-            //else
-            //{
-            // TODO check if we can live without
-            //transform.localPosition = Vector3.zero;
-            //}
+
+            var collider = GetComponent<Collider>();
+            if (CookingLevel)
+            {
+                if (collider) collider.isTrigger = true;
+            }
+            if (YurtLevel)
+            {
+                if (collider) collider.isTrigger = false;
+
+                var renderer = GetComponent<Renderer>();
+                if (renderer) renderer.enabled = false;
+            }
         }
     }
 }
