@@ -10,11 +10,12 @@ public class GirlController : EntityController
     public float InteractionDistance = 4;
 
     public bool FollowPlayer = true;
-    public bool ForcePlayerToFollow { 
-        get { return FollowPlayer; } 
-        set{ FollowPlayer = value; } 
+    public bool ForcePlayerToFollow
+    {
+        get { return FollowPlayer; }
+        set { FollowPlayer = value; }
     }
-    
+
 
     private Vector2 inputAxis;
     private float turnSmoothVelocity;
@@ -136,6 +137,7 @@ public class GirlController : EntityController
             string foundItem = TriggerEnterer.CurrentItemInRange.name;
             int itemNumber = -1;
             if (foundItem.Contains("Buckets")) itemNumber = 0;
+            if (foundItem.Contains("Copulating")) itemNumber = 1;
 
             // Vero says
             GetComponent<PlayMakerFSM>().FsmVariables.GetFsmInt("FoundItemNumber").Value = itemNumber;
@@ -150,7 +152,9 @@ public class GirlController : EntityController
             if (fsm.ActiveStateName != "Close Dialog") return;
 
             fsm.SendEvent("StartDialog");
-            Destroy(TriggerEnterer.CurrentItemInRange);
+
+            if (!TriggerEnterer.CurrentItemInRange.name.Contains("Copulating"))
+                Destroy(TriggerEnterer.CurrentItemInRange);
         }
         // TODO check if works: when Vero speaks with herself
         else if (gm.NearestVillager == null && SpeakingWithVillager)
