@@ -85,7 +85,8 @@ public class ItemRespawner : MonoBehaviour
         }
 
         transform.localPosition = originPos;
-        transform.localScale = originScale;
+        if (name != "StoryKnife")
+            transform.localScale = originScale;
 
         rg.velocity = Vector3.zero;
         rg.angularVelocity = Vector3.zero;
