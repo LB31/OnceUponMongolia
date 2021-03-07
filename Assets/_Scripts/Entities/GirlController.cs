@@ -20,7 +20,7 @@ public class GirlController : EntityController
     private float turnSmoothVelocity;
     private PositionChanger positionChanger;
     // TODO private
-    public bool speakingWithVillager;
+    public bool SpeakingWithVillager { get; set; }
     private Transform player;
     // Simulator
     private bool useSimulator;
@@ -65,7 +65,7 @@ public class GirlController : EntityController
     {
         base.FixedUpdate();
 
-        if (speakingWithVillager || !characterController.enabled) return;
+        if (SpeakingWithVillager || !characterController.enabled) return;
 
         // Gravity 
         if (characterController.isGrounded)
@@ -128,10 +128,10 @@ public class GirlController : EntityController
         if (gm.NearestVillager != null && Vector3.Distance(gm.Vero.position, gm.NearestVillager.transform.position) < InteractionDistance)
         {
             gm.NearestVillager.GetComponent<PlayMakerFSM>().SendEvent("StartDialog");
-            speakingWithVillager = true;
+            SpeakingWithVillager = true;
         }
         // Collect item
-        if (TriggerEnterer.CurrentItemInRange && !speakingWithVillager)
+        if (TriggerEnterer.CurrentItemInRange && !SpeakingWithVillager)
         {
             string foundItem = TriggerEnterer.CurrentItemInRange.name;
             int itemNumber = -1;
@@ -141,15 +141,20 @@ public class GirlController : EntityController
             GetComponent<PlayMakerFSM>().FsmVariables.GetFsmInt("FoundItemNumber").Value = itemNumber;
             PlayMakerFSM.BroadcastEvent("ItemCollected");
             // Stop movement
-            speakingWithVillager = true;
+            SpeakingWithVillager = true;
         }
-        else if (TriggerEnterer.CurrentItemInRange && speakingWithVillager)
+        else if (TriggerEnterer.CurrentItemInRange && SpeakingWithVillager)
         {
             var fsm = GetComponent<PlayMakerFSM>();
             if (fsm.ActiveStateName != "Close Dialog") return;
 
             fsm.SendEvent("StartDialog");
             Destroy(TriggerEnterer.CurrentItemInRange);
+        }
+        // TODO check if works: when Vero speaks with herself
+        else if (gm.NearestVillager == null && SpeakingWithVillager)
+        {
+            GetComponent<PlayMakerFSM>().SendEvent("StartDialog");
         }
     }
 
@@ -158,7 +163,7 @@ public class GirlController : EntityController
     {
         print("interaction finished");
         GameManager.Instance.NearestVillager = null;
-        speakingWithVillager = false;
+        SpeakingWithVillager = false;
     }
 
 

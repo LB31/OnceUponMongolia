@@ -5,7 +5,7 @@
             "characterName": "Vero",
             "veroTexts": {
                 "hints": [
-                    "Mau",
+                    "Finally the Yurt is ready! Let's go inside and speak with Gentle Wind",
                     "geh mal zum Jungen, lak shu",
                     "Tadelü"
                 ],
@@ -248,6 +248,53 @@
                         "My lover wants to build a Party Yurt for me?",
                         "Noice, totally my jam!",
                         "Then he will surely need some hot colors. Go to the barn to get some"
+                    ]
+                },
+                {
+                    "text": [
+                        "So you kids need some wood to build a Yourt? Cute",
+                        "I'll give you some. But beware: in the Beta you'll need to chop it yourself!"
+                    ]
+                }
+            ],
+            "quests": [
+                {
+                    "task": [
+                        "You need some fabrics for my Party Yurt? Then you shall get them!",
+                        "*YOU GOT FABRICS*",
+                        "For the fancy colors go to the barn"
+                    ],
+                    "hint": [
+                        "Hey, I need some me-time now! Get some colors at the barn"
+                    ],
+                    "hintSecond": [
+                        "I'm so wet now"
+                    ],
+                    "ready": [
+                        "Noice"
+                    ]
+                }
+            ],
+            "randomAnswers": [
+                {
+                    "answer": [
+                        "obama cares",
+                        "so much"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "characterName": "GentleWind",
+            "veroTexts": null,
+            "dialogs": [
+                {
+                    "text": [
+                        "This is such a great new Yurt! I'm very proud of you kids =)",
+                        "For a good Party we will need some tasty food. Good that Mama is here",
+                        "Don't worry about the ingredients. I was a great 'Alpha' Mom an collected everything that we need already",
+                        "So slip inside of me and let's start the cooking!"
                     ]
                 },
                 {

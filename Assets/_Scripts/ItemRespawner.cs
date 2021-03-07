@@ -11,6 +11,8 @@ public class ItemRespawner : MonoBehaviour
     public bool YurtLevel;
     public bool CookingLevel;
 
+    public static bool KnifeGrabbed;
+
     private Vector3 originPos;
     private Vector3 originScale;
     private Rigidbody rg;
@@ -38,6 +40,9 @@ public class ItemRespawner : MonoBehaviour
 
     private void ObjectGrabbed(XRBaseInteractor arg0)
     {
+        if (name == "StoryKnife")
+            KnifeGrabbed = true;
+
         Debug.LogError("grabbed");
         //rg.useGravity = false;
         //rg.isKinematic = true;
@@ -46,6 +51,9 @@ public class ItemRespawner : MonoBehaviour
 
     private void ObjectReleased(XRBaseInteractor arg0)
     {
+        if (name == "StoryKnife")
+            KnifeGrabbed = false;
+
         Debug.LogError("released");
         // Allow object to fall and to to collide
         rg.useGravity = true;
@@ -60,7 +68,8 @@ public class ItemRespawner : MonoBehaviour
 
     public async void ReturnToOriginalPos()
     {
-        if (!gameObject) return; // TODO test if this helps
+        if (!gameObject || this == null) return; // TODO test if this helps
+
         await Task.Delay(1000);
 
         if (YurtLevel)
@@ -80,9 +89,7 @@ public class ItemRespawner : MonoBehaviour
 
         rg.velocity = Vector3.zero;
         rg.angularVelocity = Vector3.zero;
-
-        
-        
+      
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -101,10 +108,10 @@ public class ItemRespawner : MonoBehaviour
         {
             rg.useGravity = false;
             rg.isKinematic = true;
-
-            var collider = GetComponent<Collider>();
+          
             if (CookingLevel)
             {
+                var collider = GetComponent<Collider>();
                 if (collider) collider.isTrigger = true;
             }
         }

@@ -15,7 +15,8 @@ public class GameStateHandler : MonoBehaviour
     {
         MoveFreely,
         ControlGirl,
-        PortIntoCharacter
+        PortIntoCharacter,
+        PassiveFirstPerson
     };
     public GameState StartState;
 
@@ -47,6 +48,9 @@ public class GameStateHandler : MonoBehaviour
                 break;
             case GameState.PortIntoCharacter:
                 PortIntoCharacter();
+                break;
+            case GameState.PassiveFirstPerson:
+                PassiveFirstPerson();
                 break;
             default:
                 break;
@@ -84,6 +88,12 @@ public class GameStateHandler : MonoBehaviour
         DisableAllComponents();
 
         positionChanger.enabled = true;
+    }
+
+    public void PassiveFirstPerson()
+    {
+        DisableAllComponents();
+        // TODO
     }
 
 

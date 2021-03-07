@@ -51,6 +51,8 @@ public class KnifeCutter : MonoBehaviour
     [ContextMenu("Do Something")]
     public async void CutObject()
     {
+        if (!ItemRespawner.KnifeGrabbed) return; // Only cut when knife is in hand
+
         try { crossMat = CutMaterials.FirstOrDefault(e => objToCut.name.ToLower().Contains(e.FoodName)).MaterialAfterCut; }
         catch (Exception) { throw; }
 
