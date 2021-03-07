@@ -10,6 +10,7 @@ public class ItemRespawner : MonoBehaviour
     public List<string> AllowedCollisionTags = new List<string> { "Table", "Pot", "Plate" };
     public bool YurtLevel;
     public bool CookingLevel;
+    public bool DiceLevel;
 
     public static bool KnifeGrabbed;
 
@@ -68,7 +69,9 @@ public class ItemRespawner : MonoBehaviour
     {
         if (!gameObject || this == null) return; // TODO test if this helps
 
-        await Task.Delay(1000);
+        int waitTime = 1000;
+        if (DiceLevel) waitTime = 2000;
+        await Task.Delay(waitTime);
 
         if (YurtLevel)
         {
@@ -105,6 +108,8 @@ public class ItemRespawner : MonoBehaviour
         // When object with allowed tag was hit
         else
         {
+            if (DiceLevel) return;
+
             rg.useGravity = false;
             rg.isKinematic = true;
           

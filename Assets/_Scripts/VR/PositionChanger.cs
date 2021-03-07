@@ -70,7 +70,7 @@ public class PositionChanger : MonoBehaviour
                 return;
         }
 
-        if (left)
+        if (!left)
         {
             currentPosition++;
             if (currentPosition > currentPositions.Count - 1)

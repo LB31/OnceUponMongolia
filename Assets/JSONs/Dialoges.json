@@ -6,7 +6,7 @@
             "veroTexts": {
                 "hints": [
                     "Finally the Yurt is ready! Let's go inside and speak with Gentle Wind",
-                    "geh mal zum Jungen, lak shu",
+                    "Oh, it seems that Granny is back at home. Let's visit her",
                     "Tadelü"
                 ],
                 "grandma": [
@@ -73,11 +73,11 @@
                 },
                 {
                     "task": [
-                        "mach ma, du elefant",
-                        "mimimi"
+                        "Very nice Yurt. You are a good gurl. However, we still need a sign from the sky and stuff",
+                        "Go to the ruins and find a couple full of love"
                     ],
                     "hint": [
-
+                        "Find damn copulating animals!"
                     ],
                     "ready": [
                         "toches"
