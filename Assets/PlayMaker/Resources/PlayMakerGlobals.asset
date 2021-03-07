@@ -79,3 +79,4 @@ MonoBehaviour:
   - AreYouReady
   - YurtIsBuilt
   - FollowPlayer
+  - GiveInfo

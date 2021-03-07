@@ -8,6 +8,7 @@ using UnityEngine.Events;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class PositionChanger : MonoBehaviour
 {
@@ -122,14 +123,22 @@ public class PositionChanger : MonoBehaviour
         }
         goal.gameObject.SetActive(false);
         transform.position = goal.position;
-        ToggleControllerOrHands(true);
+        ToggleControllerOrHands(true, false);
     }
 
-    public void ToggleControllerOrHands(bool activateHands)
+    public void ToggleControllerOrHands(bool activateHands, bool holdingObject)
     {
         HandPresence[] hands = FindObjectsOfType<HandPresence>();
         hands[0].ToggleHands(activateHands);
         hands[1].ToggleHands(activateHands);
+
+        if (holdingObject)
+        {
+            hands[0].transform.parent.GetComponent<XRDirectInteractor>().
+                selectActionTrigger = XRBaseControllerInteractor.InputTriggerType.Sticky;
+            hands[1].transform.parent.GetComponent<XRDirectInteractor>().
+                selectActionTrigger = XRBaseControllerInteractor.InputTriggerType.Sticky;
+        }
     }
 
 }
