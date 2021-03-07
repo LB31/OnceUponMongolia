@@ -37,7 +37,7 @@ public class XRRayController : MonoBehaviour
 
     private void Update()
     {
-        
+        // Allow only selction on interactable element
         if (xrController.selectInteractionState.active && !layerWasSet)
         {
             rayInteractor.raycastMask = LayerMask.GetMask("Nothing");
@@ -45,7 +45,6 @@ public class XRRayController : MonoBehaviour
         }          
         else if (!xrController.selectInteractionState.active && layerWasSet)
         {
-            Debug.Log(xrController.selectInteractionState.active, gameObject);
             rayInteractor.raycastMask = startLayers;
             layerWasSet = false;
         }

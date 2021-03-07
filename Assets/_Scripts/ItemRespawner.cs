@@ -43,7 +43,6 @@ public class ItemRespawner : MonoBehaviour
         if (name == "StoryKnife")
             KnifeGrabbed = true;
 
-        Debug.LogError("grabbed");
         //rg.useGravity = false;
         //rg.isKinematic = true;
         //GetComponent<Collider>().isTrigger = false;
@@ -54,7 +53,6 @@ public class ItemRespawner : MonoBehaviour
         if (name == "StoryKnife")
             KnifeGrabbed = false;
 
-        Debug.LogError("released");
         // Allow object to fall and to to collide
         rg.useGravity = true;
         rg.isKinematic = false;

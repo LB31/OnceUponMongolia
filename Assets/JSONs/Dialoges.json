@@ -297,25 +297,17 @@
             "dialogs": [
                 {
                     "text": [
-                        "This is such a great new Yurt! I'm very proud of you kids =)",
-                        "For a good Party we will need some tasty food. Good that Mama is here",
-                        "Don't worry about the ingredients. I was a great 'Alpha' Mom an collected everything that we need already",
-                        "So slip inside of me and let's start the cooking!"
-                    ]
-                },
-                {
-                    "text": [
-                        "So you kids need some wood to build a Yourt? Cute",
-                        "I'll give you some. But beware: in the Beta you'll need to chop it yourself!"
+                        ""
                     ]
                 }
             ],
             "quests": [
                 {
                     "task": [
-                        "You need some fabrics for my Party Yurt? Then you shall get them!",
-                        "*YOU GOT FABRICS*",
-                        "For the fancy colors go to the barn"
+                        "This is such a great new Yurt! I'm very proud of you kids =)",
+                        "For a good Party we will need some tasty food. Good that Mama is here",
+                        "Don't worry about the ingredients. I was a great 'Alpha' Mom an collected everything that we need already",
+                        "So slip inside of me and let's start the cooking!"
                     ],
                     "hint": [
                         "Hey, I need some me-time now! Get some colors at the barn"
@@ -324,7 +316,7 @@
                         "I'm so wet now"
                     ],
                     "ready": [
-                        "Noice"
+                        "Best meal I've ever made ;)"
                     ]
                 }
             ],

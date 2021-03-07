@@ -130,7 +130,7 @@ public class GirlController : EntityController
             gm.NearestVillager.GetComponent<PlayMakerFSM>().SendEvent("StartDialog");
             SpeakingWithVillager = true;
         }
-        // Collect item
+        // Collect Item
         if (TriggerEnterer.CurrentItemInRange && !SpeakingWithVillager)
         {
             string foundItem = TriggerEnterer.CurrentItemInRange.name;
@@ -143,6 +143,7 @@ public class GirlController : EntityController
             // Stop movement
             SpeakingWithVillager = true;
         }
+        // Close DialogBox after collect Item Dialog
         else if (TriggerEnterer.CurrentItemInRange && SpeakingWithVillager)
         {
             var fsm = GetComponent<PlayMakerFSM>();
