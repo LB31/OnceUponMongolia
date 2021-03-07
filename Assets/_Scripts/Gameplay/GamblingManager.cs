@@ -7,7 +7,7 @@ public class GamblingManager : MonoBehaviour
 {
     public List<string> OracleAnswers;
     public TextMeshProUGUI OracleText;
-    private int stonesInside;
+    [SerializeField] private int stonesInside;
 
     private void ShowOracleMessage()
     {

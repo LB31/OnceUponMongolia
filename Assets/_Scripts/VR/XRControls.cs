@@ -64,12 +64,12 @@ public class XRControls : Singleton<XRControls>
         }
 
         GameManager.Instance.XRInputRight.bindings.
-            Add(bindingsButtons[0] = new XRBinding(teleportRight, PressType.End, () => ControllerEventButton(false)));
+            Add(bindingsButtons[0] = new XRBinding(teleportRight, PressType.End, () => ControllerEventButton(true)));
         
         if (GameManager.Instance.OculusInUse)
         {
             GameManager.Instance.XRInputRight.bindings.
-                Add(bindingsButtons[1] = new XRBinding(teleportLeft, PressType.End, () => ControllerEventButton(true)));
+                Add(bindingsButtons[1] = new XRBinding(teleportLeft, PressType.End, () => ControllerEventButton(false)));
         }
            
     }
