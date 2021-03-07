@@ -40,7 +40,6 @@ public class XRRayController : MonoBehaviour
         
         if (xrController.selectInteractionState.active && !layerWasSet)
         {
-            Debug.Log(xrController.selectInteractionState.active, gameObject);
             rayInteractor.raycastMask = LayerMask.GetMask("Nothing");
             layerWasSet = true;
         }          

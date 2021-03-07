@@ -245,15 +245,7 @@
             "dialogs": [
                 {
                     "text": [
-                        "My lover wants to build a Party Yurt for me?",
-                        "Noice, totally my jam!",
-                        "Then he will surely need some hot colors. Go to the barn to get some"
-                    ]
-                },
-                {
-                    "text": [
-                        "So you kids need some wood to build a Yourt? Cute",
-                        "I'll give you some. But beware: in the Beta you'll need to chop it yourself!"
+                        "Muh"
                     ]
                 }
             ],
@@ -266,6 +258,20 @@
                     ],
                     "hint": [
                         "Hey, I need some me-time now! Get some colors at the barn"
+                    ],
+                    "hintSecond": [
+                        "I'm so wet now"
+                    ],
+                    "ready": [
+                        "Noice"
+                    ]
+                },
+                {
+                    "task": [
+                        "Please cut at least 5 from the following ingredients for a tasty meal:"
+                    ],
+                    "hint": [
+                        "This is a damn good meal, bra. Continue"
                     ],
                     "hintSecond": [
                         "I'm so wet now"

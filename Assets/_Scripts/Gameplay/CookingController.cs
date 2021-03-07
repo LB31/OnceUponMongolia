@@ -1,11 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CookingController : MonoBehaviour
 {
     public int NeededAmountToFinish;
     public ParticleSystem CookingParticleEffect;
+    public List<Image> IngredientImages;
+    public TextMeshProUGUI MoonLightText;
 
     private HashSet<string> foodInPot = new HashSet<string>();
 
@@ -13,6 +19,7 @@ public class CookingController : MonoBehaviour
     {
         string foodName = food.name;
 
+        // For food that isn't cut yet
         if (!foodName.Contains("Cut"))
         {
             food.GetComponent<ItemRespawner>().ReturnToOriginalPos();
@@ -20,13 +27,18 @@ public class CookingController : MonoBehaviour
         }
 
         Destroy(food);
-        foodInPot.Add(foodName.Substring(0, 3));
+        string shortName = foodName.Substring(0, 3);
+        foodInPot.Add(shortName);
         CookingParticleEffect.Play();
-        print("pot amount " + foodInPot.Count);
 
-        if(foodInPot.Count >= NeededAmountToFinish)
+        // remove food element from ui
+        Image foundFoodImage = IngredientImages.First(foodImage => foodImage.name.Contains(shortName));
+        foundFoodImage.enabled = false;
+        MoonLightText.text = Regex.Replace(MoonLightText.text, "[0-9]", (NeededAmountToFinish - foodInPot.Count).ToString());
+
+        if (foodInPot.Count >= NeededAmountToFinish)
         {
-            Debug.LogError("FINITO");
+            PlayMakerFSM.BroadcastEvent("ContinueStory");
         }
     }
 }
