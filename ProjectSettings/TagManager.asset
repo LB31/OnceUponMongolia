@@ -8,6 +8,10 @@ TagManager:
   - Plate
   - Dice
   - Ground
+  - Vero
+  - DialogBox
+  - Item
+  - Pot
   layers:
   - Default
   - TransparentFX
@@ -24,7 +28,7 @@ TagManager:
   - Food
   - Knife
   - Hand
-  - 
+  - Brush
   - 
   - 
   - 

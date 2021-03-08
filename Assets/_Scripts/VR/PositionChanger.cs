@@ -2,8 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.XR;
 
 public class PositionChanger : MonoBehaviour
@@ -20,6 +23,8 @@ public class PositionChanger : MonoBehaviour
     private XRBinding teleportBindingRightA;
     private XRBinding teleportBindingRightB;
 
+    private Volume volume;
+    private LensDistortion lensDistortion;
 
     void Awake()
     {
@@ -29,68 +34,42 @@ public class PositionChanger : MonoBehaviour
         if (enabled)
             ChangeTransform();
         //RegisterButtonEvents();
+
+        //volume = FindObjectOfType<Volume>();
+        //volume.profile.TryGet(out lensDistortion);
     }
 
     private void OnEnable()
     {
-        RegisterButtonEvents();
+        XRControls.Instance.ControllerEventButton -= Teleport;
+        XRControls.Instance.ControllerEventButton += Teleport;
     }
 
     private void OnDisable()
     {
-        RemoveButtonEvents();
+        XRControls.Instance.RemoveButtonEvents();
     }
 
-    public void RemoveButtonEvents()
+
+
+    public void Teleport(bool left)
     {
-        if (teleportBindingRightA != null)
-        {
-            //GameManager.Instance.XRInputLeft.bindings.Remove(teleportBindingLeft);
-            GameManager.Instance.XRInputRight.bindings.Remove(teleportBindingRightA);
-            GameManager.Instance.XRInputRight.bindings.Remove(teleportBindingRightB);
-        }
-    }
-
-    public void RegisterButtonEvents()
-    {
-        RemoveButtonEvents();
-
-        XRButton teleportLeft;
-        XRButton teleportRight;
-
-        if (GameManager.Instance.OculusInUse)
-        {
-            teleportLeft = XRButton.SecondaryButton;
-            teleportRight = XRButton.PrimaryButton;
-        }
-        else
-        {
-            teleportLeft = XRButton.Primary2DAxisClick;
-            teleportRight = XRButton.Primary2DAxisClick;
-        }
-
-        GameManager.Instance.XRInputRight.bindings.
-            Add(teleportBindingRightB = new XRBinding(teleportLeft, PressType.End, () => Teleport(false)));
-        GameManager.Instance.XRInputRight.bindings.
-            Add(teleportBindingRightA = new XRBinding(teleportRight, PressType.End, () => Teleport(true)));
-    }
-
-    public void Teleport(bool right)
-    {
+        
+        // WMR Headset
         if (!GameManager.Instance.OculusInUse)
         {
             float offsetTouch = 0.4f;
             GameManager.Instance.RightCon.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 rightTouchpad);
 
             if (rightTouchpad.y < -offsetTouch)
-                right = false;
+                left = false;
             else if (rightTouchpad.y > offsetTouch)
-                right = true;
+                left = true;
             else
                 return;
         }
 
-        if (right)
+        if (left)
         {
             currentPosition++;
             if (currentPosition > currentPositions.Count - 1)
@@ -123,20 +102,34 @@ public class PositionChanger : MonoBehaviour
 
     }
 
-    public void TestMove()
+    public async void MoveVRPlayer(GameObject goal, float duration)
     {
-        StartCoroutine(MoveIntoCharacter(GameObject.Find("GurlToMove").transform));
+        _ = PositionManager.Instance.VisualizeSceneChange(true);
+        await MoveIntoCharacter(goal.transform, duration);
+        _ = PositionManager.Instance.VisualizeSceneChange(false);
     }
 
-    public IEnumerator MoveIntoCharacter(Transform goal)
+    public async Task MoveIntoCharacter(Transform goal, float timeToMove)
     {
-        while (Vector3.Distance(transform.position, goal.position) > 0.1f)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, goal.position, Time.deltaTime * 5);
-            yield return null;
-        }
+        float distance = Vector3.Distance(transform.position, goal.position);
+        float deltaToMove = distance / timeToMove;
 
+        while (distance > 0.5f)
+        {
+            distance = Vector3.Distance(transform.position, goal.position);
+            transform.position = Vector3.MoveTowards(transform.position, goal.position, Time.deltaTime * deltaToMove);
+            await Task.Yield();
+        }
         goal.gameObject.SetActive(false);
+        transform.position = goal.position;
+        ToggleControllerOrHands(true);
+    }
+
+    public void ToggleControllerOrHands(bool activateHands)
+    {
+        HandPresence[] hands = FindObjectsOfType<HandPresence>();
+        hands[0].ToggleHands(activateHands);
+        hands[1].ToggleHands(activateHands);
     }
 
 }

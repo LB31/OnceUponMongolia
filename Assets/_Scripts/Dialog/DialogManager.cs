@@ -12,7 +12,8 @@ public class DialogManager : Singleton<DialogManager>
     public float ScrollingSpeed = 0.01f;
 
     private Dialog currentDialog;
-    private List<string> outputText = new List<string>();
+    // Debug
+    public List<string> outputText = new List<string>();
     private int currentTextIndex;
 
     private IEnumerator runningDialog;
@@ -23,43 +24,26 @@ public class DialogManager : Singleton<DialogManager>
     {
         base.Awake();
 
-        ParseJson();     
-    }
-
-    private async void Start()
-    {
-        //StartDialog(Person.Vero, 1, TypeMessage.veroText, QuestType.none, VeroType.grandma);
-        //await Task.Delay(3000);
-        StartDialog(Person.Grandmother, 0, TypeMessage.dialog, QuestType.none);
+        ParseJson();
     }
 
     private void ParseJson()
     {
         VillagerTexts dialogJson = JsonUtility.FromJson<VillagerTexts>(AllDialogues.text);
-        Dialogues = new List<ItemTexts>();
-        foreach (ItemTexts dialogs in dialogJson.people)
-        {
-            //dialog.puzzleText = dialog.puzzleText.Replace("\\n", "\n");
-            // Debug
-            Dialogues.Add(dialogs);
-
-            try
-            {
-                print(dialogs.veroTexts.girl[1]);
-            }
-            catch (Exception)
-            {
-                print("try again");
-            }
-
-        }
+        Dialogues = dialogJson.people;
     }
 
     public void StartDialog(Person person, int entryNumber,
         TypeMessage messageType = 0, QuestType questType = 0, VeroType veroType = 0)
     {
         // Find according person
+        // TODO rework
         currentDialog = FindObjectsOfType<Dialog>().First(name => name.SpeakingPerson.Equals(person));
+
+        currentDialog.CharacterName.text = person.ToString();
+
+        // Reset output
+        outputText = new List<string>();
 
         if (person.Equals(Person.Vero))
             BuildVeroDialog(veroType, entryNumber);
@@ -73,7 +57,7 @@ public class DialogManager : Singleton<DialogManager>
         ItemTexts itemTexts = Dialogues.
             Find(name => name.characterName == person.ToString());
 
-        outputText.Clear();
+        //outputText.Clear();
 
         switch (messageType)
         {
@@ -81,11 +65,13 @@ public class DialogManager : Singleton<DialogManager>
                 outputText = itemTexts.dialogs[entryNumber].text;
                 break;
             case TypeMessage.quest:
-                if (questType.ToString() == "task")
+                if (questType == QuestType.task)
                     outputText = itemTexts.quests[entryNumber].task;
                 else if (questType.ToString() == "hint")
                     outputText = itemTexts.quests[entryNumber].hint;
-                else
+                else if (questType == QuestType.hintSecond)
+                    outputText = itemTexts.quests[entryNumber].hintSecond;
+                else if (questType.ToString() == "ready")
                     outputText = itemTexts.quests[entryNumber].ready;
                 break;
             case TypeMessage.randomAnswer:
@@ -105,7 +91,7 @@ public class DialogManager : Singleton<DialogManager>
         ItemTexts itemTexts = Dialogues.
             Find(name => name.characterName == Person.Vero.ToString());
 
-        outputText.Clear();
+        //outputText.Clear();
         string output = "";
 
         switch (veroType)
@@ -126,13 +112,17 @@ public class DialogManager : Singleton<DialogManager>
                 output = itemTexts.veroTexts.boy[entryNumber];
                 break;
             case VeroType.itemfound:
-                output = itemTexts.veroTexts.itemfound[entryNumber];
+                output = itemTexts.veroTexts.itemFound[entryNumber];
+                break;
+            case VeroType.question:
+                outputText = itemTexts.veroTexts.question;
                 break;
             default:
                 break;
         }
 
-        outputText.Add(output);
+        if (veroType != VeroType.question)
+            outputText.Add(output);
 
         runningDialog = ScrollDialog();
         StartCoroutine(runningDialog);
@@ -142,25 +132,33 @@ public class DialogManager : Singleton<DialogManager>
     {
         dialogIsRunning = true;
         currentDialog.DialogText.text = "";
-        foreach (char letter in outputText[currentTextIndex]) 
+        foreach (char letter in outputText[currentTextIndex])
         {
             currentDialog.DialogText.text += letter;
             yield return new WaitForSeconds(ScrollingSpeed);
         }
         dialogIsRunning = false;
+        PlayMakerFSM.BroadcastEvent("SentenceCompleted");
     }
 
-    public void ContinueDialog()
+    public async void ContinueDialog(bool jumpOver = false)
     {
-        // When dialog scrolling, show all
+        // When no dialog was selected
+        if (!currentDialog) return;
+
+        if (jumpOver) currentTextIndex++;
+
+
+        // When dialog is scrolling, show all
         if (dialogIsRunning)
         {
             StopCoroutine(runningDialog);
             currentDialog.DialogText.text = outputText[currentTextIndex]; // TODO no zero
             dialogIsRunning = false;
+            PlayMakerFSM.BroadcastEvent("SentenceCompleted");
         }
         // When there is more to say, show next
-        else if(outputText.Count - 1 > currentTextIndex)
+        else if (outputText.Count - 1 > currentTextIndex)
         {
             currentTextIndex++;
             runningDialog = ScrollDialog();
@@ -169,10 +167,17 @@ public class DialogManager : Singleton<DialogManager>
         // Send event, when dialog finished
         else
         {
-            PlayMakerFSM.BroadcastEvent("DialogFinished");
+            await Task.Delay(500);
             currentTextIndex = 0;
+            // For "Pending Dialog" state
+            PlayMakerFSM.BroadcastEvent("DialogFinished");
+
+            if (currentDialog == null) return;
             currentDialog.DialogText.text = "";
             currentDialog.gameObject.SetActive(false);
+            currentDialog = null;
+
+
         }
     }
 

@@ -11,6 +11,14 @@ public class GameStateHandler : MonoBehaviour
     public PositionChanger positionChanger;
     public GirlController girlController;
 
+    public enum GameState
+    {
+        MoveFreely,
+        ControlGirl,
+        PortIntoCharacter
+    };
+    public GameState StartState;
+
     private List<MonoBehaviour> allComponents = new List<MonoBehaviour>();
 
     void Awake()
@@ -19,7 +27,7 @@ public class GameStateHandler : MonoBehaviour
         continuousMovement = GetComponent<ContinuousMovement>();
         snapTurnProvider = GetComponent<DeviceBasedSnapTurnProvider>();
         positionChanger = GetComponent<PositionChanger>();
-        girlController = GetComponent<GirlController>();
+        girlController = FindObjectOfType<GirlController>();
 
         //allComponents.Add(characterController);
         allComponents.Add(continuousMovement);
@@ -29,8 +37,20 @@ public class GameStateHandler : MonoBehaviour
 
         DisableAllComponents();
 
-        // test
-        MoveFreely();
+        switch (StartState)
+        {
+            case GameState.MoveFreely:
+                MoveFreely();
+                break;
+            case GameState.ControlGirl:
+                ControlGirl();
+                break;
+            case GameState.PortIntoCharacter:
+                PortIntoCharacter();
+                break;
+            default:
+                break;
+        }
     }
 
     public void DisableAllComponents(bool snapTurn = true)
@@ -57,6 +77,13 @@ public class GameStateHandler : MonoBehaviour
 
         positionChanger.enabled = true;
         girlController.enabled = true;
+    }
+
+    public void PortIntoCharacter()
+    {
+        DisableAllComponents();
+
+        positionChanger.enabled = true;
     }
 
 

@@ -3,7 +3,12 @@ guid: c49a03ab2b6914143882e6900c92666d
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: runerock_mat
+    second: {fileID: 2100000, guid: b76ac738fe47d8448b97d979dc4461d1, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
