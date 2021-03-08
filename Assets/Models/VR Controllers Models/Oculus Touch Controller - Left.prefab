@@ -124,10 +124,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasControllerTutorial
       objectReference: {fileID: 0}
-    - target: {fileID: 554496788481349095, guid: 0c449e645d4a18e49a107338982b331e,
+    - target: {fileID: 1346874021824306287, guid: 0c449e645d4a18e49a107338982b331e,
         type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      propertyPath: m_LocalPosition.z
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 2148516184818847788, guid: 0c449e645d4a18e49a107338982b331e,
         type: 3}
@@ -233,11 +233,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3475313518058906388, guid: 0c449e645d4a18e49a107338982b331e,
-        type: 3}
-      propertyPath: m_Material
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c449e645d4a18e49a107338982b331e, type: 3}
