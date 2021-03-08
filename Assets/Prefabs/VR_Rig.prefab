@@ -7660,6 +7660,7 @@ MonoBehaviour:
   snapTurnProvider: {fileID: 0}
   positionChanger: {fileID: 0}
   girlController: {fileID: 0}
+  menuBox: {fileID: 0}
   StartState: 0
 --- !u!114 &5601499130302856065
 MonoBehaviour:

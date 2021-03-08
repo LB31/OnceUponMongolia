@@ -57,16 +57,20 @@ public class HandPresence : MonoBehaviour
         }
 
         if (targetDevice.name.ToLower().Contains("left"))
+        {
             GameManager.Instance.LeftCon = targetDevice;
+            GameStateHandler.Instance.RigsterMenu();
+        }
+            
         if (targetDevice.name.ToLower().Contains("right"))
         {
             GameManager.Instance.RightCon = targetDevice;
-
         }
 
         // TODO do it smarter
         XRControls.Instance.RegisterButtonEvents();
         XRControls.Instance.RegisterInteraction();
+        XRControls.Instance.RegisterMenuButton();
 
     }
 
