@@ -1,15 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class GameStateHandler : MonoBehaviour
+public class GameStateHandler : Singleton<GameStateHandler>
 {
     public CharacterController characterController;
     public ContinuousMovement continuousMovement;
     public DeviceBasedSnapTurnProvider snapTurnProvider;
     public PositionChanger positionChanger;
     public GirlController girlController;
+
+    public GameObject menuBox;
+    private bool inMenu;
 
     public enum GameState
     {
@@ -57,6 +62,15 @@ public class GameStateHandler : MonoBehaviour
         }
     }
 
+    public void RigsterMenu()
+    {
+        XRControls.Instance.ControllerEventMenu -= Menu;
+        XRControls.Instance.ControllerEventMenu += Menu;
+
+        menuBox = FindObjectOfType<MenuController>().gameObject;
+        menuBox.SetActive(false);
+    }
+
     public void DisableAllComponents(bool snapTurn = true)
     {
         foreach (MonoBehaviour component in allComponents)
@@ -94,6 +108,23 @@ public class GameStateHandler : MonoBehaviour
     {
         DisableAllComponents();
         // TODO
+    }
+
+    public void Menu()
+    {
+        inMenu = !inMenu;
+        if (inMenu)
+        {
+            Time.timeScale = 0;
+            menuBox.SetActive(true);
+            XRControls.Instance.VRInteractionRays.SetActive(true);
+        }
+        else
+        {
+            Time.timeScale = 1;
+            menuBox.SetActive(false);
+            XRControls.Instance.VRInteractionRays.SetActive(false);
+        }
     }
 
 
