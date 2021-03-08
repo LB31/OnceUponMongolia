@@ -15,12 +15,6 @@ public class XRControls : Singleton<XRControls>
     private XRBinding[] bindingsTrigger = new XRBinding[2];
     private XRBinding[] bindingsButtons = new XRBinding[2];
 
-    void Start()
-    {
-
-    }
-
-
     public void RegisterInteraction()
     {
         if (bindingsTrigger[0] != null) return;

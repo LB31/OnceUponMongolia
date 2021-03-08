@@ -54,7 +54,9 @@
                 },
                 {
                     "text": [
-                        "muh"
+                        "Thanks for the feather. Why did I need it?",
+                        "Neverhteless, the dice said that the couple's future will be bright",
+                        "Now lets find out how your future will be"
                     ]
                 }
             ],
@@ -99,14 +101,17 @@
             "randomAnswers": [
                 {
                     "answer": [
-                        "obama cares",
-                        "so much"
+                        "Your life could be worse. But man, it's quite bad"     
                     ]
                 },
                 {
                     "answer": [
-                        "adi cares",
-                        "not so much"
+                        "Buy apple stocks. And Bitcoins!"
+                    ]
+                },
+                {
+                    "answer": [
+                        "The dice say that you badly need to go to a gynaecologist"
                     ]
                 }
             ]

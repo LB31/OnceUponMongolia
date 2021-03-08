@@ -70,7 +70,7 @@ public class ItemRespawner : MonoBehaviour
         if (!gameObject || this == null) return; // TODO test if this helps
 
         int waitTime = 1000;
-        if (DiceLevel) waitTime = 2000;
+        if (DiceLevel) waitTime = 1000;
         await Task.Delay(waitTime);
 
         if (YurtLevel)

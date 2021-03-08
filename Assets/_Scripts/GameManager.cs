@@ -13,6 +13,7 @@ public class GameManager : Singleton<GameManager>
     public Transform Vero;
     public Transform Player;
     public VillagerController HailStone;
+    public VillagerController GrannyNormal;
     public Transform SkyDome;
 
     public float SkySpeed = 0.1f;
