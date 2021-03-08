@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class GameStateHandler : MonoBehaviour
+public class GameStateHandler : Singleton<GameStateHandler>
 {
     public CharacterController characterController;
     public ContinuousMovement continuousMovement;
@@ -11,15 +13,27 @@ public class GameStateHandler : MonoBehaviour
     public PositionChanger positionChanger;
     public GirlController girlController;
 
+    public GameObject menuBox;
+    private bool inMenu;
+
+    public enum GameState
+    {
+        MoveFreely,
+        ControlGirl,
+        PortIntoCharacter,
+        PassiveFirstPerson
+    };
+    public GameState StartState;
+
     private List<MonoBehaviour> allComponents = new List<MonoBehaviour>();
 
-    void Awake()
+    private void Awake()
     {
         characterController = GetComponent<CharacterController>();
         continuousMovement = GetComponent<ContinuousMovement>();
         snapTurnProvider = GetComponent<DeviceBasedSnapTurnProvider>();
         positionChanger = GetComponent<PositionChanger>();
-        girlController = GetComponent<GirlController>();
+        girlController = FindObjectOfType<GirlController>();
 
         //allComponents.Add(characterController);
         allComponents.Add(continuousMovement);
@@ -29,8 +43,32 @@ public class GameStateHandler : MonoBehaviour
 
         DisableAllComponents();
 
-        // test
-        MoveFreely();
+        switch (StartState)
+        {
+            case GameState.MoveFreely:
+                MoveFreely();
+                break;
+            case GameState.ControlGirl:
+                ControlGirl();
+                break;
+            case GameState.PortIntoCharacter:
+                PortIntoCharacter();
+                break;
+            case GameState.PassiveFirstPerson:
+                PassiveFirstPerson();
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void RigsterMenu()
+    {
+        XRControls.Instance.ControllerEventMenu -= Menu;
+        XRControls.Instance.ControllerEventMenu += Menu;
+
+        menuBox = FindObjectOfType<MenuController>().gameObject;
+        menuBox.SetActive(false);
     }
 
     public void DisableAllComponents(bool snapTurn = true)
@@ -57,6 +95,36 @@ public class GameStateHandler : MonoBehaviour
 
         positionChanger.enabled = true;
         girlController.enabled = true;
+    }
+
+    public void PortIntoCharacter()
+    {
+        DisableAllComponents();
+
+        positionChanger.enabled = true;
+    }
+
+    public void PassiveFirstPerson()
+    {
+        DisableAllComponents();
+        // TODO
+    }
+
+    public void Menu()
+    {
+        inMenu = !inMenu;
+        if (inMenu)
+        {
+            Time.timeScale = 0;
+            menuBox.SetActive(true);
+            XRControls.Instance.VRInteractionRays.SetActive(true);
+        }
+        else
+        {
+            Time.timeScale = 1;
+            menuBox.SetActive(false);
+            XRControls.Instance.VRInteractionRays.SetActive(false);
+        }
     }
 
 

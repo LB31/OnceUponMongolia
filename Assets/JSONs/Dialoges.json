@@ -1,114 +1,350 @@
 {
-   "people":[
-      {
-         "id":0,
-         "characterName":"Vero",
-         "veroTexts":{
-            "hints":[
-               "Wo bin ich? Und dann kam die Feuernation und alles änderte sich!",
-               "geh mal zum Jungen, lak shu",
-               "Tadelü"
+    "people": [
+        {
+            "id": 0,
+            "characterName": "Vero",
+            "veroTexts": {
+                "hints": [
+                    "Finally the Yurt is ready! Let's go inside and speak with Gentle Wind",
+                    "Oh, it seems that Granny is back at home. Let's visit her",
+                    "Tadelü"
+                ],
+                "grandma": [
+                    "Oma1",
+                    "Wie keiner vor ihr war"
+                ],
+                "father": [
+                    "Father1"
+                ],
+                "girl": [
+                    "girlo",
+                    "tastic",
+                    "damn",
+                    "muha"
+                ],
+                "boy": [
+                    "Well done! Let's give the Yurt some colors now",
+                    "ban",
+                    "tsu",
+                    "basa"
+                ],
+                "itemFound": [
+                    "I've got the Color. Hey yeah heh. I've got the Color",
+                    "Watislav. Tsum tsum tsum. Babi donthurt me",
+                    "I like feathers <3"
+                ],
+                "question": [
+                    "Are you ready?",
+                    "Then let's continue!",
+                    "Alright. Take your time, honey"
+                ]
+            }
+        },
+        {
+            "id": 1,
+            "characterName": "SevenStar",
+            "veroTexts": null,
+            "dialogs": [
+                {
+                    "text": [
+                        "Hail Stone wants to marry the gurl? No problemo! He just needs to prove that he is a man. Easy.",
+                        "He have to build a Yurt for her. And to give it some color.",
+                        "And now fly, you little thing. I mean you don't need to leave. But you also cannot stay here."          
+                    ]
+                },
+                {
+                    "text": [
+                        "Thanks for the feather. Why did I need it?",
+                        "Neverhteless, the dice said that the couple's future will be bright",
+                        "Now let's find out how your future will be"
+                    ]
+                }
             ],
-            "grandma":[
-               "Oma1",
-               "Wie keiner vor ihr war"
+            "quests": [
+                {
+                    "task": [
+                        "Bubbale, go and search for Hail Stone. If I were a few years younger I would clearly snack his Toches >;->"
+                    ],
+                    "hint": [
+                        "boobies",
+                        "death"
+                    ],
+                    "ready": [
+                        "toches"
+                    ]
+                },
+                {
+                    "task": [
+                        "Very nice Yurt. You are a good gurl. However, we still need a sign from the sky and stuff",
+                        "Go to the ruins and find a couple full of love"
+                    ],
+                    "hint": [
+                        "Find the damn copulating animals!"
+                    ],
+                    "ready": [
+                        "toches"
+                    ]
+                },
+                {
+                    "task": [
+                        "So there is love in the world. Nice",
+                        "Now go to the top of the mountain and bring me a feather. Just do it"
+                    ],
+                    "hint": [
+                        "You. Top. Mountain. Feather. Go go"
+                    ],
+                    "ready": [
+                        "toches"
+                    ]
+                }
             ],
-            "father":[
-               "Father1"
-            ],
-            "girl":[
-               "girlo",
-               "tastic",
-               "damn",
-               "muha"
-            ],
-            "boy":[
-               "boyto",
-               "ban",
-               "tsu",
-               "basa"
-            ],
-            "itemFound":[
-               "cool thing",
-               "always needed this",
-               "best stuff ever"
+            "randomAnswers": [
+                {
+                    "answer": [
+                        "Your life could be worse. But man, it's quite bad"     
+                    ]
+                },
+                {
+                    "answer": [
+                        "Buy apple stocks. And Bitcoins!"
+                    ]
+                },
+                {
+                    "answer": [
+                        "The dice say that you badly need to go to a gynaecologist"
+                    ]
+                }
             ]
-         }
-      },
-      {
-         "id":1,
-         "characterName":"Grandmother",
-         "veroTexts": null,
-         "dialogs":[
-            {
-               "text":[
-                  "You litte human, how dare you to intrude in my sanctum. Did my stupid Yokais let you in?",
-                  "I'm Susanno, the mightiest hero who ever lived. Yamata no Orochi",
-                  "Probably you've already noticed that all worlds became darker then ever before. ",
-                  "However, there is a way to restore the balance. Behind you there is a shrine with a sacred treasure.",
-                  "Take care of the water"
-               ]
-            },
-            {
-               "text":[
-                  "muh"
-               ]
-            }
-         ],
-         "quests":[
-            {
-               "task":[
-                  "mach ma, du arsch",
-                  "mimimi"
-               ],
-               "hint":[
-                  "boobies",
-                  "death"
-               ],
-               "ready":[
-                  "toches"
-               ]
-            },
-            {
-               "task":[
-                  "mach ma, du arsch",
-                  "mimimi"
-               ],
-               "hint":[
-                  "boobies",
-                  "ops"
-               ],
-               "ready":[
-                  "toches"
-               ]
-            },
-            {
-               "task":[
-                  "mach ma, du arsch",
-                  "mimimi"
-               ],
-               "hint":[
-                  
-               ],
-               "ready":[
-                  "toches"
-               ]
-            }
-         ],
-         "randomAnswers":[
-            {
-               "answer":[
-                  "obama cares",
-                  "so much"
-               ]
-            },
-            {
-               "answer":[
-                  "adi cares",
-                  "not so much"
-               ]
-            }
-         ]
-      }
-   ]
+        },
+        {
+            "id": 2,
+            "characterName": "HailStone",
+            "veroTexts": null,
+            "dialogs": [
+                {
+                    "text": [
+                        "There is a hot girl. However, she has to marry another guy :'(",
+                        "But my dad once said: No Waifu, no Laifu",
+                        "So help me to become her Husbando!",
+                        "Go to granny to get some advice!"
+                    ]
+                },
+                {
+                    "text": [
+                        "Can we finally continue?",
+                        "It took too long!",
+                        "fuck you! =(" 
+                    ]
+                },
+                {
+                    "text": [
+                        "My job here is done. I count on your super collection skills!"
+                    ]
+                },                
+                {
+                    "text": [
+                        "The time has come to build the Yurt",
+                        "Slip inside of me and let's finish this!",
+                        "But do it slowly please. This is my first time"
+                    ]
+                },
+                {
+                    "text": [
+                        "Bob the Builder. Can we fix it? Bob the Builder. Yes we can!"
+                    ]
+                }
+            ],
+            "quests": [
+                {
+                    "task": [
+                        "So granny said that we need to collect some wood?",
+                        "Then we need to take the boat and to meet my father Great Tiger on the other side",
+                        "I want to become a man, like no one ever was!"
+                    ],
+                    "hint": [
+                        "Gurl, let's take the boat"
+                    ],
+                    "hintSecond": [
+                        "My father is over there"
+                    ],
+                    "ready": [
+                        "Good job. Finally we have some wood"
+                    ]
+                },
+                {
+                    "task": [
+                        "mach ma, du arsch",
+                        "mimimi"
+                    ],
+                    "hint": [
+                        "boobies",
+                        "ops"
+                    ],
+                    "ready": [
+                        "toches"
+                    ]
+                },
+                {
+                    "task": [
+                        "mach ma, du arsch",
+                        "mimimi"
+                    ],
+                    "hint": [
+
+                    ],
+                    "ready": [
+                        "toches"
+                    ]
+                }
+            ],
+            "randomAnswers": [
+                {
+                    "answer": [
+                        "obama cares",
+                        "so much"
+                    ]
+                },
+                {
+                    "answer": [
+                        "adi cares",
+                        "not so much"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "characterName": "GreatTiger",
+            "veroTexts": null,
+            "dialogs": [
+                {
+                    "text": [
+                        "The precious things of the shaman these, the white jaws of a MOUSE in the first year ~🎶🎵"
+                    ]
+                },
+                {
+                    "text": [
+                        "So you kids need some wood to build a Yourt? Cute",
+                        "I'll give you some. But beware: in the Beta you'll need to chop it yourself!"
+                    ]
+                }
+            ],
+            "quests": [
+                {
+                    "task": [
+                        "This is a great place for the Party Yurt!",
+                        "Go to the future bride Moon Light. She will give you some frabrics"
+                    ],
+                    "hint": [
+                        "Go to Moon Light for some fabrics"
+                    ],
+                    "hintSecond": [
+                        "My father is over there"
+                    ],
+                    "ready": [
+                        "Good job. Finally we have some wood"
+                    ]
+                }
+            ],
+            "randomAnswers": [
+                {
+                    "answer": [
+                        "obama cares",
+                        "so much"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "characterName": "MoonLight",
+            "veroTexts": null,
+            "dialogs": [
+                {
+                    "text": [
+                        "Muh"
+                    ]
+                }
+            ],
+            "quests": [
+                {
+                    "task": [
+                        "You need some fabrics for my Party Yurt? Then you shall get them!",
+                        "*YOU GOT FABRICS*",
+                        "For the fancy colors go to the barn"
+                    ],
+                    "hint": [
+                        "Hey, I need some me-time now! Get some colors at the barn"
+                    ],
+                    "hintSecond": [
+                        "I'm so wet now"
+                    ],
+                    "ready": [
+                        "Noice"
+                    ]
+                },
+                {
+                    "task": [
+                        "Please cut at least 5 from the following ingredients for a tasty meal:"
+                    ],
+                    "hint": [
+                        "This is a damn good meal, bra. Continue"
+                    ],
+                    "hintSecond": [
+                        "I'm so wet now"
+                    ],
+                    "ready": [
+                        "Noice"
+                    ]
+                }
+            ],
+            "randomAnswers": [
+                {
+                    "answer": [
+                        "obama cares",
+                        "so much"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "characterName": "GentleWind",
+            "veroTexts": null,
+            "dialogs": [
+                {
+                    "text": [
+                        ""
+                    ]
+                }
+            ],
+            "quests": [
+                {
+                    "task": [
+                        "This is such a great new Yurt! I'm very proud of you kids =)",
+                        "For a good Party we will need some tasty food. Good that Mama is here",
+                        "Don't worry about the ingredients. I was a great 'Alpha' Mom an collected everything that we need already",
+                        "So slip inside of me and let's start the cooking!"
+                    ],
+                    "hint": [
+                        "Hey, I need some me-time now! Get some colors at the barn"
+                    ],
+                    "hintSecond": [
+                        "I'm so wet now"
+                    ],
+                    "ready": [
+                        "Best meal I've ever made ;)"
+                    ]
+                }
+            ],
+            "randomAnswers": [
+                {
+                    "answer": [
+                        "obama cares",
+                        "so much"
+                    ]
+                }
+            ]
+        }
+    ]
 }

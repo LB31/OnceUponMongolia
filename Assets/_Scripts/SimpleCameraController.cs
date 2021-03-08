@@ -24,9 +24,9 @@ namespace UnityTemplateProjects
                 pitch = t.eulerAngles.x;
                 yaw = t.eulerAngles.y;
                 roll = t.eulerAngles.z;
-                x = t.position.x;
-                y = t.position.y;
-                z = t.position.z;
+                //x = t.position.x;
+                //y = t.position.y;
+                //z = t.position.z;
             }
 
             public void Translate(Vector3 translation)
@@ -52,7 +52,8 @@ namespace UnityTemplateProjects
             public void UpdateTransform(Transform t)
             {
                 t.eulerAngles = new Vector3(pitch, yaw, roll);
-                t.position = new Vector3(x, y, z);
+                // Leo
+                //t.position = new Vector3(x, y, z); 
             }
         }
         
@@ -149,7 +150,7 @@ namespace UnityTemplateProjects
                 m_TargetCameraState.yaw += mouseMovement.x * mouseSensitivityFactor;
                 m_TargetCameraState.pitch += mouseMovement.y * mouseSensitivityFactor;
             }
-            
+
             // Translation
             translation = GetInputTranslationDirection() * Time.deltaTime;
 

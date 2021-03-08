@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.ShaderGraph.Internal;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -17,13 +14,26 @@ public class ContinuousMovement : MonoBehaviour
     private float gravity = -9.81f;
     private float fallingSpeed;
 
+    private void OnEnable()
+    {
+        XRControls.Instance.ControllerEventTrigger -= Interact;
+        XRControls.Instance.ControllerEventTrigger += Interact;
+    }
+
+    private void OnDisable()
+    {
+        // TODO test if this works
+        XRControls.Instance.ControllerEventTrigger -= Interact;
+    }
+
     void Start()
     {
         rig = GetComponent<XRRig>();
         character = GetComponent<CharacterController>();
     }
 
-    void Update() {
+    void Update()
+    {
         GameManager.Instance.LeftCon.TryGetFeatureValue(GameManager.Instance.Axis2D, out inputAxis);
 
         InputHelpers.Button m_RotateAnchorLeft = InputHelpers.Button.PrimaryAxis2DLeft;
@@ -54,6 +64,16 @@ public class ContinuousMovement : MonoBehaviour
         character.height = rig.cameraInRigSpaceHeight + AdditionalHeight;
         Vector3 capsuleCenter = transform.InverseTransformPoint(rig.cameraGameObject.transform.position);
         character.center = new Vector3(capsuleCenter.x, character.height * 0.5f + character.skinWidth, capsuleCenter.z);
+    }
+
+    public void Interact()
+    {
+        GameManager gm = GameManager.Instance;
+        // if in range of Vero
+        if(Vector3.Distance(transform.position, gm.Vero.position) < gm.Vero.GetComponent<GirlController>().InteractionDistance)
+        {
+            gm.Vero.GetComponent<PlayMakerFSM>().SendEvent("StartDialog");
+        }
     }
 
 }
