@@ -8,9 +8,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_Scenes/SetupVR.unity
     guid: 5f4b7f9dfa2e68e49829801f9c9ef76b
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/CookingCutting.unity
     guid: 8e18dfa207ac1734aac1a4dfc02d122c
+  - enabled: 1
+    path: Assets/_Scenes/_Main1.unity
+    guid: 8be25f718edaab44ba4061c1cbb266b9
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: ccb92fda74b83174fabda97da67b75d7,
       type: 2}
