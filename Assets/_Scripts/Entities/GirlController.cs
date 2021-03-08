@@ -139,6 +139,7 @@ public class GirlController : EntityController
             int itemNumber = -1;
             if (foundItem.Contains("Buckets")) itemNumber = 0;
             if (foundItem.Contains("Copulating")) itemNumber = 1;
+            if (foundItem.Contains("feather")) itemNumber = 2;
 
             // Vero says
             GetComponent<PlayMakerFSM>().FsmVariables.GetFsmInt("FoundItemNumber").Value = itemNumber;
