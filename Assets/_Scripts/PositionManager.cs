@@ -145,5 +145,6 @@ public enum Location
 {
     Temple,
     Harbor,
-    PartyYurt
+    PartyYurt, 
+    GrannyYurt
 }
