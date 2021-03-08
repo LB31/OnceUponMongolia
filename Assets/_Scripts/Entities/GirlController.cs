@@ -39,7 +39,7 @@ public class GirlController : EntityController
     {
         ResetMovement();
         // TODO test if this works
-        XRControls.Instance.ControllerEventTrigger -= Interact;
+        //XRControls.Instance.ControllerEventTrigger -= Interact;
         //XRControls.Instance.RemoveTriggerEvents(); 
     }
 
@@ -126,6 +126,7 @@ public class GirlController : EntityController
     public void Interact()
     {
         GameManager gm = GameManager.Instance;
+        // Start Dialog
         if (gm.NearestVillager != null && Vector3.Distance(gm.Vero.position, gm.NearestVillager.transform.position) < InteractionDistance)
         {
             gm.NearestVillager.GetComponent<PlayMakerFSM>().SendEvent("StartDialog");
