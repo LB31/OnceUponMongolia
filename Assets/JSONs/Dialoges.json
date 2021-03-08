@@ -47,16 +47,22 @@
             "dialogs": [
                 {
                     "text": [
-                        "Hail Stone wants to marry the gurl? No problemo! He just needs to prove that he is a man. Easy.",
-                        "He have to build a Yurt for her. And to give it some color.",
+                        "Hail Stone and my MoonLight are in love? If he wants to convince me he needs to proof that he is the right one",
+                        "Doing hard work like a real man and stuff",
                         "And now fly, you little thing. I mean you don't need to leave. But you also cannot stay here."          
                     ]
                 },
                 {
                     "text": [
-                        "Thanks for the feather. Why did I need it?",
+                        "Nice, you got the feather. Now I can repair my costume and perform the Shaman dance",
                         "Neverhteless, the dice said that the couple's future will be bright",
                         "Now let's find out how your future will be"
+                    ]
+                },
+                {
+                    "text": [
+                        "Listen! The signs of the heavens that told me that my dear MoonLight and HailStone shall be united",
+                        "Therefore I annouce their engagement!!"
                     ]
                 }
             ],
