@@ -12,7 +12,7 @@ public class AudioManager : MonoBehaviour
     public List<BackgroundMusic> AllBackgroundClips;
 
 
-    public async void AddAndPlaySound(GameObject source, AudioClip clip, bool spatial, float volume, 
+    public async void AddAndPlaySound(GameObject source, AudioClip clip, bool spatial, float volume,
         Vector2 minMaxDistance, int timeBetweenReplay, int timeBeforeStart = 0)
     {
         await Task.Delay(timeBeforeStart * 1000);
@@ -31,6 +31,24 @@ public class AudioManager : MonoBehaviour
         audioSource.maxDistance = minMaxDistance.y;
 
         audioSource.Play();
+    }
+
+    public void ChangeAndPlaySound(GameObject source, AudioClip clip)
+    {
+        Destroy(source.GetComponent<AudioController>());
+        var audioSource = source.GetComponent<AudioSource>();
+        audioSource.clip = clip;
+        audioSource.loop = true;
+
+        audioSource.Play();
+    }
+
+    public void StopAudio(GameObject source)
+    {
+        Destroy(source.GetComponent<AudioController>());
+        var audioSource = source.GetComponent<AudioSource>();
+        if (audioSource)
+            audioSource.Stop();
     }
 
     public void ChangeMusic(Music musicType)
@@ -70,7 +88,7 @@ public class AudioController : MonoBehaviour
         if (!AudioSource.isPlaying)
         {
             t += Time.deltaTime;
-            if(t >= WaitTillPlay)
+            if (t >= WaitTillPlay)
             {
                 t = 0;
                 AudioSource.Play();
