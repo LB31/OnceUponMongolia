@@ -228,6 +228,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasControllerTutorialRight
       objectReference: {fileID: 0}
+    - target: {fileID: 7130474156168526425, guid: c80dcda29556617489acfeba3c95e012,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.0301
+      objectReference: {fileID: 0}
     - target: {fileID: 7176808187495316462, guid: c80dcda29556617489acfeba3c95e012,
         type: 3}
       propertyPath: m_Material

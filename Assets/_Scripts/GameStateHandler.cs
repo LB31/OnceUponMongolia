@@ -27,7 +27,7 @@ public class GameStateHandler : Singleton<GameStateHandler>
 
     private List<MonoBehaviour> allComponents = new List<MonoBehaviour>();
 
-    void Awake()
+    private void Awake()
     {
         characterController = GetComponent<CharacterController>();
         continuousMovement = GetComponent<ContinuousMovement>();

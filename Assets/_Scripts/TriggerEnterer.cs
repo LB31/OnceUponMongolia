@@ -39,7 +39,7 @@ public class TriggerEnterer : MonoBehaviour
         veroCams = transform.Find("VeroCams");
 
         foreach (Transform cam in veroCams)
-            originCamPositions.Add(cam.localPosition);
+            originCamPositions.Add(cam.localPosition);     
     }
 
     private async void OnTriggerEnter(Collider other)
@@ -90,6 +90,12 @@ public class TriggerEnterer : MonoBehaviour
             Location nextLocation = onTempleSide ? Location.Temple : Location.Harbor;
             //StartCoroutine(VisualizeSceneChange(posMan.GetNextTransform(nextLocation)));
             posMan.ChangeVeroPosition(posMan.TeleportCharacter, transform, posMan.GetNextTransform(nextLocation));
+        }
+        // For quest 3
+        if (other.name.Contains("BridgeTrigger"))
+        {
+            PlayMakerFSM.BroadcastEvent("ContinueStory");
+            other.gameObject.SetActive(false);
         }
 
         inTrigger = false;
