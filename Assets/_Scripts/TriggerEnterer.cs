@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 using UnityEngine.AI;
+using static BackgroundMusic;
 
 /// <summary>
 /// For Vero entering buildings and stuff
@@ -58,6 +59,10 @@ public class TriggerEnterer : MonoBehaviour
             Location nextLocation = onTempleSide ? Location.Harbor : Location.Temple;
             //StartCoroutine(VisualizeSceneChange(posMan.GetNextTransform(nextLocation)));
             posMan.ChangeVeroPosition(posMan.TeleportCharacter, transform, posMan.GetNextTransform(nextLocation));
+
+            // Change Music
+            Music musicType = onTempleSide ? Music.Village : Music.Ruins;
+            AudioManager.Instance.ChangeMusic(musicType);
 
             // New Boat Positon
             await Task.Delay(1000); // wait for black transition

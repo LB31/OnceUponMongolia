@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using static BackgroundMusic;
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : Singleton<AudioManager>
 {
     public AudioSource AudiosSourceBackground;
     public List<BackgroundMusic> AllBackgroundClips;
@@ -57,7 +57,6 @@ public class AudioManager : MonoBehaviour
         AudiosSourceBackground.clip = AllBackgroundClips.First(music => music.MusicType == musicType).MusicClip;
         AudiosSourceBackground.Play();
     }
-
 
 }
 

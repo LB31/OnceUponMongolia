@@ -123,7 +123,7 @@ public class GameStateHandler : Singleton<GameStateHandler>
         {
             Time.timeScale = 1;
             menuBox.SetActive(false);
-            XRControls.Instance.VRInteractionRays.SetActive(false);
+            //XRControls.Instance.VRInteractionRays.SetActive(false);
         }
     }
 
